@@ -1,8 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { projects } from '../data/projects';
-import { GiPlantSeed, GiBrain, GiPayMoney, GiTrophyCup, GiHealthNormal } from 'react-icons/gi';
+import { GiPlantSeed, GiBrain, GiPayMoney, GiTrophyCup, GiHealthNormal, GiRadarCrossSection } from 'react-icons/gi';
 
 const projectThemes = {
+  6: { // TalentRadar
+    icon: GiRadarCrossSection,
+    gradient: "from-amber-500/10 to-transparent",
+    border: "group-hover:border-amber-500/50",
+    text: "group-hover:text-amber-400",
+    tagText: "text-amber-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]",
+    iconColor: "text-amber-500",
+  },
   1: { // AyuSethu (Agriculture)
     icon: GiPlantSeed,
     gradient: "from-emerald-500/10 to-transparent",
