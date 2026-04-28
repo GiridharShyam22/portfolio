@@ -150,10 +150,13 @@ function App() {
                   {/* Featured 1 */}
                   <div className="relative overflow-hidden rounded-3xl border border-slate-300/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(51,65,85,0.42))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-slate-300/35 hover:shadow-[0_24px_50px_-24px_rgba(226,232,240,0.35)]">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-slate-100 via-accent to-slate-500"></div>
+                    <div className="absolute -right-6 -top-8 text-slate-200/10">
+                      <PiMedalFill className="text-[10rem] rotate-12" />
+                    </div>
                     <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-300/20 bg-slate-300/10 px-3 py-1.5 text-xs font-bold text-slate-200">
-                          <PiMedalFill className="text-sm" /> Major Achievement
+                          Major Achievement
                         </div>
                         <h4 className="text-2xl font-black text-white">Smart India Hackathon 2025</h4>
                         <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
@@ -170,10 +173,13 @@ function App() {
                   {/* Featured 2 */}
                   <div className="relative overflow-hidden rounded-3xl border border-sky-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(14,165,233,0.16))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/35 hover:shadow-[0_24px_50px_-24px_rgba(14,165,233,0.35)]">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-300 via-cyan-300 to-accent"></div>
+                    <div className="absolute -right-6 -top-8 text-sky-300/10">
+                      <RiLightbulbFlashLine className="text-[10rem] rotate-12" />
+                    </div>
                     <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1.5 text-xs font-bold text-sky-300">
-                          <RiLightbulbFlashLine className="text-sm" /> Selected Cohort
+                          Selected Cohort
                         </div>
                         <h4 className="text-2xl font-black text-white">IDE Bootcamp 2026</h4>
                         <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
@@ -190,10 +196,13 @@ function App() {
                   {/* Featured 3 */}
                   <div className="relative overflow-hidden rounded-3xl border border-yellow-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(250,204,21,0.12))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-yellow-400/35 hover:shadow-[0_24px_50px_-24px_rgba(250,204,21,0.35)]">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500"></div>
+                    <div className="absolute -right-5 -top-8 text-yellow-300/10">
+                      <GiTrophyCup className="text-[10rem] rotate-12" />
+                    </div>
                     <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-3 py-1.5 text-xs font-bold text-yellow-300">
-                          <GiTrophyCup className="text-sm" /> Project Expo Winner
+                          Project Expo Winner
                         </div>
                         <h4 className="text-2xl font-black text-white">Text Sprouts, E-Summit 2K26</h4>
                         <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
