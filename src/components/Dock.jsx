@@ -20,17 +20,22 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external }) {
       aria-label={label}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
-      style={{ width }}
-      className={`relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-colors ${
+      style={isActive ? undefined : { width }}
+      className={`relative flex h-9 items-center justify-center rounded-full border backdrop-blur-xl group shadow-lg transition-all duration-300 sm:h-10 ${
         isActive 
-          ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(59,158,255,0.6)]' 
+          ? 'w-auto px-3.5 sm:px-4 bg-accent/90 border-accent text-white shadow-[0_0_24px_rgba(59,158,255,0.65)] gap-2' 
           : external
-            ? 'bg-emerald-400/10 border-emerald-300/30 text-emerald-100 hover:bg-emerald-400 hover:border-emerald-300 hover:text-bg'
-            : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
+            ? 'aspect-square bg-emerald-400/10 border-emerald-300/30 text-emerald-100 hover:bg-emerald-400 hover:border-emerald-300 hover:text-bg'
+            : 'aspect-square bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
       }`}
     >
-      <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : external ? 'group-hover:text-bg' : 'group-hover:text-white'}`} />
-      <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${
+      <Icon className={`shrink-0 transition-colors ${isActive ? 'h-4 w-4 text-white sm:h-5 sm:w-5' : external ? 'h-1/2 w-1/2 group-hover:text-bg' : 'h-1/2 w-1/2 group-hover:text-white'}`} />
+      {isActive && (
+        <span className="hidden text-xs font-extrabold sm:inline">
+          {label}
+        </span>
+      )}
+      <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${isActive ? 'hidden' : ''} ${
         external ? 'bg-emerald-400 text-bg' : 'bg-accent text-white'
       }`}>
         {label}
