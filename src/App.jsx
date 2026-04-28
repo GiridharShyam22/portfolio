@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { GiTrophyCup } from 'react-icons/gi';
 import { PiMedalFill } from 'react-icons/pi';
 import { RiAwardLine } from 'react-icons/ri';
-import SplashCursor from './reactbits/SplashCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -13,13 +12,18 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen w-full bg-bg text-txt font-sans relative pb-24 md:pb-0">
-      {/* Background Effect */}
-      <SplashCursor />
-
-      {/* Brand Logo */}
-      <a href="#home" className="fixed top-6 left-6 md:top-8 md:left-10 z-50 font-mono text-2xl font-black tracking-tighter text-white hover:text-accent transition-colors duration-300 pointer-events-auto mix-blend-difference">
-        .src
-      </a>
+      {/* Availability Marker */}
+      <div className="fixed top-6 left-6 md:top-8 md:left-10 z-50 group pointer-events-auto">
+        <a
+          href="#contact"
+          className="font-mono text-2xl font-black tracking-tighter text-white hover:text-accent transition-colors duration-300 mix-blend-difference"
+        >
+          .open
+        </a>
+        <span className="absolute top-full left-0 mt-3 whitespace-nowrap rounded-xl border border-accent/20 bg-bg2/90 px-3 py-2 text-xs font-mono text-txt-mid opacity-0 shadow-2xl backdrop-blur-xl transition-all duration-300 pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+          Open to internships / freelance / full-time
+        </span>
+      </div>
 
       {/* Navigation Dock */}
       <Navbar />
