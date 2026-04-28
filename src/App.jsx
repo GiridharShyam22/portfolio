@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GiRocket, GiTrophyCup } from 'react-icons/gi';
+import { GiTrophyCup } from 'react-icons/gi';
 import { PiMedalFill } from 'react-icons/pi';
-import { RiAwardLine } from 'react-icons/ri';
+import { RiAwardLine, RiLightbulbFlashLine } from 'react-icons/ri';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -174,12 +174,12 @@ function App() {
                   <div className="relative overflow-hidden rounded-3xl border border-sky-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(14,165,233,0.16))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/35 hover:shadow-[0_24px_50px_-24px_rgba(14,165,233,0.35)]">
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-300 via-cyan-300 to-accent"></div>
                     <div className="absolute -right-6 -top-8 text-sky-300/10">
-                      <GiRocket className="text-[10rem] rotate-12" />
+                      <RiLightbulbFlashLine className="text-[10rem] rotate-12" />
                     </div>
                     <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div>
                         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1.5 text-xs font-bold text-sky-300">
-                          <GiRocket className="text-sm" /> Selected Cohort
+                          <RiLightbulbFlashLine className="text-sm" /> Selected Cohort
                         </div>
                         <h4 className="text-2xl font-black text-white">IDE Bootcamp 2026</h4>
                         <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
