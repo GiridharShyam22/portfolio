@@ -197,6 +197,36 @@ function App() {
                     </div>
                   </div>
 
+                  {/* Ach 4 */}
+                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(14,165,233,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-sky-400 to-sky-600"></div>
+                    <div className="absolute -right-4 -top-4 text-sky-400/5 group-hover:text-sky-400/10 transition-colors duration-500">
+                      <RiAwardLine className="text-9xl transform -rotate-12" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-400/10 text-sky-400 font-bold text-xs mb-5 border border-sky-400/20">
+                        <RiAwardLine className="text-sm" /> Selected Participant
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">IDE Bootcamp 2026 (Phase 1)</h4>
+                      <p className="text-txt-dim leading-relaxed">Selected for an intensive 5-day national initiative — Focused on design thinking, product commercialization, and entrepreneurial pitching.</p>
+                    </div>
+                  </div>
+
+                  {/* Ach 5 */}
+                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-blue-700"></div>
+                    <div className="absolute -right-4 -top-4 text-blue-500/5 group-hover:text-blue-500/10 transition-colors duration-500">
+                      <RiAwardLine className="text-9xl transform -rotate-12" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 font-bold text-xs mb-5 border border-blue-500/20">
+                        <RiAwardLine className="text-sm" /> National Participant
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">NHIDE 2026</h4>
+                      <p className="text-txt-dim leading-relaxed">Competed in the National Hackathon on Innovation, Design, and Entrepreneurship (Bilaspur) — Rapidly prototyped and presented an innovative technical solution.</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
