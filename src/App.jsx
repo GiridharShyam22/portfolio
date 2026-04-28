@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GiTrophyCup } from 'react-icons/gi';
+import { GiRocket, GiTrophyCup } from 'react-icons/gi';
 import { PiMedalFill } from 'react-icons/pi';
 import { RiAwardLine } from 'react-icons/ri';
 import Navbar from './components/Navbar';
@@ -143,82 +143,95 @@ function App() {
               {/* Achievements */}
               <div>
                 <h3 className="text-2xl font-mono text-txt-mid mb-8 flex items-center gap-3">
-                  <span className="text-accent">/</span> Hall of Fame
+                  <span className="text-accent">/</span> Recognition
                 </h3>
-                <div className="flex flex-col gap-6">
+                <div className="space-y-5">
 
-                  {/* Ach 1 */}
-                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(250,204,21,0.15)]">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-yellow-400 to-yellow-600"></div>
-                    <div className="absolute -right-4 -top-4 text-yellow-400/5 group-hover:text-yellow-400/10 transition-colors duration-500">
-                      <GiTrophyCup className="text-9xl transform -rotate-12" />
+                  {/* Featured 1 */}
+                  <div className="relative overflow-hidden rounded-3xl border border-slate-300/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(51,65,85,0.42))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-slate-300/35 hover:shadow-[0_24px_50px_-24px_rgba(226,232,240,0.35)]">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-slate-100 via-accent to-slate-500"></div>
+                    <div className="absolute -right-6 -top-8 text-slate-200/10">
+                      <PiMedalFill className="text-[10rem] rotate-12" />
                     </div>
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 text-yellow-400 font-bold text-xs mb-5 border border-yellow-400/20">
-                        <GiTrophyCup className="text-sm" /> National Winner
+                    <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-300/20 bg-slate-300/10 px-3 py-1.5 text-xs font-bold text-slate-200">
+                          <PiMedalFill className="text-sm" /> Major Achievement
+                        </div>
+                        <h4 className="text-2xl font-black text-white">Smart India Hackathon 2025</h4>
+                        <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
+                          National-level finalist at Dehradun, recognized for rapid problem-solving and presenting a working technical solution under intense time pressure.
+                        </p>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3">Text Sprouts, E-Summit 2K26</h4>
-                      <p className="text-txt-dim leading-relaxed">1st place, National Level Project Expo — Developed an innovative Supply Chain Management solution.</p>
+                      <div className="shrink-0 rounded-2xl border border-slate-300/20 bg-white/5 px-4 py-3 text-left sm:text-right">
+                        <div className="text-xs font-mono uppercase tracking-widest text-txt-dim">Recognition</div>
+                        <div className="mt-1 text-lg font-black text-slate-100">National Finalist</div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Ach 2 */}
-                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(148,163,184,0.15)]">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-slate-300 to-slate-500"></div>
-                    <div className="absolute -right-4 -top-4 text-slate-300/5 group-hover:text-slate-300/10 transition-colors duration-500">
-                      <PiMedalFill className="text-9xl transform -rotate-12" />
+                  {/* Featured 2 */}
+                  <div className="relative overflow-hidden rounded-3xl border border-sky-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(14,165,233,0.16))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-sky-400/35 hover:shadow-[0_24px_50px_-24px_rgba(14,165,233,0.35)]">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-300 via-cyan-300 to-accent"></div>
+                    <div className="absolute -right-6 -top-8 text-sky-300/10">
+                      <GiRocket className="text-[10rem] rotate-12" />
                     </div>
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-300/10 text-slate-300 font-bold text-xs mb-5 border border-slate-300/20">
-                        <PiMedalFill className="text-sm" /> National Runner-up
+                    <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1.5 text-xs font-bold text-sky-300">
+                          <GiRocket className="text-sm" /> Selected Cohort
+                        </div>
+                        <h4 className="text-2xl font-black text-white">IDE Bootcamp 2026</h4>
+                        <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
+                          Selected for a 5-day national innovation and entrepreneurship program focused on design thinking, product commercialization, and pitching.
+                        </p>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3">Smart India Hackathon 2025</h4>
-                      <p className="text-txt-dim leading-relaxed">National level finalist (Dehradun) — Awarded for innovative problem-solving under extreme time constraints.</p>
+                      <div className="shrink-0 rounded-2xl border border-sky-400/20 bg-sky-400/5 px-4 py-3 text-left sm:text-right">
+                        <div className="text-xs font-mono uppercase tracking-widest text-txt-dim">Program</div>
+                        <div className="mt-1 text-lg font-black text-sky-200">National Selection</div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Ach 3 */}
-                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(217,119,6,0.15)]">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-500 to-amber-700"></div>
-                    <div className="absolute -right-4 -top-4 text-amber-500/5 group-hover:text-amber-500/10 transition-colors duration-500">
-                      <RiAwardLine className="text-9xl transform -rotate-12" />
+                  {/* Featured 3 */}
+                  <div className="relative overflow-hidden rounded-3xl border border-yellow-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(250,204,21,0.12))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-yellow-400/35 hover:shadow-[0_24px_50px_-24px_rgba(250,204,21,0.35)]">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500"></div>
+                    <div className="absolute -right-5 -top-8 text-yellow-300/10">
+                      <GiTrophyCup className="text-[10rem] rotate-12" />
                     </div>
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-500 font-bold text-xs mb-5 border border-amber-500/20">
-                        <RiAwardLine className="text-sm" /> Finalist
+                    <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div>
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-3 py-1.5 text-xs font-bold text-yellow-300">
+                          <GiTrophyCup className="text-sm" /> Project Expo Winner
+                        </div>
+                        <h4 className="text-2xl font-black text-white">Text Sprouts, E-Summit 2K26</h4>
+                        <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
+                          Won 1st place at a national-level project expo for presenting a supply-chain management solution with strong product and technical framing.
+                        </p>
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3">Prajwalan 2025</h4>
-                      <p className="text-txt-dim leading-relaxed">Recognized as a top national team — Praised for complex solution architecture and rapid prototype implementation.</p>
+                      <div className="shrink-0 rounded-2xl border border-yellow-400/20 bg-yellow-400/5 px-4 py-3 text-left sm:text-right">
+                        <div className="text-xs font-mono uppercase tracking-widest text-txt-dim">Result</div>
+                        <div className="mt-1 text-lg font-black text-yellow-200">1st Place</div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Ach 4 */}
-                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(14,165,233,0.15)]">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-sky-400 to-sky-600"></div>
-                    <div className="absolute -right-4 -top-4 text-sky-400/5 group-hover:text-sky-400/10 transition-colors duration-500">
-                      <RiAwardLine className="text-9xl transform -rotate-12" />
-                    </div>
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-400/10 text-sky-400 font-bold text-xs mb-5 border border-sky-400/20">
-                        <RiAwardLine className="text-sm" /> Selected Participant
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-amber-500/30 hover:bg-bg3/60">
+                      <div className="mb-4 flex items-center justify-between gap-4">
+                        <span className="rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-400">Finalist</span>
+                        <RiAwardLine className="text-2xl text-amber-500/60" />
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3">IDE Bootcamp 2026 (Phase 1)</h4>
-                      <p className="text-txt-dim leading-relaxed">Selected for an intensive 5-day national initiative — Focused on design thinking, product commercialization, and entrepreneurial pitching.</p>
+                      <h4 className="text-lg font-bold text-white">Prajwalan 2025</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-txt-dim">Recognized as a top national team for solution architecture and rapid prototype execution.</p>
                     </div>
-                  </div>
-
-                  {/* Ach 5 */}
-                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.15)]">
-                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-500 to-blue-700"></div>
-                    <div className="absolute -right-4 -top-4 text-blue-500/5 group-hover:text-blue-500/10 transition-colors duration-500">
-                      <RiAwardLine className="text-9xl transform -rotate-12" />
-                    </div>
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 font-bold text-xs mb-5 border border-blue-500/20">
-                        <RiAwardLine className="text-sm" /> National Participant
+                    <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-blue-500/30 hover:bg-bg3/60">
+                      <div className="mb-4 flex items-center justify-between gap-4">
+                        <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-400">National Participant</span>
+                        <RiAwardLine className="text-2xl text-blue-500/60" />
                       </div>
-                      <h4 className="text-xl font-bold text-white mb-3">NHIDE 2026</h4>
-                      <p className="text-txt-dim leading-relaxed">Competed in the National Hackathon on Innovation, Design, and Entrepreneurship (Bilaspur) — Rapidly prototyped and presented an innovative technical solution.</p>
+                      <h4 className="text-lg font-bold text-white">NHIDE 2026</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-txt-dim">Competed at Bilaspur in a national hackathon on innovation, design, and entrepreneurship.</p>
                     </div>
                   </div>
 

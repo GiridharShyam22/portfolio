@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail } from 'lucide-react';
+import { ArrowUpRight, BriefcaseBusiness, Mail, Send } from 'lucide-react';
 import { FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -13,50 +13,64 @@ const LinkedinIcon = () => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 md:px-12 max-w-6xl mx-auto relative z-10">
+    <section id="contact" className="py-28 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="relative group"
+        className="relative"
       >
-        {/* Glow Aura */}
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-purple-500/20 to-pink-500/20 blur-[100px] -z-10 rounded-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div className="absolute inset-x-8 top-10 h-48 rounded-full bg-accent/10 blur-[90px] -z-10 pointer-events-none"></div>
 
-        <div className="bg-bg2/90 backdrop-blur-2xl border border-white/10 p-12 md:p-24 rounded-[3rem] text-center shadow-2xl overflow-hidden relative">
-          
-          {/* Watermark Icon */}
-          <div className="absolute -right-20 -bottom-20 text-accent/5 pointer-events-none transform -rotate-12 group-hover:scale-110 transition-transform duration-1000">
-            <Mail className="w-96 h-96" />
-          </div>
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-bg2/80 shadow-2xl backdrop-blur-2xl">
+          <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="relative p-8 md:p-12 lg:p-16">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-cyan-300 to-emerald-300"></div>
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-accent">
+                <BriefcaseBusiness className="h-4 w-4" /> Available for work
+              </div>
 
-          <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/30">
-              Let's build something useful.
-            </h2>
-            <p className="text-xl md:text-2xl text-txt-mid mb-6 max-w-2xl mx-auto font-medium">
-              I'm available for full-stack development, ML-backed product features, Flutter apps, and practical UI builds.
-            </p>
-            <p className="text-sm md:text-base text-txt-dim mb-16">
-              Send a brief note about the project, timeline, and expected outcome. I'll reply with a clear next step.
-            </p>
+              <h2 className="max-w-3xl text-4xl font-black leading-tight text-white md:text-6xl">
+                Let's build something useful.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-txt-mid md:text-xl">
+                I'm open to internships, freelance builds, and full-time roles across full-stack development, ML-backed product features, Flutter apps, and agentic AI workflows.
+              </p>
 
-            <div className="flex flex-col gap-4 md:gap-5 items-center">
-              {/* Primary CTA — full width emphasis */}
-              <a href="mailto:nvsk72@gmail.com" className="w-full max-w-lg px-10 py-6 rounded-2xl bg-gradient-to-r from-accent to-purple-600 text-white font-extrabold text-lg hover:brightness-125 transition-all shadow-[0_0_40px_rgba(59,158,255,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.6)] hover:-translate-y-1 flex items-center justify-center gap-3">
-                <Mail className="w-6 h-6" /> nvsk72@gmail.com
-              </a>
-              
-              {/* Secondary Buttons — smaller row */}
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-[#0A66C2]/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
-                  <div className="text-txt-dim group-hover/btn:text-[#0A66C2] transition-colors"><LinkedinIcon /></div> LinkedIn
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <a href="mailto:nvsk72@gmail.com" className="group inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-accent px-6 py-4 text-base font-extrabold text-white shadow-[0_0_36px_rgba(59,158,255,0.35)] transition-all duration-300 hover:-translate-y-1 hover:brightness-110 sm:w-auto">
+                  <Send className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  Email me
                 </a>
-                <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-white/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
-                  <div className="text-txt-dim group-hover/btn:text-white transition-colors"><GithubIcon /></div> GitHub
+                <a href="/CharansResume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-base font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/10 sm:w-auto">
+                  Resume <ArrowUpRight className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/me_nsrc/" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-[#E1306C]/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
-                  <FaInstagram className="w-5 h-5 text-txt-dim group-hover/btn:text-[#E1306C] transition-colors" /> Instagram
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 bg-bg/60 p-8 md:p-12 lg:border-l lg:border-t-0">
+              <div className="rounded-3xl border border-white/10 bg-bg2/70 p-6">
+                <div className="text-xs font-mono uppercase tracking-widest text-txt-dim">Direct contact</div>
+                <a href="mailto:nvsk72@gmail.com" className="mt-3 flex items-center gap-3 break-all text-lg font-black text-white transition-colors hover:text-accent">
+                  <Mail className="h-5 w-5 shrink-0 text-accent" /> nvsk72@gmail.com
+                </a>
+                <p className="mt-4 text-sm leading-relaxed text-txt-dim">
+                  Send the role, project idea, timeline, and what outcome you need. I’ll reply with a clear next step.
+                </p>
+              </div>
+
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-bg2/70 px-5 py-4 text-sm font-bold text-white transition-all duration-300 hover:border-[#0A66C2]/50 hover:bg-white/5">
+                  <span className="flex items-center gap-3"><span className="text-txt-dim transition-colors group-hover:text-[#0A66C2]"><LinkedinIcon /></span> LinkedIn</span>
+                  <ArrowUpRight className="h-4 w-4 text-txt-dim" />
+                </a>
+                <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-bg2/70 px-5 py-4 text-sm font-bold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5">
+                  <span className="flex items-center gap-3"><span className="text-txt-dim transition-colors group-hover:text-white"><GithubIcon /></span> GitHub</span>
+                  <ArrowUpRight className="h-4 w-4 text-txt-dim" />
+                </a>
+                <a href="https://www.instagram.com/me_nsrc/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-bg2/70 px-5 py-4 text-sm font-bold text-white transition-all duration-300 hover:border-[#E1306C]/50 hover:bg-white/5">
+                  <span className="flex items-center gap-3"><FaInstagram className="h-5 w-5 text-txt-dim transition-colors group-hover:text-[#E1306C]" /> Instagram</span>
+                  <ArrowUpRight className="h-4 w-4 text-txt-dim" />
                 </a>
               </div>
             </div>
