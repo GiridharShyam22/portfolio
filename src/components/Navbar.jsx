@@ -37,7 +37,7 @@ export default function Navbar() {
     { icon: Code, label: 'Projects', href: '#projects', id: 'projects' },
     { icon: Briefcase, label: 'Experience', href: '#experience', id: 'experience' },
     { icon: Mail, label: 'Contact', href: '#contact', id: 'contact' },
-    { icon: FileText, label: 'Resume', href: '/CharansResume.pdf', id: 'resume' },
+    { icon: FileText, label: 'Resume', href: '/CharansResume.pdf', id: 'resume', external: true },
   ];
 
   return (

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-function DockItem({ icon: Icon, label, href, id, activeId, mouseX }) {
+function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external }) {
   const ref = useRef(null);
   const isActive = id === activeId;
 
@@ -10,22 +10,29 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX }) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthSync = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
+  const widthSync = useTransform(distance, [-150, 0, 150], [36, 72, 36]);
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
   return (
     <motion.a
       href={href}
       ref={ref}
+      aria-label={label}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
       style={{ width }}
-      className={`relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border hover:bg-accent hover:border-accent group shadow-lg transition-colors ${
+      className={`relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-colors ${
         isActive 
           ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(59,158,255,0.6)]' 
-          : 'bg-white/10 border-white/20 text-white/80'
+          : external
+            ? 'bg-emerald-400/10 border-emerald-300/30 text-emerald-100 hover:bg-emerald-400 hover:border-emerald-300 hover:text-bg'
+            : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
       }`}
     >
-      <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : 'group-hover:text-white'}`} />
-      <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
+      <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : external ? 'group-hover:text-bg' : 'group-hover:text-white'}`} />
+      <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${
+        external ? 'bg-emerald-400 text-bg' : 'bg-accent text-white'
+      }`}>
         {label}
       </span>
     </motion.a>
@@ -39,7 +46,7 @@ export default function Dock({ items, activeId }) {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="flex items-center justify-center gap-4 px-6 py-4 rounded-3xl bg-bg2/90 backdrop-blur-3xl border border-white/20 shadow-[0_0_50px_rgba(59,158,255,0.2)] ring-1 ring-white/5"
+      className="flex max-w-[calc(100vw-1.5rem)] items-center justify-center gap-2 rounded-3xl border border-white/20 bg-bg2/90 px-3 py-3 shadow-[0_0_50px_rgba(59,158,255,0.2)] ring-1 ring-white/5 backdrop-blur-3xl sm:gap-3 sm:px-5 sm:py-4 md:gap-4 md:px-6"
     >
       {items.map((item, i) => (
         <DockItem key={i} {...item} activeId={activeId} mouseX={mouseX} />
