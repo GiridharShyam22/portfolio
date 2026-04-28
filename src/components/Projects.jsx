@@ -21,16 +21,7 @@ const projectThemes = {
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)]",
     iconColor: "text-emerald-500",
   },
-  2: { // Soul Connect (Mental Health)
-    icon: GiBrain,
-    gradient: "from-rose-500/10 to-transparent",
-    border: "group-hover:border-rose-500/50",
-    text: "group-hover:text-rose-400",
-    tagText: "text-rose-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]",
-    iconColor: "text-rose-500",
-  },
-  3: { // SmartSpend (Finance)
+  2: { // SmartSpend (Finance)
     icon: GiPayMoney,
     gradient: "from-cyan-500/10 to-transparent",
     border: "group-hover:border-cyan-500/50",
@@ -38,6 +29,15 @@ const projectThemes = {
     tagText: "text-cyan-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]",
     iconColor: "text-cyan-500",
+  },
+  3: { // Soul Connect (Mental Health)
+    icon: GiBrain,
+    gradient: "from-rose-500/10 to-transparent",
+    border: "group-hover:border-rose-500/50",
+    text: "group-hover:text-rose-400",
+    tagText: "text-rose-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]",
+    iconColor: "text-rose-500",
   },
   4: { // Prajwalan (Hackathon)
     icon: GiTrophyCup,

@@ -51,7 +51,7 @@ export default function Hero() {
           style={{ textShadow: '0 2px 20px rgba(3,6,14,0.8)' }}
         >
           <div className="font-mono text-accent text-sm tracking-widest uppercase">
-            // full-stack developer · ml engineer
+            // full-stack developer · ml engineer · agentic ai builder
           </div>
 
           <h1 className="text-4xl md:text-7xl font-extrabold tracking-normal leading-tight md:leading-snug" style={{ textShadow: '0 4px 30px rgba(3,6,14,0.9)' }}>
@@ -59,13 +59,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-txt-mid max-w-2xl leading-loose">
-            I build full-stack products, ML pipelines, and REST APIs — from polished UIs to intelligent backends. Calm under pressure, precise in execution.{' '}
-            <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim">
-              Built different.
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg" style={{ textShadow: 'none' }}>
-                I'm gonna be King of the Pirates! — Luffy
-              </span>
-            </span>
+            I build web products, ML-backed systems, and agentic AI workflows end to end. My work connects React interfaces, Node.js and FastAPI backends, Python ML pipelines, Flutter apps, and LLM agents into usable products.
           </p>
 
           {/* Skill Chips */}
@@ -128,7 +122,7 @@ export default function Hero() {
         >
           <ProfileCard
             name="Sri Ram Charan Nalla"
-            title="Full-Stack & ML Engineer"
+            title="Full-Stack, ML & Agentic AI"
             handle="Charan512"
             status="Open to Work"
             contactText="Hire Me"

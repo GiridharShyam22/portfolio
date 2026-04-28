@@ -32,16 +32,13 @@ export default function Contact() {
 
           <div className="relative z-10">
             <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/30">
-              Got a problem worth solving?
+              Let's build something useful.
             </h2>
             <p className="text-xl md:text-2xl text-txt-mid mb-6 max-w-2xl mx-auto font-medium">
-              I'm open to full-stack projects, ML work, UI builds & interesting collabs.
+              I'm available for full-stack development, ML-backed product features, Flutter apps, and practical UI builds.
             </p>
-            <p className="text-sm md:text-base text-txt-dim mb-16 inline-block cursor-help border-b border-dashed border-accent/50 hover:text-accent transition-colors relative group/tooltip">
-              I respond fast. Always.
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover/tooltip:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover/tooltip:translate-y-0">
-                Shinzou wo Sasageyo! Dedicate your heart. — AoT
-              </span>
+            <p className="text-sm md:text-base text-txt-dim mb-16">
+              Send a brief note about the project, timeline, and expected outcome. I'll reply with a clear next step.
             </p>
 
             <div className="flex flex-col gap-4 md:gap-5 items-center">

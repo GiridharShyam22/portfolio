@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "AyuSethu Ecosystem",
-    description: "A comprehensive B2B supply chain ecosystem connecting farmers directly with Ayurveda manufacturers. Features secure contract farming, real-time inventory tracking, decentralized IPFS storage for immutable agreements, and a voice-enabled Flutter app for farmers, supported by an auxiliary ML herb-classification model.",
+    description: "A full-stack medicinal plant traceability platform connecting farmers, collectors, labs, and manufacturers. Built role-based React portals, a Flutter farmer app, Node/Express APIs, Socket.io auctions, IPFS-backed verification, and a FastAPI ML service for 92-species plant identification.",
     tags: ["FastAPI", "React", "Flutter", "MongoDB", "Express.js", "ML"],
     highlightTags: ["FastAPI", "ML"],
     year: "2025",
@@ -14,18 +14,18 @@ export const projects = [
   {
     id: 2,
     title: "SmartSpend",
-    description: "A next-generation personal finance dashboard automating expense tracking. Utilizes Tesseract OCR to instantly extract data from receipt images and features an intuitive natural language chat interface for conversational logging, alongside algorithms that analyze spending habits to generate adaptive monthly budgets.",
+    description: "A personal finance app for logging, analyzing, and forecasting expenses. Built a Next.js dashboard with FastAPI services for natural-language expense entry, receipt OCR using Tesseract, budget tracking, CSV import, WebSocket updates, and category-wise spending analytics.",
     tags: ["Next.js", "FastAPI", "OCR", "SQLAlchemy", "AI"],
     highlightTags: ["Next.js", "OCR"],
     year: "2025",
-    github: "https://github.com/Charan512",
-    demoUrl: "https://smart-spend-chi.vercel.app",
+    github: "https://github.com/Charan512/smartSpend",
+    demoUrl: "https://smart-spend-gold.vercel.app",
     featured: false,
   },
   {
     id: 3,
     title: "Soul Connect",
-    description: "An empathetic AI mental health companion designed to provide real-time emotional support. Engineered with advanced NLP for nuanced sentiment detection, integrating fuzzy logic to dynamically assess user distress levels. Features conversational AI via LLMs, secure journaling, and an automated emergency alert protocol.",
+    description: "A mental health support assistant with chat, voice input, risk analysis, and emergency escalation. Built a React and FastAPI system using RoBERTa sentiment and emotion models, a TF-IDF risk classifier, fuzzy-logic urgency scoring, Qwen response generation, MongoDB history, and Twilio alerts.",
     tags: ["FastAPI", "React", "MongoDB", "NLP", "LLM"],
     highlightTags: ["FastAPI", "NLP"],
     year: "2026",
@@ -36,7 +36,7 @@ export const projects = [
   {
     id: 4,
     title: "Prajwalan 2K26 Platform",
-    description: "End-to-end Hackathon Management System. Architected an advanced Admin Dashboard featuring a dynamic 3-round evaluation and scoring engine, complete with multi-format CSV reporting and aggregated analytics for real-time leaderboards.",
+    description: "A production event platform for the Prajwalan 2K26 hackathon ecosystem. Built React/Vite modules for public pages, admin and evaluator portals, team management, synchronized 24-hour timers, live scoreboards, and an Express/MongoDB backend with JWT auth and weighted evaluation flows.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "Dashboard"],
     highlightTags: ["React", "Node.js"],
     year: "2026",
@@ -47,7 +47,7 @@ export const projects = [
   {
     id: 5,
     title: "Mana Hospitals App",
-    description: "Freelance cross-platform mobile application developed using Flutter. Engineered robust offline walk-in scheduling, dynamic date pickers, strict time-gate validation preventing past-date bookings, and real-time synchronization of the Slot Log.",
+    description: "A Flutter appointment and walk-in management app for hospital workflows. Built patient booking, admin slot logs, Firebase OTP authentication, Express/Mongoose APIs, caretaker booking limits, atomic appointment writes, and IST-based time gates that prevent past-slot walk-ins.",
     tags: ["Flutter", "Dart", "Node.js", "MongoDB", "Firebase"],
     highlightTags: ["Flutter", "Mobile"],
     year: "2026",
@@ -58,7 +58,7 @@ export const projects = [
   {
     id: 6,
     title: "TalentRadar AI Agent",
-    description: "Premium AI-driven recruitment engine that transforms raw job descriptions into ranked candidate shortlists. Utilizes a 5-agent pipeline to simulate deep-dive screening conversations and semantic searches over a ChromaDB vector store.",
+    description: "An AI recruiting workflow that turns job descriptions into ranked candidate shortlists. Built a FastAPI and Next.js system with ChromaDB semantic search, server-sent event streaming, a 5-agent evaluation pipeline, simulated screening conversations, LLM fallback routing, and JSON repair for unstable model outputs.",
     tags: ["FastAPI", "Next.js", "ChromaDB", "LLMs", "Python"],
     highlightTags: ["FastAPI", "LLMs"],
     year: "2026",

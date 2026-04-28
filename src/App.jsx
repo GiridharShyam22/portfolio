@@ -42,16 +42,10 @@ function App() {
 
               <div className="pl-6 border-l-2 border-accent/30 space-y-8">
                 <p className="text-xl md:text-2xl text-txt-mid leading-relaxed font-medium">
-                  I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think.
+                  I'm Sri Ram Charan Nalla, a 3rd year AI & ML student at SRKR Engineering College. I work across full-stack web development, machine learning, and agentic AI systems.
                 </p>
                 <p className="text-lg md:text-xl text-txt-dim leading-relaxed">
-                  Off-screen I'm deep in anime arcs — drawing quiet lessons from loud stories.{' '}
-                  <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim hover:text-accent transition-colors">
-                    Never settling.
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
-                      A lesson without pain is meaningless — FMA
-                    </span>
-                  </span>
+                  I like building complete products: React frontends, Node.js and FastAPI services, Flutter apps, ML pipelines, and LLM-powered agents that can reason through workflows instead of just responding to prompts. I care about reliable architecture, clean implementation, and AI features that are useful in real product contexts.
                 </p>
               </div>
             </div>
@@ -66,19 +60,16 @@ function App() {
                   <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">React / Node / FastAPI</div>
                 </div>
                 <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)] transition-all duration-500 group">
-                  <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-purple-400 group-hover:to-pink-400 transition-all">ML / DL</div>
-                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Vision & NLP</div>
+                  <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-purple-400 group-hover:to-pink-400 transition-all">AI / ML</div>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Vision / NLP / Agents</div>
                 </div>
                 <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)] transition-all duration-500 group">
                   <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all">8.87</div>
                   <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Current CGPA</div>
                 </div>
-                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center cursor-help hover:-translate-y-2 hover:border-rose-500/50 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] transition-all duration-500 group relative">
+                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-rose-500/50 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] transition-all duration-500 group relative">
                   <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-rose-400 group-hover:to-orange-400 transition-all">∞</div>
-                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Episodes</div>
-                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-rose-500/10 backdrop-blur-xl border border-rose-500/30 text-rose-300 font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
-                    The One Piece is real! The adventure never ends. — Whitebeard
-                  </span>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Learning Loop</div>
                 </div>
               </div>
             </div>
@@ -128,15 +119,15 @@ function App() {
                       <ul className="text-txt-dim space-y-4">
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Trained and evaluated supervised ML models on real-world data such as Car Price Predictor, Credit Risk etc.,</span>
+                          <span className="leading-relaxed">Built and evaluated supervised ML models for car price prediction and credit-risk style datasets</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Engineered robust data preprocessing pipelines to improve model performance</span>
+                          <span className="leading-relaxed">Prepared datasets, handled preprocessing, and compared model performance using standard evaluation metrics</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Built analytical dashboards and interactive reports using MS Power BI for sales analytics, inventory management etc.,</span>
+                          <span className="leading-relaxed">Created Power BI dashboards for sales and inventory analysis, turning raw data into cleaner operational reports</span>
                         </li>
                       </ul>
                     </div>
