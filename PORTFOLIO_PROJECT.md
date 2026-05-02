@@ -17,7 +17,7 @@
 | **Role** | Full-Stack Developer · ML/DL Engineer · NLP · Conversational AI |
 | **Education** | B.Tech in AI & ML — SRKR Engineering College (2023–2027), CGPA: 8.87 |
 | **Status** | Open to work / available for hire |
-| **Personality** | Calm, mysterious, reliable at work — childish anime fan off-screen |
+| **Personality** | Calm, mysterious, reliable at work |
 
 ---
 
@@ -50,7 +50,6 @@
 `MongoDB` `PostgreSQL` `MySQL` *(comfortable with both SQL and NoSQL)*
 
 > Agent note: Do NOT label Sri Ram Charan as only a MongoDB developer. He works across SQL and NoSQL databases.
-
 ### Tools & Platforms
 `Git` `GitHub` `Jupyter Notebook` `Android Studio`
 `MS Power BI` `MS Excel` `Vercel` `Render`
@@ -71,7 +70,9 @@
 |---|---|
 | 🥇 **Winner** — Text Sprouts, E-Summit 2K26 | 1st place, National Level Project Expo — Supply Chain Management solution |
 | 🥈 **Runner-up (Finalist)** — Smart India Hackathon 2025 | National level (Dehradun) — innovative problem-solving & technical execution |
+| 🥉 **Selected Cohort** — IDE Bootcamp 2026 | National selection — innovation, design thinking, and entrepreneurship program |
 | 🏅 **Finalist** — Prajwalan 2025 | Top national team — solution architecture & prototype implementation |
+| 🎖️ **National Participant** — NHIDE 2026 | National hackathon on innovation, design, and entrepreneurship (Bilaspur) |
 
 ---
 
@@ -86,75 +87,126 @@
 
 ## 📦 Real Projects (from Resume — replace ALL placeholders with these)
 
-### Project 1 — Herb Species Detection API ⭐ FEATURED
+### Project 1 — AyuSethu Ecosystem ⭐ FEATURED
 | Field | Detail |
 |---|---|
-| **Title** | Herb Species Detection API |
-| **Description** | Scalable ML inference API using FastAPI to classify 92 herb species from images. Hybrid pipeline: EfficientNetV2B3 feature extraction + PCA dimensionality reduction + SVM classification. 96.6% accuracy with probabilistic top-k predictions. |
-| **Stack** | `FastAPI` `EfficientNetV2B3` `PCA` `SVM` `Python` `Scikit-learn` |
-| **Card Visual** | Loss/accuracy curve canvas — signals ML precision |
+| **Title** | AyuSethu Ecosystem |
+| **Description** | A full-stack medicinal plant traceability platform connecting farmers, collectors, labs, and manufacturers. Built role-based React portals, a Flutter farmer app, Node/Express APIs, Socket.io auctions, IPFS-backed verification, and a FastAPI ML service for 92-species plant identification. |
+| **Stack** | `FastAPI` `React` `Flutter` `MongoDB` `Express.js` `ML` `IPFS` `Socket.io` |
 | **Badge** | Featured |
+| **Links** | [GitHub](https://github.com/Charan512/Ayusethu.git) · [Demo](https://ayusethu-ui.vercel.app) · [APK](https://github.com/Charan512/AyusethuApp/releases/download/v1.0.0/Ayusethu.Farm.apk) |
 
-### Project 2 — Soul Connect
+### Project 2 — SmartSpend
+| Field | Detail |
+|---|---|
+| **Title** | SmartSpend |
+| **Description** | A personal finance app for logging, analyzing, and forecasting expenses. Built a Next.js dashboard with FastAPI services for natural-language expense entry, receipt OCR using Tesseract, budget tracking, CSV import, WebSocket updates, and category-wise spending analytics. |
+| **Stack** | `Next.js` `FastAPI` `OCR` `SQLAlchemy` `AI` `Tesseract` `WebSockets` |
+| **Links** | [GitHub](https://github.com/Charan512/smartSpend) · [Demo](https://smart-spend-gold.vercel.app) |
+
+### Project 3 — Soul Connect
 | Field | Detail |
 |---|---|
 | **Title** | Soul Connect |
-| **Description** | AI mental health assistant using FastAPI, React, and MongoDB. NLP-based sentiment, emotion, and risk detection with fuzzy logic and LLM-driven responses. Real-time chat, session tracking, and emergency alert mechanisms. |
-| **Stack** | `FastAPI` `React` `MongoDB` `NLP` `LLM` `Fuzzy Logic` |
-| **Card Visual** | Waveform / sentiment signal canvas |
+| **Description** | A mental health support assistant with chat, voice input, risk analysis, and emergency escalation. Built a React and FastAPI system using RoBERTa sentiment and emotion models, a TF-IDF risk classifier, fuzzy-logic urgency scoring, Qwen response generation, MongoDB history, and Twilio alerts. |
+| **Stack** | `FastAPI` `React` `MongoDB` `NLP` `LLM` `RoBERTa` `Twilio` |
+| **Links** | [GitHub](https://github.com/Charan512/SoulConnect.git) · [Demo](https://soul-connect-one.vercel.app) |
 
-### Project 3 — Herbal Supply Chain
+### Project 4 — Prajwalan 2K26 Platform
 | Field | Detail |
 |---|---|
-| **Title** | Herbal Supply Chain |
-| **Description** | End-to-end traceability system using MERN stack. Eliminates data opacity across multi-stage lifecycles. Deployed Hyperledger blockchain infrastructure for immutable tracking from farm to consumer. |
-| **Stack** | `MongoDB` `Express.js` `React` `Node.js` `Hyperledger Blockchain` |
-| **Card Visual** | Node graph / chain diagram canvas |
-| **Badge** | 🥇 National Winner |
+| **Title** | Prajwalan 2K26 Platform |
+| **Description** | A production event platform for the Prajwalan 2K26 hackathon ecosystem. Built React/Vite modules for public pages, admin and evaluator portals, team management, synchronized 24-hour timers, live scoreboards, and an Express/MongoDB backend with JWT auth and weighted evaluation flows. |
+| **Stack** | `React` `Node.js` `Express.js` `MongoDB` `JWT` `Vite` |
+| **Links** | [GitHub](https://github.com/Charan512/Prajwalan2K26.git) · [Demo](https://prajwalan-2k26.tech) |
 
-### projects.js schema (agent must follow this exactly)
+### Project 5 — Mana Hospitals App ⭐ FEATURED
+| Field | Detail |
+|---|---|
+| **Title** | Mana Hospitals App |
+| **Description** | A Flutter appointment and walk-in management app for hospital workflows. Built patient booking, admin slot logs, Firebase OTP authentication, Express/Mongoose APIs, caretaker booking limits, atomic appointment writes, and IST-based time gates that prevent past-slot walk-ins. |
+| **Stack** | `Flutter` `Dart` `Node.js` `MongoDB` `Firebase` `Express` |
+| **Badge** | Featured |
+| **Links** | [GitHub](https://github.com/Charan512/ManaHospital.git) · [APK](https://github.com/Charan512/ManaHospitalUI/releases/download/v1.0.0/Mana.Hospital.apk) |
+
+### Project 6 — TalentRadar AI Agent ⭐ FEATURED
+| Field | Detail |
+|---|---|
+| **Title** | TalentRadar AI Agent |
+| **Description** | An AI recruiting workflow that turns job descriptions into ranked candidate shortlists. Built a FastAPI and Next.js system with ChromaDB semantic search, server-sent event streaming, a 5-agent evaluation pipeline, simulated screening conversations, LLM fallback routing, and JSON repair for unstable model outputs. |
+| **Stack** | `FastAPI` `Next.js` `ChromaDB` `LLMs` `Python` `LangChain` |
+| **Badge** | Featured |
+| **Links** | [GitHub](https://github.com/Charan512/TalentHunt) · [Demo](https://talent-hunt-sigma.vercel.app) |
+### projects.js content
 ```js
-// src/data/projects.js
 export const projects = [
   {
     id: 1,
-    title: "Herb Species Detection API",
-    description: "Scalable ML inference API classifying 92 herb species. EfficientNetV2B3 + PCA + SVM pipeline achieving 96.6% accuracy.",
-    tags: ["FastAPI", "EfficientNetV2B3", "PCA", "SVM", "Python"],
-    highlightTags: ["FastAPI", "EfficientNetV2B3"],
-    year: "2024",
-    github: "https://github.com/Charan512",
+    title: "AyuSethu Ecosystem",
+    description: "A full-stack medicinal plant traceability platform connecting farmers, collectors, labs, and manufacturers. Built role-based React portals, a Flutter farmer app, Node/Express APIs, Socket.io auctions, IPFS-backed verification, and a FastAPI ML service for 92-species plant identification.",
+    tags: ["FastAPI", "React", "Flutter", "MongoDB", "Express.js", "ML"],
+    highlightTags: ["FastAPI", "ML"],
+    year: "2025",
+    github: "https://github.com/Charan512/Ayusethu.git",
+    demoUrl: "https://ayusethu-ui.vercel.app",
+    apkUrl: "https://github.com/Charan512/AyusethuApp/releases/download/v1.0.0/Ayusethu.Farm.apk",
     featured: true,
-    visual: "lossChart",
-    badge: "Featured",
-    easterEgg: null,
   },
   {
     id: 2,
-    title: "Soul Connect",
-    description: "AI mental health assistant with NLP sentiment/emotion detection, fuzzy logic, LLM responses, real-time chat & emergency alerts.",
-    tags: ["FastAPI", "React", "MongoDB", "NLP", "LLM"],
-    highlightTags: ["FastAPI", "NLP"],
-    year: "2024",
-    github: "https://github.com/Charan512",
+    title: "SmartSpend",
+    description: "A personal finance app for logging, analyzing, and forecasting expenses. Built a Next.js dashboard with FastAPI services for natural-language expense entry, receipt OCR using Tesseract, budget tracking, CSV import, WebSocket updates, and category-wise spending analytics.",
+    tags: ["Next.js", "FastAPI", "OCR", "SQLAlchemy", "AI"],
+    highlightTags: ["Next.js", "OCR"],
+    year: "2025",
+    github: "https://github.com/Charan512/smartSpend",
+    demoUrl: "https://smart-spend-gold.vercel.app",
     featured: false,
-    visual: "waveform",
-    badge: null,
-    easterEgg: "Even AI needs to listen sometimes.",
   },
   {
     id: 3,
-    title: "Herbal Supply Chain",
-    description: "MERN stack traceability system with Hyperledger blockchain for immutable farm-to-consumer lifecycle tracking.",
-    tags: ["MongoDB", "Express.js", "React", "Node.js", "Blockchain"],
-    highlightTags: ["Node.js", "Blockchain"],
-    year: "2024",
-    github: "https://github.com/Charan512",
+    title: "Soul Connect",
+    description: "A mental health support assistant with chat, voice input, risk analysis, and emergency escalation. Built a React and FastAPI system using RoBERTa sentiment and emotion models, a TF-IDF risk classifier, fuzzy-logic urgency scoring, Qwen response generation, MongoDB history, and Twilio alerts.",
+    tags: ["FastAPI", "React", "MongoDB", "NLP", "LLM"],
+    highlightTags: ["FastAPI", "NLP"],
+    year: "2026",
+    github: "https://github.com/Charan512/SoulConnect.git",
+    demoUrl: "https://soul-connect-one.vercel.app",
     featured: false,
-    visual: "nodeGraph",
-    badge: "🥇 National Winner",
-    easterEgg: null,
   },
+  {
+    id: 4,
+    title: "Prajwalan 2K26 Platform",
+    description: "A production event platform for the Prajwalan 2K26 hackathon ecosystem. Built React/Vite modules for public pages, admin and evaluator portals, team management, synchronized 24-hour timers, live scoreboards, and an Express/MongoDB backend with JWT auth and weighted evaluation flows.",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Dashboard"],
+    highlightTags: ["React", "Node.js"],
+    year: "2026",
+    github: "https://github.com/Charan512/Prajwalan2K26.git",
+    demoUrl: "https://prajwalan-2k26.tech",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Mana Hospitals App",
+    description: "A Flutter appointment and walk-in management app for hospital workflows. Built patient booking, admin slot logs, Firebase OTP authentication, Express/Mongoose APIs, caretaker booking limits, atomic appointment writes, and IST-based time gates that prevent past-slot walk-ins.",
+    tags: ["Flutter", "Dart", "Node.js", "MongoDB", "Firebase"],
+    highlightTags: ["Flutter", "Mobile"],
+    year: "2026",
+    github: "https://github.com/Charan512/ManaHospital.git",
+    apkUrl: "https://github.com/Charan512/ManaHospitalUI/releases/download/v1.0.0/Mana.Hospital.apk",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "TalentRadar AI Agent",
+    description: "An AI recruiting workflow that turns job descriptions into ranked candidate shortlists. Built a FastAPI and Next.js system with ChromaDB semantic search, server-sent event streaming, a 5-agent evaluation pipeline, simulated screening conversations, LLM fallback routing, and JSON repair for unstable model outputs.",
+    tags: ["FastAPI", "Next.js", "ChromaDB", "LLMs", "Python"],
+    highlightTags: ["FastAPI", "LLMs"],
+    year: "2026",
+    github: "https://github.com/Charan512/TalentHunt",
+    demoUrl: "https://talent-hunt-sigma.vercel.app",
+    featured: true,
+  }
 ];
 ```
 
@@ -239,7 +291,6 @@ mono tags/labels   : 10px – 11px (fixed)
 - Globe canvas: resize listener on `window resize` — always redraws to fit container
 - Particle canvas: same — resize on window resize
 - Navbar drawer: `z-index: 99` — always above all content
-- Easter egg tooltips: on mobile use `click` to toggle instead of hover (hover doesn't exist on touch)
 
 ---
 
@@ -259,7 +310,6 @@ mono tags/labels   : 10px – 11px (fixed)
 | **Text Dim** | `#2a5a8a` |
 | **Font — Display** | Inter (800 weight for headings) |
 | **Font — Mono** | JetBrains Mono (tags, labels, nav, eyebrows) |
-| **Personality Layer** | Subtle Re:Zero / anime easter eggs on hover tooltips |
 | **Visitor Feeling** | "I can trust and work with this person" |
 
 ### Visual Effects
@@ -303,8 +353,7 @@ portfolio/
 │   │   ├── Projects.jsx            # Project cards grid
 │   │   ├── Experience.jsx          # Internship + certifications
 │   │   ├── Contact.jsx             # Contact buttons section
-│   │   └── Footer.jsx              # Footer with easter egg
-│   ├── reactbits/
+│   │   └── Footer.jsx              # Footer component│   ├── reactbits/
 │   │   └── [ComponentName].jsx     # React Bits components dropped here by user
 │   ├── data/
 │   │   └── projects.js             # Real project metadata (see schema above)
@@ -343,15 +392,12 @@ portfolio/
 - Bio: *"I build full-stack products, ML pipelines, and REST APIs — from polished UIs to intelligent backends. Calm under pressure, precise in execution."*
 - CTAs: `Download Resume` (→ `/CharansResume.pdf`) + `View Projects`
 - Status badge: `● open to work`
-- Easter egg on "Relentless in iteration." → `Re:Zero — even in loops, keep moving forward`
-
 ### 3. About
 - Two-column: bio left, orbiting ring avatar right
 - Bio:
-  > "I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think. MongoDB, PostgreSQL — I pick what fits. Off-screen I'm deep in anime arcs — drawing quiet lessons from loud stories."
-- Stats grid (2×2): `Full-Stack` · `8.85 CGPA` · `ML/DL` · `∞ Episodes`
-- Easter egg on ∞: `Power level: over 9000`
-- Achievements strip: 3 badge cards (Winner · Runner-up · Finalist)
+  > "I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think. MongoDB, PostgreSQL — I pick what fits."
+- Stats grid (2×2): `Full-Stack` · `8.87 CGPA` · `ML/DL` · `∞ Episodes`
+- Achievements strip: 5 badge cards (Winner · Runner-up · Selected Cohort · Finalist · National Participant)
 
 ### 4. Projects
 - Grid: 1 featured wide card + 2 regular cards
@@ -366,16 +412,14 @@ portfolio/
 ### 6. Contact
 - Headline: `Got a problem worth solving?`
 - Sub: `I'm open to full-stack projects, ML work, UI builds & interesting collabs.`
-- Easter egg sub line: *"I respond fast. Always."* → `Unlike Subaru, I reply on the first timeline`
-- Buttons: `Email Me` · `GitHub` · `LinkedIn` · `Anime List`
+- Buttons: `Email Me` · `GitHub` · `LinkedIn`
 - Email: nvsk72@gmail.com
 - LinkedIn: https://linkedin.com/in/nsrcharan
 - GitHub: https://github.com/Charan512
 
 ### 7. Footer
 - Left: `Sri Ram Charan Nalla © 2025`
-- Right easter egg: `Built with caffeine & curiosity` → `// TODO: sleep()`
-
+- Right: `Built with precision & curiosity`
 ---
 
 ## 🧩 React Bits Integration
@@ -399,24 +443,7 @@ portfolio/
 
 ---
 
-## 🐣 Easter Eggs Map
-
-| Location | Element | Hover Tooltip |
-|---|---|---|
-| Hero tagline | "Relentless in iteration." | `Re:Zero — even in loops, keep moving forward` |
-| Hero skill | `PyTorch` tag | `Sharingan: pattern recognition maxed` |
-| Hero skill | `Scikit-learn` tag | `Every model is a new arc` |
-| About ∞ stat | Stat card | `Power level: over 9000` |
-| About bio | Anime reference line | `Subaru would've given up. I don't.` |
-| Projects | Soul Connect card | `Even AI needs to listen sometimes.` |
-| Contact | Subtext line | `Unlike Subaru, I reply on the first timeline` |
-| Contact | `Anime List` button | `MAL profile loading...` |
-| Footer | Right text | `// TODO: sleep()` |
-
----
-
 ## ⚙️ Setup Instructions
-
 ```bash
 # 1. Scaffold project
 npm create vite@latest portfolio -- --template react
@@ -481,7 +508,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); }
 
 1. **Color palette is locked** — `#03060e` bg, `#3b9eff` accent. Never substitute without instruction.
 2. **JetBrains Mono** for eyebrows, tags, nav links, badges, code, footers. **Inter** for body text and headings.
-3. **Easter eggs are intentional features** — never remove or "fix" them.
+3. **Animations are smooth** — use Framer Motion for all transitions.
 4. **Globe canvas stays in Hero** — it is the signature visual. Do not remove or replace.
 5. **Sections are content-sized** — never add `min-height: 100vh` to any section except Hero.
 6. **Glassmorphic navbar is mandatory** — `backdrop-filter: blur(22px)`, dark semi-transparent bg, electric blue border.
@@ -490,7 +517,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); }
 9. **Fully responsive at ALL screen sizes** — follow the detailed breakpoint rules in the `📱 Responsive Design` section above. Every section has specific layout rules per breakpoint. No exceptions. No horizontal scroll. No broken layouts on any device from 320px to 4K.
 10. **React Bits components go in `src/reactbits/`** — never inline large third-party code into section files.
 11. **Resume PDF** at `public/CharansResume.pdf` — Hero "Download Resume" button must link here.
-12. **Real projects only** — use the 3 real projects defined in this file. Do not invent projects.
+12. **Real projects only** — use the 6 real projects defined in this file. Do not invent projects.
 13. **Contact info is real** — email: nvsk72@gmail.com · LinkedIn: linkedin.com/in/nsrcharan · GitHub: github.com/Charan512
 
 ---

@@ -4,16 +4,16 @@ Based on a deep dive into the GitHub repositories (`Charan512`), here is a compr
 
 ## 🌟 Core Developer Identity
 
-Sri Ram Charan Nalla is a highly capable **Full-Stack Developer** and **ML/DL Engineer**. The codebases show a clear progression beyond basic tutorials into multi-service, production-grade applications that utilize modern architectural patterns (microservices, real-time WebSockets, IPFS, hardware integrations, and machine learning pipelines).
+Sri Ram Charan Nalla is a highly capable **Full-Stack Developer**, **ML Engineer**, and **Agentic AI Builder**. The codebases show a clear progression beyond basic tutorials into multi-service, production-grade applications that utilize modern architectural patterns (microservices, real-time WebSockets, IPFS, hardware integrations, and sophisticated agentic AI pipelines).
 
 ### Tech Stack Mastery
 
 *   **Frontend & Mobile:** React (Vite), Next.js 15, Flutter (Dart), Tailwind CSS.
 *   **Backend & APIs:** Node.js, Express.js, FastAPI (Python). 
-*   **AI & Machine Learning:** TensorFlow, Scikit-learn, spaCy, EfficientNetV2, PCA, SVM, NLP (Sentiment Analysis), LLMs, Bhashini (ASR/TTS).
-*   **Databases & Storage:** MongoDB (Mongoose), PostgreSQL, SQLite, IPFS (Pinata).
-*   **Authentication & Security:** JWT Auth, Role-Based Access Control (RBAC), Firebase Auth, bcrypt.
-*   **Real-time & System Integration:** Socket.io, WebSockets, WebRTC, Multi-role dashboards.
+*   **AI & Machine Learning:** TensorFlow, Scikit-learn, ChromaDB, LangChain, OpenAI/Gemini/Qwen LLMs, NLP (Sentiment Analysis, Emotion Detection), Agentic Workflows.
+*   **Databases & Storage:** MongoDB (Mongoose), PostgreSQL (SQLAlchemy), SQLite, IPFS (Pinata), Firebase.
+*   **Authentication & Security:** JWT Auth, Role-Based Access Control (RBAC), Firebase Auth, IST-based schedule gating.
+*   **Real-time & System Integration:** Socket.io, WebSockets, Server-Sent Events (SSE), Multi-role dashboards.
 
 ---
 
@@ -50,8 +50,14 @@ This is an enterprise-scale, multi-platform system designed for the medicinal pl
 ### 5. Prajwalan 2K26 (Event Management Platform)
 **Repos:** `Prajwalan2k26_api`, `Prajwalan2k26_ui`
 
-*   A complex React/Express full-stack platform coordinating teams, evaluators, and events for an engineering fest.
+*   A complex React/Express full-stack platform coordinating teams, evaluators, and events for a national engineering fest.
 *   Features highly segmented Role-Based Access Control and a weighted evaluation algorithm natively running algorithmic point distribution based on Staff vs. Student evaluator rules.
+
+### 6. TalentRadar (Autonomous AI Talent Scout)
+**Repo:** `TalentHunt`
+*   An AI recruiting engine that transforms job descriptions into ranked candidate shortlists.
+*   **Architecture:** Built with FastAPI and Next.js using ChromaDB for semantic vector search.
+*   **Features:** Implements a multi-agent orchestration pattern (5 agents) to simulate screening conversations, evaluate candidates against specific criteria, and handle LLM fallback routing with automatic JSON repair for unstable model outputs.
 
 ---
 
@@ -61,7 +67,8 @@ The repositories conclusively prove that Sri Ram Charan is adept at **orchestrat
 
 His systems routinely demonstrate:
 1.  **Strict Security Practices:** Environment isolation, secure tokenization, and complex RBAC matrices (e.g., AyuSethu's 6 roles or Prajwalan's evaluator tiers).
-2.  **Performance Tuning:** Dimension reduction in ML pipelines (PCA) and strategic framework choices (FastAPI + Gunicorn).
-3.  **Future-proof Infrastructure:** Integration with decentralized protocols like IPFS for data immutability. 
+2.  **Performance Tuning:** Dimension reduction in ML pipelines (PCA), strategic framework choices (FastAPI + Gunicorn), and efficient vector search.
+3.  **Future-proof Infrastructure:** Integration with decentralized protocols like IPFS for data immutability and multi-agent AI for autonomous decision-making.
 
-This profile represents a highly driven, system-level thinker capable of leading end-to-end full-stack architectures imbued with artificial intelligence capabilities.
+This profile represents a highly driven, system-level thinker capable of leading end-to-end full-stack architectures imbued with sophisticated artificial intelligence capabilities.
+
