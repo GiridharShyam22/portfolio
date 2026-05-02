@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Home, User, Briefcase, Code, Mail, FileText } from 'lucide-react';
 import Dock from './Dock';
+import { useResumeModal } from '../context/ResumeModalContext';
 
 export default function Navbar() {
   const [activeId, setActiveId] = useState('home');
+  const { open } = useResumeModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function Navbar() {
     { icon: Code, label: 'Projects', href: '#projects', id: 'projects' },
     { icon: Briefcase, label: 'Experience', href: '#experience', id: 'experience' },
     { icon: Mail, label: 'Contact', href: '#contact', id: 'contact' },
-    { icon: FileText, label: 'Resume', href: '/CharansResume.pdf', id: 'resume', external: true },
+    { icon: FileText, label: 'Resume', id: 'resume', external: true, onAction: open },
   ];
 
   return (

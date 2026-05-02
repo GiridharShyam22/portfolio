@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external }) {
+function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onAction }) {
   const ref = useRef(null);
   const isActive = id === activeId;
 
@@ -13,6 +13,39 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external }) {
   const widthSync = useTransform(distance, [-150, 0, 150], [40, 84, 40]);
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
+  const sharedClass = `relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-colors ${
+    isActive
+      ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(59,158,255,0.6)]'
+      : external
+        ? 'bg-emerald-400/10 border-emerald-300/30 text-emerald-100 hover:bg-emerald-400 hover:border-emerald-300 hover:text-bg'
+        : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
+  }`;
+
+  const children = (
+    <>
+      <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : external ? 'group-hover:text-bg' : 'group-hover:text-white'}`} />
+      <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${
+        external ? 'bg-emerald-400 text-bg' : 'bg-accent text-white'
+      }`}>
+        {label}
+      </span>
+    </>
+  );
+
+  if (onAction) {
+    return (
+      <motion.button
+        ref={ref}
+        aria-label={label}
+        onClick={onAction}
+        style={{ width }}
+        className={sharedClass}
+      >
+        {children}
+      </motion.button>
+    );
+  }
+
   return (
     <motion.a
       href={href}
@@ -21,20 +54,9 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external }) {
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
       style={{ width }}
-      className={`relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-colors ${
-        isActive 
-          ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(59,158,255,0.6)]' 
-          : external
-            ? 'bg-emerald-400/10 border-emerald-300/30 text-emerald-100 hover:bg-emerald-400 hover:border-emerald-300 hover:text-bg'
-            : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
-      }`}
+      className={sharedClass}
     >
-      <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : external ? 'group-hover:text-bg' : 'group-hover:text-white'}`} />
-      <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${
-        external ? 'bg-emerald-400 text-bg' : 'bg-accent text-white'
-      }`}>
-        {label}
-      </span>
+      {children}
     </motion.a>
   );
 }

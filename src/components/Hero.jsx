@@ -5,9 +5,23 @@ import ProfileCard from '../reactbits/ProfileCard';
 import EvilEye from '../reactbits/EvilEye';
 import StarBorder from '../reactbits/StarBorder';
 import heroImg from '../assets/hero.jpg';
+import { useResumeModal } from '../context/ResumeModalContext';
 
 const allSkills = ['React.js', 'Node.js', 'FastAPI', 'Flutter', 'TensorFlow', 'PostgreSQL', 'MongoDB', 'React Native', 'Scikit-Learn', 'Power BI'];
 const VISIBLE_COUNT = 6;
+
+function HeroResumeButton() {
+  const { open } = useResumeModal();
+  return (
+    <button
+      onClick={open}
+      className="px-8 py-4 rounded-xl bg-accent text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(59,158,255,0.3)] hover:shadow-[0_0_40px_rgba(59,158,255,0.5)] flex items-center gap-2"
+      style={{ textShadow: 'none' }}
+    >
+      View Resume ↗
+    </button>
+  );
+}
 
 export default function Hero() {
   const [showAll, setShowAll] = useState(false);
@@ -104,9 +118,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-6">
-            <a href="/CharansResume.pdf" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-accent text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(59,158,255,0.3)] hover:shadow-[0_0_40px_rgba(59,158,255,0.5)] flex items-center gap-2" style={{ textShadow: 'none' }}>
-              Download Resume ↗
-            </a>
+            <HeroResumeButton />
             <a href="#projects" className="px-8 py-4 rounded-xl bg-bg2/80 backdrop-blur-md border border-accent-dim/50 text-txt font-bold hover:bg-bg3 hover:border-accent-dim transition-all flex items-center gap-2" style={{ textShadow: 'none' }}>
               View Projects
             </a>

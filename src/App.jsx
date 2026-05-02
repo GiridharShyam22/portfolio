@@ -8,9 +8,12 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
+import { ResumeModalProvider } from './context/ResumeModalContext';
 
 function App() {
   return (
+    <ResumeModalProvider>
     <div className="min-h-screen w-full bg-bg text-txt font-sans relative pb-24 md:pb-0">
       {/* Availability Marker */}
       <div className="fixed top-6 left-6 md:top-8 md:left-10 z-50 group pointer-events-auto">
@@ -250,7 +253,9 @@ function App() {
       </main>
 
       <Footer />
+      <ResumeModal />
     </div>
+    </ResumeModalProvider>
   );
 }
 
