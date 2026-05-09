@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
 import StarBorder from '../reactbits/StarBorder';
+import { StarsBackground } from '../reactbits/StarsBackground';
 import heroImg from '../assets/hero.jpg';
 import { useResumeModal } from '../context/ResumeModalContext';
 
@@ -29,13 +30,14 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-48 px-6 md:px-12 overflow-hidden">
 
-      {/* Subtle dark radial background */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(59,158,255,0.08) 0%, transparent 70%), #03060e',
-        }}
+      {/* Stars Background Component */}
+      <StarsBackground
+        starColor="#3b9eff" // Using the portfolio accent color
+        className="absolute inset-0 z-0 opacity-70"
+        factor={0.05}
+        speed={40}
       />
+
 
       <div className="max-w-7xl w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
 
