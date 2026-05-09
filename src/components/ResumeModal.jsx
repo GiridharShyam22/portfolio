@@ -85,10 +85,10 @@ export default function ResumeModal() {
             <div className="absolute inset-0 pointer-events-none opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:36px_36px]" />
 
             {/* Header */}
-            <div className="relative flex items-start justify-between px-8 pt-8 pb-2">
+            <div className="relative flex items-start justify-between px-5 sm:px-8 pt-6 sm:pt-8 pb-2">
               <div>
                 <p className="text-xs font-mono tracking-widest uppercase text-white/30 mb-2">Choose your path</p>
-                <h2 className="text-2xl font-extrabold text-white leading-tight">Which version would<br />you like to see?</h2>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">Which version would<br />you like to see?</h2>
               </div>
               <button
                 onClick={close}
@@ -100,7 +100,7 @@ export default function ResumeModal() {
             </div>
 
             {/* Options */}
-            <div className="relative flex flex-col gap-4 px-8 py-7">
+            <div className="relative flex flex-col gap-4 px-5 sm:px-8 py-5 sm:py-7">
               {OPTIONS.map((opt) => {
                 const Icon = opt.icon;
                 return (
@@ -110,7 +110,7 @@ export default function ResumeModal() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={close}
-                    className={`group relative flex items-start gap-5 rounded-2xl border ${opt.accentBorder} bg-gradient-to-br ${opt.accentFrom} to-transparent p-6 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110`}
+                    className={`group relative flex items-start gap-3 sm:gap-5 rounded-2xl border ${opt.accentBorder} bg-gradient-to-br ${opt.accentFrom} to-transparent p-4 sm:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110`}
                     style={{ boxShadow: `0 4px 24px ${opt.glowColor}` }}
                   >
                     {/* Icon badge */}
@@ -141,7 +141,7 @@ export default function ResumeModal() {
             </div>
 
             {/* Footer note */}
-            <p className="text-center text-xs text-white/20 font-mono pb-7 px-8">
+            <p className="text-center text-[10px] sm:text-xs text-white/20 font-mono pb-6 sm:pb-7 px-5 sm:px-8">
               Both resumes open in a new tab as PDF
             </p>
           </motion.div>
