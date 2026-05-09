@@ -41,14 +41,14 @@ export default function Hero() {
       <LuminousBackground />
 
 
-      <div className="max-w-7xl w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
+      <div className="max-w-7xl w-full mx-auto flex flex-col md:grid md:grid-cols-2 gap-12 items-center relative z-[2]">
 
         {/* Text Content — clean typography with text-shadow for contrast */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col gap-10 order-last lg:order-first"
+          className="flex flex-col gap-10 order-last md:order-first"
           style={{ textShadow: '0 2px 20px rgba(3,6,14,0.8)' }}
         >
           <div className="font-mono text-accent text-sm tracking-widest uppercase">
@@ -117,7 +117,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end h-[380px] sm:h-[440px] md:h-[500px] w-full order-first lg:order-last"
+          className="relative flex justify-center md:justify-end h-[380px] sm:h-[440px] md:h-[500px] w-full order-first md:order-last"
         >
           <ProfileCard
             name="Sri Ram Charan Nalla"
