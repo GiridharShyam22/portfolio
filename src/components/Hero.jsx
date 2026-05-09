@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
 import StarBorder from '../reactbits/StarBorder';
+import PrismaticBurst from '../reactbits/PrismaticBurst';
 import heroImg from '../assets/hero.jpg';
 import { useResumeModal } from '../context/ResumeModalContext';
 
@@ -29,12 +30,26 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-48 px-6 md:px-12 overflow-hidden">
 
-      {/* Subtle dark radial background */}
+      {/* PrismaticBurst — full-screen WebGL background */}
+      <div className="absolute inset-0 z-0">
+        <PrismaticBurst
+          animationType="rotate3d"
+          intensity={0.9}
+          speed={0.18}
+          distort={0.6}
+          paused={false}
+          offset={{ x: 0, y: 0 }}
+          hoverDampness={0.25}
+          rayCount={0}
+          mixBlendMode="screen"
+          colors={['#03060e', '#0a1628', '#1a4a7a', '#3b9eff', '#60a5fa', '#a78bfa', '#6d28d9', '#0d1b3e']}
+        />
+      </div>
+
+      {/* Overlay to darken and keep text readable */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(59,158,255,0.07) 0%, transparent 70%), #03060e',
-        }}
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, rgba(3,6,14,0.55) 0%, rgba(3,6,14,0.35) 50%, rgba(3,6,14,0.65) 100%)' }}
       />
 
       <div className="max-w-7xl w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
