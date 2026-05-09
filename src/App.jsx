@@ -113,6 +113,37 @@ function App() {
                 </h3>
                 <div className="relative pl-8 border-l border-white/10 space-y-12 ml-4">
 
+                  {/* Experience 0: Deccan AI */}
+                  <div className="relative group">
+                    <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
+                    <div className="bg-bg2 border border-white/5 p-8 rounded-3xl group-hover:border-accent/30 transition-all duration-300 shadow-2xl">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent font-mono text-xs mb-6 border border-accent/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        April 2026 – Present
+                      </div>
+                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Training Specialist (Freelance)</h4>
+                      <div className="text-txt-mid font-medium mb-6">Deccan AI</div>
+                      <ul className="text-txt-dim space-y-4">
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Collaborated on the Launchpad (Pre-Production) project, focusing on the refinement of large language models through complex technical reasoning and comprehension tasks.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Evaluated and optimized AI-generated responses to ensure high levels of accuracy, logical consistency, and alignment with specific project constraints.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Contributed to specialized AI development initiatives, including participating in The Catalyst Hackathon with a project focused on AI-driven talent scouting agents.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Demonstrated proficiency in navigating professional freelance workflows, including cross-border payment systems and rigorous quality-assurance benchmarks.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
                   {/* Experience 1 */}
                   <div className="relative group">
                     <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
@@ -195,31 +226,28 @@ function App() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Featured 3 */}
-                  <div className="relative overflow-hidden rounded-3xl border border-yellow-400/15 bg-[linear-gradient(135deg,rgba(15,23,42,0.96),rgba(250,204,21,0.12))] p-6 md:p-7 shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:border-yellow-400/35 hover:shadow-[0_24px_50px_-24px_rgba(250,204,21,0.35)]">
-                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500"></div>
-                    <div className="absolute -right-5 -top-8 text-yellow-300/10">
-                      <GiTrophyCup className="text-[10rem] rotate-12" />
-                    </div>
-                    <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/20 bg-yellow-400/10 px-3 py-1.5 text-xs font-bold text-yellow-300">
-                          Project Expo Winner
-                        </div>
-                        <h4 className="text-2xl font-black text-white">Text Sprouts, E-Summit 2K26</h4>
-                        <p className="mt-3 max-w-xl text-sm leading-relaxed text-txt-mid md:text-base">
-                          Won 1st place at a national-level project expo for presenting a supply-chain management solution with strong product and technical framing.
-                        </p>
-                      </div>
-                      <div className="shrink-0 rounded-2xl border border-yellow-400/20 bg-yellow-400/5 px-4 py-3 text-left sm:text-right">
-                        <div className="text-xs font-mono uppercase tracking-widest text-txt-dim">Result</div>
-                        <div className="mt-1 text-lg font-black text-yellow-200">1st Place</div>
-                      </div>
-                    </div>
-                  </div>
-
                   <div className="grid gap-4 sm:grid-cols-2">
+                    {/* Small Card 1: Text Sprouts */}
+                    <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-yellow-500/30 hover:bg-bg3/60">
+                      <div className="mb-4 flex items-center justify-between gap-4">
+                        <span className="rounded-full border border-yellow-500/20 bg-yellow-500/10 px-3 py-1 text-xs font-bold text-yellow-400">1st Place</span>
+                        <GiTrophyCup className="text-2xl text-yellow-500/60" />
+                      </div>
+                      <h4 className="text-lg font-bold text-white">Tech Sprouts, E-Summit 2K26</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-txt-dim">Won 1st place at a national-level project expo for a supply-chain management solution.</p>
+                    </div>
+
+                    {/* Small Card 2: ACE Executive Member */}
+                    <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-purple-500/30 hover:bg-bg3/60">
+                      <div className="mb-4 flex items-center justify-between gap-4">
+                        <span className="rounded-full border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs font-bold text-purple-400">Tech Team</span>
+                        <RiAwardLine className="text-2xl text-purple-500/60" />
+                      </div>
+                      <h4 className="text-lg font-bold text-white">ACE Executive Member</h4>
+                      <p className="mt-2 text-sm leading-relaxed text-txt-dim">Executive Body Member of Association of Computer Engineers (ACE), serving in the technical team.</p>
+                    </div>
+
+                    {/* Small Card 3: Prajwalan */}
                     <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-amber-500/30 hover:bg-bg3/60">
                       <div className="mb-4 flex items-center justify-between gap-4">
                         <span className="rounded-full border border-amber-500/20 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-400">Finalist</span>
@@ -228,6 +256,8 @@ function App() {
                       <h4 className="text-lg font-bold text-white">Prajwalan 2025</h4>
                       <p className="mt-2 text-sm leading-relaxed text-txt-dim">Recognized as a top national team for solution architecture and rapid prototype execution.</p>
                     </div>
+                    
+                    {/* Small Card 4: NHIDE */}
                     <div className="rounded-2xl border border-white/5 bg-bg2/80 p-5 transition-all duration-300 hover:border-blue-500/30 hover:bg-bg3/60">
                       <div className="mb-4 flex items-center justify-between gap-4">
                         <span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-400">National Participant</span>
