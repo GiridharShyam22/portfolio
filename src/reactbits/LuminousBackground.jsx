@@ -56,8 +56,8 @@ const LuminousBackground = () => {
                 this.y = initial ? Math.random() * height : -10;
                 // Mostly tiny particles, some slightly larger
                 this.size = Math.random() < 0.9 ? Math.random() * 1.5 + 0.5 : Math.random() * 3 + 1;
-                this.speedY = Math.random() * 1.5 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = Math.random() * 0.4 + 0.1; // Reduced particle falling speed
+                this.speedX = (Math.random() - 0.5) * 0.2; // Reduced lateral drift
                 this.alpha = Math.random() * 0.5 + 0.1; // Reduced particle brightness
                 this.isBlue = Math.random() > 0.8;
             }
