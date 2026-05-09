@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
 import StarBorder from '../reactbits/StarBorder';
-import HoloBackground from '../reactbits/HoloBackground';
+import LuminousBackground from '../reactbits/LuminousBackground';
 import heroImg from '../assets/hero.jpg';
 import { useResumeModal } from '../context/ResumeModalContext';
 
@@ -37,8 +37,9 @@ export default function Hero() {
           background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(59,158,255,0.08) 0%, transparent 70%), #03060e',
         }}
       />
-      {/* HoloBackground Overlay */}
-      <HoloBackground />
+      {/* Custom Luminous Rays Background */}
+      <LuminousBackground />
+
 
       <div className="max-w-7xl w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
 
