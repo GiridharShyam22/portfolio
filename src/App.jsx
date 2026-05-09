@@ -113,6 +113,33 @@ function App() {
                 </h3>
                 <div className="relative pl-8 border-l border-white/10 space-y-12 ml-4">
 
+                  {/* Experience 1 */}
+                  <div className="relative group">
+                    <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
+                    <div className="bg-bg2 border border-white/5 p-8 rounded-3xl group-hover:border-accent/30 transition-all duration-300 shadow-2xl">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent font-mono text-xs mb-6 border border-accent/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        Mar 2025 – Jun 2025
+                      </div>
+                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Intern</h4>
+                      <div className="text-txt-mid font-medium mb-6">Adverk Technologies Pvt. Ltd. · Remote</div>
+                      <ul className="text-txt-dim space-y-4">
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Built and evaluated supervised ML models for car price prediction and credit-risk style datasets</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Prepared datasets, handled preprocessing, and compared model performance using standard evaluation metrics</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Created Power BI dashboards for sales and inventory analysis, turning raw data into cleaner operational reports</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
                   {/* Experience 0: Deccan AI */}
                   <div className="relative group">
                     <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
@@ -139,33 +166,6 @@ function App() {
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
                           <span className="leading-relaxed">Demonstrated proficiency in navigating professional freelance workflows, including cross-border payment systems and rigorous quality-assurance benchmarks.</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Experience 1 */}
-                  <div className="relative group">
-                    <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
-                    <div className="bg-bg2 border border-white/5 p-8 rounded-3xl group-hover:border-accent/30 transition-all duration-300 shadow-2xl">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent font-mono text-xs mb-6 border border-accent/20">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                        Mar 2025 – Jun 2025
-                      </div>
-                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Intern</h4>
-                      <div className="text-txt-mid font-medium mb-6">Adverk Technologies Pvt. Ltd. · Remote</div>
-                      <ul className="text-txt-dim space-y-4">
-                        <li className="flex items-start gap-3">
-                          <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Built and evaluated supervised ML models for car price prediction and credit-risk style datasets</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Prepared datasets, handled preprocessing, and compared model performance using standard evaluation metrics</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Created Power BI dashboards for sales and inventory analysis, turning raw data into cleaner operational reports</span>
                         </li>
                       </ul>
                     </div>
