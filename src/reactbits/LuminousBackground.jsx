@@ -22,8 +22,8 @@ const LuminousBackground = () => {
             constructor() {
                 this.x = Math.random() * width;
                 this.width = Math.random() * 15 + 2;
-                this.alpha = Math.random() * 0.15 + 0.05;
-                this.length = Math.random() * height * 0.7 + height * 0.3;
+                this.alpha = Math.random() * 0.08 + 0.02; // Reduced base brightness
+                this.length = Math.random() * height * 0.4 + height * 0.1; // Reduced length
                 this.phase = Math.random() * Math.PI * 2;
                 this.speed = Math.random() * 0.02 + 0.01;
                 // Add a slightly blue tint to some beams
@@ -36,8 +36,8 @@ const LuminousBackground = () => {
                 
                 const color = this.isBlue ? '150, 200, 255' : '255, 255, 255';
                 
-                gradient.addColorStop(0, `rgba(${color}, ${currentAlpha * 2})`); // Brighter at top
-                gradient.addColorStop(0.2, `rgba(${color}, ${currentAlpha})`);
+                gradient.addColorStop(0, `rgba(${color}, ${currentAlpha * 1.5})`); // Brighter at top but less intense
+                gradient.addColorStop(0.2, `rgba(${color}, ${currentAlpha * 0.8})`);
                 gradient.addColorStop(1, `rgba(${color}, 0)`);
 
                 ctx.fillStyle = gradient;
@@ -58,7 +58,7 @@ const LuminousBackground = () => {
                 this.size = Math.random() < 0.9 ? Math.random() * 1.5 + 0.5 : Math.random() * 3 + 1;
                 this.speedY = Math.random() * 1.5 + 0.5;
                 this.speedX = (Math.random() - 0.5) * 0.5;
-                this.alpha = Math.random() * 0.8 + 0.2;
+                this.alpha = Math.random() * 0.5 + 0.1; // Reduced particle brightness
                 this.isBlue = Math.random() > 0.8;
             }
 
