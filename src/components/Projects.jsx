@@ -103,7 +103,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 md:gap-32 pb-32">
+        <div className="flex flex-col gap-8 md:gap-32 pb-32">
           {projects.map((project, index) => {
             const theme = projectThemes[project.id];
             const Icon = theme.icon;
@@ -123,7 +123,7 @@ export default function Projects() {
                   aria-label={`View ${project.title} case study`}
                   onClick={() => setSelectedProject(project)}
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedProject(project); }}
-                  className={`bg-bg2 border border-white/10 rounded-3xl p-6 md:p-12 max-w-5xl mx-auto h-[550px] md:h-[420px] flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 cursor-pointer ${theme.border} ${theme.shadow}`}
+                  className={`bg-bg2 border border-white/10 rounded-3xl p-5 md:p-12 max-w-5xl mx-auto min-h-[420px] md:h-[420px] flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 cursor-pointer ${theme.border} ${theme.shadow}`}
                 >
                   {/* Massive Watermark Icon */}
                   <div className={`absolute -right-8 -top-8 opacity-5 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none transform -rotate-12 ${theme.iconColor}`}>
@@ -141,14 +141,14 @@ export default function Projects() {
                   </div>
 
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
                       <div>
-                        <span className="text-txt-dim font-mono text-sm tracking-wider uppercase mb-1 block">{project.year}</span>
-                        <h3 className={`text-3xl md:text-4xl font-extrabold text-white mt-1 transition-colors duration-300 ${theme.text}`}>
+                        <span className="text-txt-dim font-mono text-xs tracking-wider uppercase mb-1 block">{project.year}</span>
+                        <h3 className={`text-2xl md:text-4xl font-extrabold text-white mt-1 transition-colors duration-300 ${theme.text}`}>
                           {project.title}
                         </h3>
                       </div>
-                      <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-4 md:mt-0">
+                      <div className="flex flex-wrap items-center gap-2 md:gap-4 mt-0">
                         {project.demoUrl && (
                           <a
                             href={project.demoUrl}
@@ -191,7 +191,7 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <p className="text-txt-mid text-xl leading-relaxed mb-8 max-w-3xl font-medium">
+                    <p className="text-txt-mid text-base md:text-xl leading-relaxed mb-4 md:mb-8 max-w-3xl font-medium">
                       {project.description}
                     </p>
 

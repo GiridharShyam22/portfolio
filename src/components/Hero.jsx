@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
-import EvilEye from '../reactbits/EvilEye';
 import StarBorder from '../reactbits/StarBorder';
 import heroImg from '../assets/hero.jpg';
 import { useResumeModal } from '../context/ResumeModalContext';
@@ -30,38 +29,22 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-48 px-6 md:px-12 overflow-hidden">
 
-      {/* EvilEye — full-screen background, visible and dominant */}
-      <div className="absolute inset-0 z-0">
-        <EvilEye
-          eyeColor="#3b9eff"
-          intensity={0.6}
-          pupilSize={1.25}
-          irisWidth={0.15}
-          glowIntensity={0.4}
-          scale={0.75}
-          noiseScale={1.5}
-          pupilFollow={1.4}
-          flameSpeed={1.0}
-          backgroundColor="#03060e"
-        />
-      </div>
-
-      {/* Left-side vignette — fades from solid bg to transparent so text is readable */}
-      <div 
-        className="absolute inset-0 z-[1] pointer-events-none"
+      {/* Subtle dark radial background */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: 'linear-gradient(to right, #03060e 5%, rgba(3,6,14,0.85) 25%, rgba(3,6,14,0.4) 50%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(59,158,255,0.07) 0%, transparent 70%), #03060e',
         }}
       />
 
-      <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
+      <div className="max-w-7xl w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center relative z-[2]">
 
         {/* Text Content — clean typography with text-shadow for contrast */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col gap-10"
+          className="flex flex-col gap-10 order-last lg:order-first"
           style={{ textShadow: '0 2px 20px rgba(3,6,14,0.8)' }}
         >
           <div className="font-mono text-accent text-sm tracking-widest uppercase">
@@ -125,12 +108,12 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* ProfileCard — sits naturally on the right, eye shows through behind it */}
+        {/* ProfileCard — right column on desktop, below text on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end h-[420px] md:h-[540px] w-full"
+          className="relative flex justify-center lg:justify-end h-[380px] sm:h-[440px] md:h-[500px] w-full order-first lg:order-last"
         >
           <ProfileCard
             name="Sri Ram Charan Nalla"

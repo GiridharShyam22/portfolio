@@ -148,7 +148,7 @@ export default function ProjectDetailModal({ project, onClose }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 40, scale: 0.97 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed inset-x-4 md:inset-x-8 lg:inset-x-16 xl:inset-x-32 top-6 bottom-6 z-[101] flex flex-col rounded-3xl overflow-hidden border ${theme.border} shadow-2xl`}
+        className={`fixed inset-0 sm:inset-x-4 sm:top-4 sm:bottom-4 md:inset-x-8 lg:inset-x-16 xl:inset-x-32 md:top-6 md:bottom-6 z-[101] flex flex-col rounded-none sm:rounded-3xl overflow-hidden border ${theme.border} shadow-2xl`}
         style={{ boxShadow: `0 0 80px ${theme.glow}, 0 32px 64px rgba(0,0,0,0.6)` }}
         onClick={(e) => e.stopPropagation()}
       >
