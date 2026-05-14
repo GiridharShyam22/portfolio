@@ -93,7 +93,7 @@ export default function Projects() {
         </div>
 
         {/* Sticky Scroll Counter */}
-        <div className="sticky top-[15vh] z-50 hidden md:block pointer-events-none">
+        <div className="sticky top-[15vh] z-50 hidden xl:block pointer-events-none">
           <div className="absolute right-8 lg:right-12 top-0 font-mono tracking-widest pointer-events-auto">
             <div className="bg-bg2/80 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-5 flex flex-col items-center gap-1 shadow-2xl">
               <span className="text-white text-2xl font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
