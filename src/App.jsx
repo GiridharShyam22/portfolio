@@ -153,19 +153,15 @@ function App() {
                       <ul className="text-txt-dim space-y-4">
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Collaborated on the Launchpad (Pre-Production) project, focusing on the refinement of large language models through complex technical reasoning and comprehension tasks.</span>
+                          <span className="leading-relaxed">Successfully completed the rigorous Training & Evaluation phase to join the vetted Deccan AI Experts network.</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Evaluated and optimized AI-generated responses to ensure high levels of accuracy, logical consistency, and alignment with specific project constraints.</span>
+                          <span className="leading-relaxed">Evaluated and refined large language models via human-in-the-loop workflows, ensuring high accuracy, logical consistency, and adherence to complex technical constraints.</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Contributed to specialized AI development initiatives, including participating in The Catalyst Hackathon with a project focused on AI-driven talent scouting agents.</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Demonstrated proficiency in navigating professional freelance workflows, including cross-border payment systems and rigorous quality-assurance benchmarks.</span>
+                          <span className="leading-relaxed">Participated in The Catalyst Hackathon, contributing to the development of an AI-driven talent scouting agent.</span>
                         </li>
                       </ul>
                     </div>
