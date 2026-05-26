@@ -113,34 +113,39 @@ function App() {
                 </h3>
                 <div className="relative pl-8 border-l border-white/10 space-y-12 ml-4">
 
-                  {/* Experience 1 */}
+                  {/* Experience 1 — Stikbook */}
                   <div className="relative group">
                     <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
                     <div className="bg-bg2 border border-white/5 p-8 rounded-3xl group-hover:border-accent/30 transition-all duration-300 shadow-2xl">
                       <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent font-mono text-xs mb-6 border border-accent/20">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                        May 2025 – Present
+                        May 2026 – Present
                       </div>
-                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Trainee Intern</h4>
+                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Intern</h4>
                       <div className="text-txt-mid font-medium mb-6">Stikbook Pvt. Ltd. · Remote</div>
                       <ul className="text-txt-dim space-y-4">
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Participating in a structured learning program focused on startup engineering workflows and professional skill development</span>
+                          <span className="leading-relaxed">Performed data analytics and built visualisations using Python and Google Colab to support data-driven decision making across engineering workflows</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Shadowing team members across project discussions, reviews, and planning sessions to build exposure to real-world professional collaboration</span>
+                          <span className="leading-relaxed">Contributed to project planning sessions and team reviews, gaining structured exposure to startup collaboration and product development processes</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Completing guided assignments and supervised tasks designed to strengthen foundational knowledge of startup processes</span>
+                          <span className="leading-relaxed">Conducted domain research and prepared analytical reports, translating findings into clear insights to support engineering and business objectives</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Conducting research and preparing sample reports to deepen understanding of the engineering domain and sharpen professional communication skills</span>
+                          <span className="leading-relaxed">Managed code and analysis artifacts with Git, maintaining clean version history across collaborative assignments and simulated tasks</span>
                         </li>
                       </ul>
+                      <div className="flex flex-wrap gap-2 mt-6">
+                        {['Python', 'Google Colab', 'Data Analytics', 'Data Visualisation', 'Git'].map(tag => (
+                          <span key={tag} className="px-2.5 py-1 rounded-full bg-accent/5 border border-accent/15 text-accent font-mono text-[10px] tracking-wide">{tag}</span>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
