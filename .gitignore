@@ -36,4 +36,5 @@ yarn-debug.log*
 yarn-error.log*
 
 PORTFOLIO_PROJECT.md
-PROJECT_SECTION.mddist/
+PROJECT_SECTION.md
+dist/
