@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Home, User, Briefcase, Code, Mail, FileText } from 'lucide-react';
 import Dock from './Dock';
 import { useResumeModal } from '../context/ResumeModalContext';

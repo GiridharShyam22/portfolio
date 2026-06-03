@@ -12,15 +12,15 @@
   --grain: none;
   --icon: none;
   --behind-gradient: none;
-  --behind-glow-color: rgba(125, 190, 255, 0.67);
+  --behind-glow-color: rgba(212, 175, 130, 0.5);
   --behind-glow-size: 25%;
   --inner-gradient: none;
-  --sunpillar-1: hsl(2, 100%, 73%);
-  --sunpillar-2: hsl(53, 100%, 69%);
-  --sunpillar-3: hsl(93, 100%, 69%);
-  --sunpillar-4: hsl(176, 100%, 76%);
-  --sunpillar-5: hsl(228, 100%, 74%);
-  --sunpillar-6: hsl(283, 100%, 73%);
+  --sunpillar-1: hsl(30, 80%, 65%);
+  --sunpillar-2: hsl(38, 85%, 62%);
+  --sunpillar-3: hsl(25, 75%, 60%);
+  --sunpillar-4: hsl(35, 70%, 68%);
+  --sunpillar-5: hsl(20, 60%, 58%);
+  --sunpillar-6: hsl(42, 80%, 65%);
   --sunpillar-clr-1: var(--sunpillar-1);
   --sunpillar-clr-2: var(--sunpillar-2);
   --sunpillar-clr-3: var(--sunpillar-3);
@@ -144,12 +144,12 @@
     ),
     repeating-linear-gradient(
       var(--angle),
-      #0e152e 0%,
-      hsl(180, 10%, 60%) 3.8%,
-      hsl(180, 29%, 66%) 4.5%,
-      hsl(180, 10%, 60%) 5.2%,
-      #0e152e 10%,
-      #0e152e 12%
+      #1a1510 0%,
+      hsl(30, 20%, 55%) 3.8%,
+      hsl(35, 25%, 60%) 4.5%,
+      hsl(30, 20%, 55%) 5.2%,
+      #1a1510 10%,
+      #1a1510 12%
     ),
     radial-gradient(
       farthest-corner circle at var(--pointer-x) var(--pointer-y),
@@ -238,8 +238,8 @@
   overflow: hidden;
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    hsl(248, 25%, 80%) 12%,
-    hsla(207, 40%, 30%, 0.8) 90%
+    hsl(30, 20%, 65%) 12%,
+    hsla(35, 25%, 35%, 0.8) 90%
   );
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
@@ -374,7 +374,6 @@
     0.1px
   );
   z-index: 5;
-  mix-blend-mode: luminosity;
 }
 
 .pc-details {
@@ -387,30 +386,24 @@
 }
 
 .pc-details h3 {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
-  font-size: min(5svh, 3em);
-  margin: 0;
-  background-image: linear-gradient(to bottom, #fff, #6f6fbe);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  font-size: min(4.5svh, 2.2em);
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 4px 24px rgba(0,0,0,0.6);
+  line-height: 1.2;
 }
 
 .pc-details p {
   font-weight: 600;
   position: relative;
-  top: -12px;
+  top: 2px;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 13px;
   margin: 0 auto;
   width: min-content;
-  background-image: linear-gradient(to bottom, #fff, #4a4ac0);
-  background-size: 1em 1.5em;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: rgba(212, 163, 115, 0.85);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
 @keyframes glow-bg {

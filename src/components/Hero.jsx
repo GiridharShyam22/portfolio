@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
@@ -7,7 +7,7 @@ import LuminousBackground from '../reactbits/LuminousBackground';
 import heroImg from '../assets/hero.jpg';
 import { useResumeModal } from '../context/ResumeModalContext';
 
-const allSkills = ['React.js', 'Node.js', 'FastAPI', 'Flutter', 'TensorFlow', 'PostgreSQL', 'MongoDB', 'React Native', 'Scikit-Learn', 'Power BI'];
+const allSkills = ['Python', 'TensorFlow', 'OpenCV', 'React.js', 'Node.js', 'FastAPI', 'MongoDB', 'PostgreSQL', 'Scikit-Learn', 'Docker'];
 const VISIBLE_COUNT = 6;
 
 function HeroResumeButton() {
@@ -15,7 +15,7 @@ function HeroResumeButton() {
   return (
     <button
       onClick={open}
-      className="px-8 py-4 rounded-xl bg-accent text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(59,158,255,0.3)] hover:shadow-[0_0_40px_rgba(59,158,255,0.5)] flex items-center gap-2"
+      className="px-8 py-4 rounded-xl bg-accent text-bg font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(212,163,115,0.3)] hover:shadow-[0_0_40px_rgba(212,163,115,0.5)] flex items-center gap-2"
       style={{ textShadow: 'none' }}
     >
       View Resume ↗
@@ -34,7 +34,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(59,158,255,0.08) 0%, transparent 70%), #03060e',
+          background: 'radial-gradient(ellipse 80% 60% at 65% 50%, rgba(212,163,115,0.06) 0%, transparent 70%), #0c0a09',
         }}
       />
       {/* Custom Luminous Rays Background */}
@@ -49,18 +49,18 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="flex flex-col gap-10 order-last md:order-first"
-          style={{ textShadow: '0 2px 20px rgba(3,6,14,0.8)' }}
+          style={{ textShadow: '0 2px 20px rgba(12,10,9,0.8)' }}
         >
           <div className="font-mono text-accent text-sm tracking-widest uppercase">
-            // full-stack developer · ml engineer · agentic ai builder
+            // ai·ml developer · full-stack builder
           </div>
 
-          <h1 className="text-4xl md:text-7xl font-extrabold tracking-normal leading-tight md:leading-snug" style={{ textShadow: '0 4px 30px rgba(3,6,14,0.9)' }}>
-            Sri Ram <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400" style={{ textShadow: 'none' }}>Charan.</span>
+          <h1 className="text-4xl md:text-7xl font-extrabold tracking-normal leading-tight md:leading-snug" style={{ textShadow: '0 4px 30px rgba(12,10,9,0.9)' }}>
+            Giridhar <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-300" style={{ textShadow: 'none' }}>Shyam.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-txt-mid max-w-2xl leading-loose">
-            I build web products, ML-backed systems, and agentic AI workflows end to end. My work connects React interfaces, Node.js and FastAPI backends, Python ML pipelines, Flutter apps, and LLM agents into usable products.
+            Passionate AI & Machine Learning Developer building intelligent applications with Computer Vision, ML pipelines, and full-stack web technologies. Dedicated to solving real-world problems through innovative and scalable solutions.
           </p>
 
           {/* Skill Chips */}
@@ -75,7 +75,7 @@ export default function Hero() {
               >
                 <StarBorder
                   as="div"
-                  color="#3b9eff"
+                  color="#d4a373"
                   speed={`${3 + (i % 4)}s`}
                   thickness={1.5}
                   innerClass="px-4 py-2 bg-bg2/80 backdrop-blur-md text-sm font-mono text-txt-mid hover:text-accent transition-all duration-300"
@@ -92,7 +92,7 @@ export default function Hero() {
             >
               <StarBorder
                 as="button"
-                color="#a855f7"
+                color="#c2956a"
                 speed="4s"
                 thickness={1.5}
                 onClick={() => setShowAll(!showAll)}
@@ -120,9 +120,9 @@ export default function Hero() {
           className="relative flex justify-center md:justify-end h-[380px] sm:h-[440px] md:h-[500px] w-full order-first md:order-last"
         >
           <ProfileCard
-            name="Sri Ram Charan Nalla"
-            title="Full-Stack, ML & Agentic AI"
-            handle="Charan512"
+            name="Giridhar Shyam"
+            title="AI/ML Developer & Full-Stack"
+            handle="GiridharShyam22"
             status="Open to Work"
             contactText="Hire Me"
             avatarUrl={heroImg}

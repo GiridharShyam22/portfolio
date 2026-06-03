@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 /**
  * ScreenshotReel — infinite auto-scrolling image reel with drag/swipe support.
@@ -14,7 +14,7 @@ export default function ScreenshotReel({
   speed = 40,         // px per second
   height = 280,       // uniform image height
   gap = 20,           // gap between images
-  fadeColor = '#03060e',
+  fadeColor = '#0c0a09',
   borderClass = '',
   glowColor = 'rgba(255,255,255,0.05)',
   ariaLabel = 'Screenshot gallery',

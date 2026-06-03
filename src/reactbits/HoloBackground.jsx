@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const HoloBackground = () => {
     const canvasRef = useRef(null);
@@ -42,7 +42,7 @@ const HoloBackground = () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(59, 158, 255, 0.5)'; // Portfolio Accent Blue (#3b9eff)
+                ctx.fillStyle = 'rgba(212, 163, 115, 0.5)'; // Portfolio Accent Amber (#d4a373)
                 ctx.fill();
             }
         }
@@ -71,7 +71,7 @@ const HoloBackground = () => {
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(59, 158, 255, ${0.15 * (1 - distance / connectionDistance)})`;
+                        ctx.strokeStyle = `rgba(212, 163, 115, ${0.15 * (1 - distance / connectionDistance)})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
@@ -87,7 +87,7 @@ const HoloBackground = () => {
 
             const scanGradient = ctx.createLinearGradient(0, scanY - 20, 0, scanY + 20);
             scanGradient.addColorStop(0, 'rgba(0,0,0,0)');
-            scanGradient.addColorStop(0.5, 'rgba(59, 158, 255, 0.1)');
+            scanGradient.addColorStop(0.5, 'rgba(212, 163, 115, 0.1)');
             scanGradient.addColorStop(1, 'rgba(0,0,0,0)');
 
             ctx.fillStyle = scanGradient;

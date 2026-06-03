@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowUpRight, Download } from 'lucide-react';
 import { LogoLoop } from '../reactbits/LogoLoop';
@@ -21,64 +21,64 @@ const ICON_MAP = {
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-emerald-950/95 via-[#03060e]/98 to-[#03060e]/98',
-    glow: 'rgba(16,185,129,0.12)',
-    glowSolid: 'rgb(16,185,129)',
-    border: 'border-emerald-500/20',
-    accent: 'text-emerald-400',
-    accentBg: 'bg-emerald-500/10',
-    accentBorder: 'border-emerald-500/25',
-    fadeColor: '#052017',
+    bg: 'from-lime-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    glow: 'rgba(132,204,22,0.12)',
+    glowSolid: 'rgb(132,204,22)',
+    border: 'border-lime-500/20',
+    accent: 'text-lime-400',
+    accentBg: 'bg-lime-500/10',
+    accentBorder: 'border-lime-500/25',
+    fadeColor: '#0a0d05',
   },
   2: {
-    bg: 'from-cyan-950/95 via-[#03060e]/98 to-[#03060e]/98',
-    glow: 'rgba(6,182,212,0.12)',
-    glowSolid: 'rgb(6,182,212)',
-    border: 'border-cyan-500/20',
-    accent: 'text-cyan-400',
-    accentBg: 'bg-cyan-500/10',
-    accentBorder: 'border-cyan-500/25',
-    fadeColor: '#021a1f',
+    bg: 'from-teal-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    glow: 'rgba(20,184,166,0.12)',
+    glowSolid: 'rgb(20,184,166)',
+    border: 'border-teal-500/20',
+    accent: 'text-teal-400',
+    accentBg: 'bg-teal-500/10',
+    accentBorder: 'border-teal-500/25',
+    fadeColor: '#051412',
   },
   3: {
-    bg: 'from-rose-950/95 via-[#03060e]/98 to-[#03060e]/98',
+    bg: 'from-orange-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    glow: 'rgba(251,146,60,0.12)',
+    glowSolid: 'rgb(251,146,60)',
+    border: 'border-orange-500/20',
+    accent: 'text-orange-400',
+    accentBg: 'bg-orange-500/10',
+    accentBorder: 'border-orange-500/25',
+    fadeColor: '#140a04',
+  },
+  4: {
+    bg: 'from-rose-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(244,63,94,0.12)',
     glowSolid: 'rgb(244,63,94)',
     border: 'border-rose-500/20',
     accent: 'text-rose-400',
     accentBg: 'bg-rose-500/10',
     accentBorder: 'border-rose-500/25',
-    fadeColor: '#1c0208',
-  },
-  4: {
-    bg: 'from-violet-950/95 via-[#03060e]/98 to-[#03060e]/98',
-    glow: 'rgba(139,92,246,0.12)',
-    glowSolid: 'rgb(139,92,246)',
-    border: 'border-violet-500/20',
-    accent: 'text-violet-400',
-    accentBg: 'bg-violet-500/10',
-    accentBorder: 'border-violet-500/25',
-    fadeColor: '#0e0618',
+    fadeColor: '#140206',
   },
   5: {
-    bg: 'from-sky-950/95 via-[#03060e]/98 to-[#03060e]/98',
-    glow: 'rgba(14,165,233,0.12)',
-    glowSolid: 'rgb(14,165,233)',
-    border: 'border-sky-500/20',
-    accent: 'text-sky-400',
-    accentBg: 'bg-sky-500/10',
-    accentBorder: 'border-sky-500/25',
-    fadeColor: '#02101a',
+    bg: 'from-stone-900/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    glow: 'rgba(168,162,158,0.12)',
+    glowSolid: 'rgb(168,162,158)',
+    border: 'border-stone-500/20',
+    accent: 'text-stone-300',
+    accentBg: 'bg-stone-500/10',
+    accentBorder: 'border-stone-500/25',
+    fadeColor: '#0e0d0c',
   },
   6: {
-    bg: 'from-amber-950/95 via-[#03060e]/98 to-[#03060e]/98',
+    bg: 'from-amber-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(245,158,11,0.12)',
     glowSolid: 'rgb(245,158,11)',
     border: 'border-amber-500/20',
     accent: 'text-amber-400',
     accentBg: 'bg-amber-500/10',
     accentBorder: 'border-amber-500/25',
-    fadeColor: '#1a0f02',
+    fadeColor: '#140d02',
   },
 };
 
@@ -161,7 +161,7 @@ export default function ProjectDetailModal({ project, onClose }) {
         <div ref={scrollRef} className="relative flex flex-col h-full overflow-y-auto">
 
           {/* HEADER */}
-          <div className={`sticky top-0 z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-6 md:px-12 py-6 border-b ${theme.border} bg-[#03060e]/85 backdrop-blur-xl`}>
+          <div className={`sticky top-0 z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-6 md:px-12 py-6 border-b ${theme.border} bg-[#0c0a09]/85 backdrop-blur-xl`}>
             <div className="flex flex-col gap-1.5 min-w-0">
               <div className={`flex items-center gap-2.5 text-xs font-mono tracking-widest uppercase ${theme.accent}`}>
                 <span className="inline-block w-2 h-2 rounded-full" style={{ background: theme.glowSolid }} />
@@ -267,7 +267,7 @@ export default function ProjectDetailModal({ project, onClose }) {
             <div className="grid md:grid-cols-2 gap-8">
 
               {/* Key Features */}
-              <div className={`rounded-2xl border ${theme.accentBorder} bg-[#03060e]/60 p-7`}>
+              <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7`}>
                 <h3 className={`text-xs font-mono tracking-widest uppercase mb-6 ${theme.accent}`}>Key Features</h3>
                 <ul className="space-y-4">
                   {project.keyFeatures.map((f, i) => (
@@ -281,11 +281,11 @@ export default function ProjectDetailModal({ project, onClose }) {
 
               {/* Architecture + Outcome */}
               <div className="flex flex-col gap-8">
-                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#03060e]/60 p-7 flex-1`}>
+                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7 flex-1`}>
                   <h3 className={`text-xs font-mono tracking-widest uppercase mb-4 ${theme.accent}`}>Architecture</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{project.architectureNotes}</p>
                 </div>
-                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#03060e]/60 p-7 flex-1`}>
+                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7 flex-1`}>
                   <h3 className={`text-xs font-mono tracking-widest uppercase mb-4 ${theme.accent}`}>Outcome</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{project.outcome}</p>
                 </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './ProfileCard.css';
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg,#4a3520cc 0%,#d4a37344 100%)';
 
 const ANIMATION_CONFIG = {
   INITIAL_DURATION: 1200,
@@ -356,7 +356,19 @@ const ProfileCardComponent = ({
               )}
             </div>
             <div className="pc-content">
-              <div className="pc-details">
+              {/* Dark gradient backdrop for name readability */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '45%',
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, transparent 100%)',
+                borderRadius: 'inherit',
+                pointerEvents: 'none',
+                zIndex: 0,
+              }} />
+              <div className="pc-details" style={{ position: 'relative', zIndex: 1 }}>
                 <h3>{name}</h3>
                 <p>{title}</p>
               </div>

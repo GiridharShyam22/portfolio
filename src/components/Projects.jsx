@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { projects } from '../data/projects';
-import { GiPlantSeed, GiBrain, GiPayMoney, GiTrophyCup, GiHealthNormal, GiRadarCrossSection } from 'react-icons/gi';
 import { AnimatePresence } from 'framer-motion';
 import ProjectDetailModal from './ProjectDetailModal';
 
 const projectThemes = {
   6: { // TalentRadar
-    icon: GiRadarCrossSection,
+    logo: '/logos/talentradar.png',
     gradient: "from-amber-500/10 to-transparent",
     border: "group-hover:border-amber-500/50",
     text: "group-hover:text-amber-400",
@@ -15,49 +14,49 @@ const projectThemes = {
     iconColor: "text-amber-500",
   },
   1: { // AyuSethu (Agriculture)
-    icon: GiPlantSeed,
-    gradient: "from-emerald-500/10 to-transparent",
-    border: "group-hover:border-emerald-500/50",
-    text: "group-hover:text-emerald-400",
-    tagText: "text-emerald-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)]",
-    iconColor: "text-emerald-500",
+    logo: '/logos/ayusethu.png',
+    gradient: "from-lime-600/10 to-transparent",
+    border: "group-hover:border-lime-500/50",
+    text: "group-hover:text-lime-400",
+    tagText: "text-lime-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(132,204,22,0.25)]",
+    iconColor: "text-lime-500",
   },
   2: { // SmartSpend (Finance)
-    icon: GiPayMoney,
-    gradient: "from-cyan-500/10 to-transparent",
-    border: "group-hover:border-cyan-500/50",
-    text: "group-hover:text-cyan-400",
-    tagText: "text-cyan-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]",
-    iconColor: "text-cyan-500",
+    logo: '/logos/smartspend.png',
+    gradient: "from-teal-600/10 to-transparent",
+    border: "group-hover:border-teal-500/50",
+    text: "group-hover:text-teal-400",
+    tagText: "text-teal-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.25)]",
+    iconColor: "text-teal-500",
   },
   3: { // Soul Connect (Mental Health)
-    icon: GiBrain,
-    gradient: "from-rose-500/10 to-transparent",
+    logo: '/logos/soulconnect.png',
+    gradient: "from-orange-600/10 to-transparent",
+    border: "group-hover:border-orange-400/50",
+    text: "group-hover:text-orange-400",
+    tagText: "text-orange-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(251,146,60,0.25)]",
+    iconColor: "text-orange-500",
+  },
+  4: { // Prajwalan (Hackathon)
+    logo: '/logos/prajwalan.png',
+    gradient: "from-rose-700/10 to-transparent",
     border: "group-hover:border-rose-500/50",
     text: "group-hover:text-rose-400",
     tagText: "text-rose-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.25)]",
     iconColor: "text-rose-500",
   },
-  4: { // Prajwalan (Hackathon)
-    icon: GiTrophyCup,
-    gradient: "from-violet-500/10 to-transparent",
-    border: "group-hover:border-violet-500/50",
-    text: "group-hover:text-violet-400",
-    tagText: "text-violet-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.3)]",
-    iconColor: "text-violet-500",
-  },
   5: { // Mana Hospitals (Health)
-    icon: GiHealthNormal,
-    gradient: "from-sky-500/10 to-transparent",
-    border: "group-hover:border-sky-500/50",
-    text: "group-hover:text-sky-400",
-    tagText: "text-sky-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(14,165,233,0.3)]",
-    iconColor: "text-sky-500",
+    logo: '/logos/manahospitals.png',
+    gradient: "from-stone-500/10 to-transparent",
+    border: "group-hover:border-stone-400/50",
+    text: "group-hover:text-stone-300",
+    tagText: "text-stone-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(168,162,158,0.25)]",
+    iconColor: "text-stone-400",
   }
 };
 
@@ -89,7 +88,7 @@ export default function Projects() {
       <section id="projects" className="relative z-10">
         <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-accent rounded-full" />
+          <div className="h-1 w-20 bg-gradient-to-r from-accent to-amber-400 rounded-full" />
         </div>
 
         {/* Sticky Scroll Counter */}
@@ -106,7 +105,6 @@ export default function Projects() {
         <div className="flex flex-col gap-8 md:gap-32 pb-32">
           {projects.map((project, index) => {
             const theme = projectThemes[project.id];
-            const Icon = theme.icon;
 
             return (
               <div
@@ -125,9 +123,9 @@ export default function Projects() {
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedProject(project); }}
                   className={`bg-bg2 border border-white/10 rounded-3xl p-5 md:p-12 max-w-5xl mx-auto min-h-[420px] md:h-[420px] flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 cursor-pointer ${theme.border} ${theme.shadow}`}
                 >
-                  {/* Massive Watermark Icon */}
-                  <div className={`absolute -right-8 -top-8 opacity-5 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none transform -rotate-12 ${theme.iconColor}`}>
-                    <Icon className="text-[280px]" />
+                  {/* Massive Watermark Logo */}
+                  <div className="absolute -right-4 -top-4 w-[280px] h-[280px] opacity-[0.07] group-hover:opacity-[0.18] transition-opacity duration-700 pointer-events-none -rotate-12">
+                    <img src={theme.logo} alt="" className="w-full h-full object-contain" draggable={false} />
                   </div>
 
                   {/* Thematic gradient overlay */}

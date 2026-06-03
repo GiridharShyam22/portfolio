@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const LuminousBackground = () => {
     const canvasRef = useRef(null);
@@ -26,15 +26,15 @@ const LuminousBackground = () => {
                 this.length = Math.random() * height * 0.4 + height * 0.1; // Reduced length
                 this.phase = Math.random() * Math.PI * 2;
                 this.speed = Math.random() * 0.02 + 0.01;
-                // Add a slightly blue tint to some beams
-                this.isBlue = Math.random() > 0.7;
+                // Add a warm amber tint to some beams
+                this.isWarm = Math.random() > 0.7;
             }
 
             draw() {
                 const currentAlpha = Math.max(0, this.alpha + Math.sin(this.phase) * 0.05);
                 const gradient = ctx.createLinearGradient(this.x, 0, this.x, this.length);
                 
-                const color = this.isBlue ? '150, 200, 255' : '255, 255, 255';
+                const color = this.isWarm ? '212, 175, 130' : '255, 240, 220';
                 
                 gradient.addColorStop(0, `rgba(${color}, ${currentAlpha * 1.5})`); // Brighter at top but less intense
                 gradient.addColorStop(0.2, `rgba(${color}, ${currentAlpha * 0.8})`);
@@ -59,7 +59,7 @@ const LuminousBackground = () => {
                 this.speedY = Math.random() * 0.4 + 0.1; // Reduced particle falling speed
                 this.speedX = (Math.random() - 0.5) * 0.2; // Reduced lateral drift
                 this.alpha = Math.random() * 0.5 + 0.1; // Reduced particle brightness
-                this.isBlue = Math.random() > 0.8;
+                this.isWarm = Math.random() > 0.8;
             }
 
             update() {
@@ -76,7 +76,7 @@ const LuminousBackground = () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                const color = this.isBlue ? '150, 200, 255' : '255, 255, 255';
+                const color = this.isWarm ? '212, 175, 130' : '255, 240, 220';
                 ctx.fillStyle = `rgba(${color}, ${this.alpha})`;
                 
                 // Add glow to larger particles

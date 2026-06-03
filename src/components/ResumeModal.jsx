@@ -1,36 +1,22 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ArrowUpRight, Brain, Code2 } from 'lucide-react';
+import { X, ArrowUpRight, FileText } from 'lucide-react';
 import { useResumeModal } from '../context/ResumeModalContext';
 
 const OPTIONS = [
   {
-    key: 'ai',
-    icon: Brain,
-    title: 'AI & Research',
-    subtitle: 'Agentic Workflows · LLMs · ML Pipelines · NLP',
-    description: 'Best for roles in AI engineering, research, or agentic system building.',
-    href: '/charansResume1.pdf',
-    accentFrom: 'from-violet-500/15',
-    accentBorder: 'border-violet-500/25',
-    accentText: 'text-violet-400',
-    accentBg: 'bg-violet-500/10',
-    glowColor: 'rgba(139,92,246,0.15)',
-    dotColor: 'rgb(139,92,246)',
-  },
-  {
-    key: 'dev',
-    icon: Code2,
-    title: 'Software Engineering',
-    subtitle: 'Full-Stack · Mobile · System Architecture · APIs',
-    description: 'Best for roles in product engineering, web, or mobile development.',
-    href: '/charansResume2.pdf',
-    accentFrom: 'from-cyan-500/15',
-    accentBorder: 'border-cyan-500/25',
-    accentText: 'text-cyan-400',
-    accentBg: 'bg-cyan-500/10',
-    glowColor: 'rgba(6,182,212,0.15)',
-    dotColor: 'rgb(6,182,212)',
+    key: 'main',
+    icon: FileText,
+    title: 'View Resume',
+    subtitle: 'AI/ML · Full-Stack · Computer Vision · Projects',
+    description: 'My latest resume highlighting AI/ML development, full-stack projects, and technical skills.',
+    href: '/giridhar_resume.pdf',
+    accentFrom: 'from-amber-500/15',
+    accentBorder: 'border-amber-500/25',
+    accentText: 'text-amber-400',
+    accentBg: 'bg-amber-500/10',
+    glowColor: 'rgba(212,163,115,0.15)',
+    dotColor: 'rgb(212,163,115)',
   },
 ];
 
@@ -72,13 +58,13 @@ export default function ResumeModal() {
             key="resume-modal"
             role="dialog"
             aria-modal="true"
-            aria-label="Choose your resume"
+            aria-label="View resume"
             initial={{ opacity: 0, y: 40, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:w-[560px] top-1/2 -translate-y-1/2 z-[201] rounded-3xl border border-white/10 bg-[#060a12]/95 backdrop-blur-2xl shadow-2xl overflow-hidden"
-            style={{ boxShadow: '0 0 80px rgba(100,100,255,0.08), 0 32px 64px rgba(0,0,0,0.7)' }}
+            className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:w-[560px] top-1/2 -translate-y-1/2 z-[201] rounded-3xl border border-white/10 bg-[#0e0c0a]/95 backdrop-blur-2xl shadow-2xl overflow-hidden"
+            style={{ boxShadow: '0 0 80px rgba(212,163,115,0.08), 0 32px 64px rgba(0,0,0,0.7)' }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Subtle grid texture */}
@@ -87,8 +73,8 @@ export default function ResumeModal() {
             {/* Header */}
             <div className="relative flex items-start justify-between px-5 sm:px-8 pt-6 sm:pt-8 pb-2">
               <div>
-                <p className="text-xs font-mono tracking-widest uppercase text-white/30 mb-2">Choose your path</p>
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">Which version would<br />you like to see?</h2>
+                <p className="text-xs font-mono tracking-widest uppercase text-white/30 mb-2">Resume</p>
+                <h2 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">View my resume</h2>
               </div>
               <button
                 onClick={close}
@@ -142,7 +128,7 @@ export default function ResumeModal() {
 
             {/* Footer note */}
             <p className="text-center text-[10px] sm:text-xs text-white/20 font-mono pb-6 sm:pb-7 px-5 sm:px-8">
-              Both resumes open in a new tab as PDF
+              Resume opens in a new tab as PDF
             </p>
           </motion.div>
         </>
