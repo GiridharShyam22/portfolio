@@ -19,14 +19,14 @@ Sri Ram Charan Nalla is a highly capable **Full-Stack Developer** and **ML/DL En
 
 ## 🚀 Key Projects Deep Dive
 
-### 1. AyuSethu Ecosystem (Agricultural Supply Chain)
-**Repos:** `AyusethuML`, `AyusethuAPI`, `AyusethuApp`, `AyusethuUI`
-This is an enterprise-scale, multi-platform system designed for the medicinal plant supply chain.
+### 1. Trading Pulse AI (Algorithmic Trading Dashboard)
+**Repo:** `Trading_Pulse_Ai_app`
+An AI-powered dashboard displaying live crypto asset charts, sentiment analyses, and simulated paper-trading workflows.
 
-*   **AyusethuML:** A FastAPI inference service. Uses an EfficientNetV2B3 feature extractor with PCA dimensionality reduction mapped to an SVM classifier to identify 92 herb species with 96.6% accuracy. Served natively using Gunicorn/Uvicorn.
-*   **AyusethuAPI:** An Express.js/MongoDB central backend mediating 6 distinct user roles (Farmer, Collector, Lab, Admin, Manufacturer, Consumer). Uses JWT config, Multer for file uploads, and securely pins validation data to the IPFS Filecoin network via Pinata.
-*   **AyusethuApp:** A Flutter-based native mobile app for rural farmers. Uses Google Gemini LLM and Bhashini AI to bypass UI complexity via voice pipelines. Employs hardware capabilities like `geolocator` and `image_picker` for strict tracking.
-*   **AyusethuUI:** A React + Vite dashboard enabling dynamic role-based viewing, Live WebSocket-driven auctions (`Socket.io`) for manufacturers, and automatic IPFS PDF generation for Lab technicians.
+*   **Real-time Markets:** Streams live ticker price feeds from Binance APIs. Rendered using highly responsive Recharts Area and Candlestick interfaces.
+*   **Interactive Simulation:** Supports instant buying/selling trades, live P&L calculation, win rate tracking, and ledger history saved persistently via client local storage.
+*   **AI Sentiment Feed:** Integrates real-time news analyses and technical SMA indicators for market insights.
+*   **User Session Flow:** Robust local authentication and state synchronization, permitting account creations, logins, and session management.
 
 ### 2. Soul Connect (Mental Health AI Assistant)
 **Repos:** `EmotionBot` (Backend), `ui_bot` (Frontend)
@@ -60,8 +60,8 @@ This is an enterprise-scale, multi-platform system designed for the medicinal pl
 The repositories conclusively prove that Sri Ram Charan is adept at **orchestrating complex systems**. He doesn't just build isolated apps; he maps out the interactions between databases, mobile clients, web dashboards, and AI inference engines. 
 
 His systems routinely demonstrate:
-1.  **Strict Security Practices:** Environment isolation, secure tokenization, and complex RBAC matrices (e.g., AyuSethu's 6 roles or Prajwalan's evaluator tiers).
-2.  **Performance Tuning:** Dimension reduction in ML pipelines (PCA) and strategic framework choices (FastAPI + Gunicorn).
-3.  **Future-proof Infrastructure:** Integration with decentralized protocols like IPFS for data immutability. 
+1.  **Strict Security Practices:** Environment isolation, secure tokenization, and complex state machines (e.g., Trading Pulse's transaction ledger or Prajwalan's evaluator tiers).
+2.  **Performance Tuning:** Dimension reduction in ML pipelines (PCA) and high-throughput real-time data streaming.
+3.  **Future-proof Infrastructure:** Integration with decentralized feeds and live exchange API endpoints. 
 
 This profile represents a highly driven, system-level thinker capable of leading end-to-end full-stack architectures imbued with artificial intelligence capabilities.

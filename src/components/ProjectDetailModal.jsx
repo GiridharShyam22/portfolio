@@ -7,7 +7,7 @@ import {
   SiFastapi, SiReact, SiFlutter, SiMongodb, SiNodedotjs,
   SiPython, SiTensorflow, SiSocketdotio, SiNextdotjs,
   SiPostgresql, SiTailwindcss, SiVercel, SiHuggingface,
-  SiVite, SiExpress, SiFirebase, SiDart,
+  SiVite, SiExpress, SiFirebase, SiDart, SiBinance,
 } from 'react-icons/si';
 
 // Map icon string keys to actual icon components
@@ -15,20 +15,20 @@ const ICON_MAP = {
   SiFastapi, SiReact, SiFlutter, SiMongodb, SiNodedotjs,
   SiPython, SiTensorflow, SiSocketdotio, SiNextdotjs,
   SiPostgresql, SiTailwindcss, SiVercel, SiHuggingface,
-  SiVite, SiExpress, SiFirebase, SiDart,
+  SiVite, SiExpress, SiFirebase, SiDart, SiBinance,
 };
 
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-lime-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(132,204,22,0.12)',
-    glowSolid: 'rgb(132,204,22)',
-    border: 'border-lime-500/20',
-    accent: 'text-lime-400',
-    accentBg: 'bg-lime-500/10',
-    accentBorder: 'border-lime-500/25',
-    fadeColor: '#0a0d05',
+    bg: 'from-blue-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    glow: 'rgba(59,130,246,0.12)',
+    glowSolid: 'rgb(59,130,246)',
+    border: 'border-blue-500/20',
+    accent: 'text-blue-400',
+    accentBg: 'bg-blue-500/10',
+    accentBorder: 'border-blue-500/25',
+    fadeColor: '#050a14',
   },
   2: {
     bg: 'from-teal-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',

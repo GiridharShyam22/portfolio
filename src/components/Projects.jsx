@@ -13,14 +13,14 @@ const projectThemes = {
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]",
     iconColor: "text-amber-500",
   },
-  1: { // AyuSethu (Agriculture)
-    logo: '/logos/ayusethu.png',
-    gradient: "from-lime-600/10 to-transparent",
-    border: "group-hover:border-lime-500/50",
-    text: "group-hover:text-lime-400",
-    tagText: "text-lime-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(132,204,22,0.25)]",
-    iconColor: "text-lime-500",
+  1: { // Trading Pulse AI
+    logo: '/logos/tradingpulse.svg',
+    gradient: "from-blue-600/10 to-transparent",
+    border: "group-hover:border-blue-500/50",
+    text: "group-hover:text-blue-400",
+    tagText: "text-blue-400/50",
+    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.25)]",
+    iconColor: "text-blue-500",
   },
   2: { // SmartSpend (Finance)
     logo: '/logos/smartspend.png',
