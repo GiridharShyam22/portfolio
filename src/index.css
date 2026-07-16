@@ -25,9 +25,9 @@
   --color-glow-navy:   rgba(12,31,94,0.6);
 
   /* ── Text ── */
-  --color-txt:     #e8eaf6;
-  --color-txt-mid: #7986cb;
-  --color-txt-dim: #4a5190;
+  --color-txt:     #ffffff;
+  --color-txt-mid: #e2e8f0;
+  --color-txt-dim: #94a3b8;
 
   /* ── Fonts ── */
   --font-mono: 'JetBrains Mono', monospace;
@@ -44,6 +44,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 110%; /* Makes text bigger globally */
   overflow-x: clip;
   max-width: 100%;
 }

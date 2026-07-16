@@ -183,10 +183,10 @@ function HoloAvatar({ imgSrc }) {
 
         {/* Photo container */}
         <div
-          className="absolute inset-0 rounded-2xl overflow-hidden"
+          className="absolute inset-0 rounded-full overflow-hidden"
           style={{
             boxShadow:
-              '0 0 0 1px rgba(104,105,110,0.25), 0 0 50px rgba(104,105,110,0.35), 0 0 100px rgba(29,32,102,0.5), inset 0 0 40px rgba(29,32,102,0.3)',
+              '0 0 0 1px rgba(104,105,110,0.25), 0 0 50px rgba(104,105,110,0.35), 0 0 100px rgba(12,31,94,0.5), inset 0 0 40px rgba(12,31,94,0.3)',
           }}
         >
           {/* Photo */}
@@ -219,7 +219,7 @@ function HoloAvatar({ imgSrc }) {
           {/* Glare layer */}
           <div
             ref={glareRef}
-            className="absolute inset-0 pointer-events-none rounded-2xl transition-none z-10"
+            className="absolute inset-0 pointer-events-none rounded-full transition-none z-10"
           />
 
           {/* Bottom vignette */}
@@ -227,14 +227,14 @@ function HoloAvatar({ imgSrc }) {
             className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none"
             style={{
               background:
-                'linear-gradient(to top, rgba(8,11,26,0.7), transparent)',
+                'linear-gradient(to top, rgba(2,3,3,0.7), transparent)',
             }}
           />
         </div>
 
         {/* Depth layer — "3D depth" effect */}
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none"
+          className="absolute inset-0 rounded-full pointer-events-none"
           style={{
             transform: 'translateZ(-8px)',
             background: 'rgba(104,105,110,0.08)',
