@@ -16,7 +16,7 @@ function CoreSphere() {
     <mesh ref={meshRef}>
       <icosahedronGeometry args={[1.3, 3]} />
       <MeshDistortMaterial
-        color="#00b4d8"
+        color="#68696e"
         emissive="#2a3e9e"
         emissiveIntensity={0.6}
         wireframe={false}
@@ -43,13 +43,13 @@ function WireShell() {
   return (
     <mesh ref={meshRef} scale={1.55}>
       <icosahedronGeometry args={[1.3, 1]} />
-      <meshBasicMaterial color="#00b4d8" wireframe transparent opacity={0.12} />
+      <meshBasicMaterial color="#68696e" wireframe transparent opacity={0.12} />
     </mesh>
   );
 }
 
 /* ── Orbiting ring ── */
-function OrbitRing({ radius = 2.2, speed = 0.4, tilt = 0, color = '#00b4d8' }) {
+function OrbitRing({ radius = 2.2, speed = 0.4, tilt = 0, color = '#68696e' }) {
   const groupRef = useRef();
   const dotRef = useRef();
   useFrame(({ clock }) => {
@@ -88,7 +88,7 @@ function DataNodes() {
         y: (Math.random() - 0.5) * 2.5,
         z: Math.sin(theta) * r,
         size: 0.03 + Math.random() * 0.04,
-        color: ['#00b4d8', '#48cae4', '#00b4d8'][Math.floor(Math.random() * 3)],
+        color: ['#68696e', '#0c1f5e', '#68696e'][Math.floor(Math.random() * 3)],
         speed: 0.3 + Math.random() * 0.4,
         phase: Math.random() * Math.PI * 2,
       });
@@ -126,9 +126,9 @@ export default function HeroScene() {
       style={{ width: '100%', height: '100%' }}
     >
       <ambientLight intensity={0.4} />
-      <pointLight position={[5, 5, 5]} intensity={1.2} color="#00b4d8" />
-      <pointLight position={[-5, -3, -3]} intensity={0.6} color="#48cae4" />
-      <pointLight position={[0, 0, 4]} intensity={0.8} color="#00b4d8" />
+      <pointLight position={[5, 5, 5]} intensity={1.2} color="#68696e" />
+      <pointLight position={[-5, -3, -3]} intensity={0.6} color="#0c1f5e" />
+      <pointLight position={[0, 0, 4]} intensity={0.8} color="#68696e" />
 
       <Stars radius={30} depth={10} count={800} factor={2} saturation={0.8} fade speed={0.5} />
 
@@ -137,9 +137,9 @@ export default function HeroScene() {
         <WireShell />
       </Float>
 
-      <OrbitRing radius={2.1} speed={0.35} tilt={0.3} color="#00b4d8" />
-      <OrbitRing radius={2.6} speed={-0.22} tilt={-0.5} color="#48cae4" />
-      <OrbitRing radius={2.0} speed={0.5} tilt={1.0} color="#00b4d8" />
+      <OrbitRing radius={2.1} speed={0.35} tilt={0.3} color="#68696e" />
+      <OrbitRing radius={2.6} speed={-0.22} tilt={-0.5} color="#0c1f5e" />
+      <OrbitRing radius={2.0} speed={0.5} tilt={1.0} color="#68696e" />
 
       <DataNodes />
 

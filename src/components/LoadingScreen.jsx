@@ -41,14 +41,14 @@ export default function LoadingScreen({ onComplete }) {
           exit={{ opacity: 0, scale: 1.04 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center"
-          style={{ background: '#0b132b' }}
+          style={{ background: '#020303' }}
         >
           {/* Background grid */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px)',
+                'linear-gradient(rgba(104,105,110,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(104,105,110,0.04) 1px, transparent 1px)',
               backgroundSize: '40px 40px',
             }}
           />
@@ -58,7 +58,7 @@ export default function LoadingScreen({ onComplete }) {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,180,216,0.1) 0%, transparent 70%)',
+                'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(104,105,110,0.1) 0%, transparent 70%)',
             }}
           />
 
@@ -72,19 +72,19 @@ export default function LoadingScreen({ onComplete }) {
             <div
               className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-black font-mono text-white"
               style={{
-                background: 'linear-gradient(135deg, #00b4d8, #48cae4)',
-                boxShadow: '0 0 40px rgba(0,180,216,0.6), 0 0 80px rgba(0,180,216,0.2)',
+                background: 'linear-gradient(135deg, #68696e, #0c1f5e)',
+                boxShadow: '0 0 40px rgba(104,105,110,0.6), 0 0 80px rgba(104,105,110,0.2)',
               }}
             >
               GS
             </div>
             {/* Orbiting ring */}
             <div
-              className="absolute -inset-3 rounded-full border border-[#00b4d8]/20"
+              className="absolute -inset-3 rounded-full border border-[#68696e]/20"
               style={{ animation: 'spin 4s linear infinite' }}
             />
             <div
-              className="absolute -inset-6 rounded-full border border-dashed border-[#00b4d8]/10"
+              className="absolute -inset-6 rounded-full border border-dashed border-[#68696e]/10"
               style={{ animation: 'spin 8s linear infinite reverse' }}
             />
           </motion.div>
@@ -97,14 +97,14 @@ export default function LoadingScreen({ onComplete }) {
             className="w-full max-w-md mx-6 rounded-2xl overflow-hidden"
             style={{
               background: 'rgba(8,11,26,0.95)',
-              border: '1px solid rgba(0,180,216,0.2)',
+              border: '1px solid rgba(104,105,110,0.2)',
               boxShadow: '0 20px 60px rgba(3,4,14,0.8)',
             }}
           >
             {/* Terminal title bar */}
             <div
               className="flex items-center gap-2 px-4 py-3 border-b"
-              style={{ borderColor: 'rgba(0,180,216,0.1)' }}
+              style={{ borderColor: 'rgba(104,105,110,0.1)' }}
             >
               <div className="w-3 h-3 rounded-full bg-red-500/70" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
@@ -140,7 +140,7 @@ export default function LoadingScreen({ onComplete }) {
                     <span
                       className="inline-block w-2 h-3 ml-1 align-middle"
                       style={{
-                        background: '#00b4d8',
+                        background: '#68696e',
                         animation: 'blink-cursor 1s step-end infinite',
                       }}
                     />
@@ -153,13 +153,13 @@ export default function LoadingScreen({ onComplete }) {
             <div className="px-4 pb-4">
               <div
                 className="relative h-1 rounded-full overflow-hidden"
-                style={{ background: 'rgba(0,180,216,0.1)' }}
+                style={{ background: 'rgba(104,105,110,0.1)' }}
               >
                 <motion.div
                   className="absolute inset-y-0 left-0 rounded-full"
                   style={{
-                    background: 'linear-gradient(90deg, #00b4d8, #48cae4, #00b4d8)',
-                    boxShadow: '0 0 8px rgba(0,180,216,0.6)',
+                    background: 'linear-gradient(90deg, #68696e, #0c1f5e, #68696e)',
+                    boxShadow: '0 0 8px rgba(104,105,110,0.6)',
                   }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.15, ease: 'linear' }}
