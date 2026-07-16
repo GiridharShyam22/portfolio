@@ -193,7 +193,7 @@ function HoloAvatar({ imgSrc }) {
           <img
             src={imgSrc}
             alt="Giridhar Shyam"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-[80%_85%] scale-[1.3] origin-[80%_85%]"
             style={{ transform: 'translateZ(0)' }}
           />
 
