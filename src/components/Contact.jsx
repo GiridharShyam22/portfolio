@@ -21,19 +21,19 @@ function ContactResumeButton() {
       onClick={open}
       className="group inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-3.5 text-sm font-bold transition-all duration-300 sm:w-auto"
       style={{
-        background: 'rgba(104,105,110,0.1)',
-        border: '1px solid rgba(104,105,110,0.3)',
+        background: 'rgba(232,228,235,0.1)',
+        border: '1px solid rgba(232,228,235,0.3)',
         color: '#a5b4fc',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = 'rgba(104,105,110,0.2)';
-        e.currentTarget.style.borderColor = 'rgba(104,105,110,0.5)';
+        e.currentTarget.style.background = 'rgba(232,228,235,0.2)';
+        e.currentTarget.style.borderColor = 'rgba(232,228,235,0.5)';
         e.currentTarget.style.color = '#fff';
         e.currentTarget.style.transform = 'translateY(-2px)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = 'rgba(104,105,110,0.1)';
-        e.currentTarget.style.borderColor = 'rgba(104,105,110,0.3)';
+        e.currentTarget.style.background = 'rgba(232,228,235,0.1)';
+        e.currentTarget.style.borderColor = 'rgba(232,228,235,0.3)';
         e.currentTarget.style.color = '#a5b4fc';
         e.currentTarget.style.transform = '';
       }}
@@ -49,7 +49,7 @@ export default function Contact() {
 
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(104,105,110,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 20% 50%, rgba(29,32,102,0.2) 0%, transparent 50%)',
+        background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,228,235,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 20% 50%, rgba(29,32,102,0.2) 0%, transparent 50%)',
       }} />
 
       {/* Circuit board pattern */}
@@ -65,7 +65,7 @@ export default function Contact() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(104,105,110,0.6))' }} />
+            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(232,228,235,0.6))' }} />
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">04 — Contact</span>
           </div>
         </motion.div>
@@ -79,16 +79,16 @@ export default function Contact() {
           className="relative overflow-hidden rounded-3xl"
           style={{
             background: 'linear-gradient(135deg, rgba(15,18,48,0.97) 0%, rgba(29,32,102,0.25) 50%, rgba(8,11,26,0.97) 100%)',
-            border: '1px solid rgba(104,105,110,0.2)',
-            boxShadow: '0 0 80px rgba(104,105,110,0.08), inset 0 0 80px rgba(29,32,102,0.1)',
+            border: '1px solid rgba(232,228,235,0.2)',
+            boxShadow: '0 0 80px rgba(232,228,235,0.08), inset 0 0 80px rgba(29,32,102,0.1)',
           }}
         >
           {/* Top accent line */}
-          <div className="absolute inset-x-0 top-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #68696e, #0c1f5e, #68696e, transparent)' }} />
+          <div className="absolute inset-x-0 top-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #e8e4eb, #dbc0f0, #e8e4eb, transparent)' }} />
 
           {/* Decorative corner ring */}
-          <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full pointer-events-none" style={{ border: '1px solid rgba(104,105,110,0.08)' }} />
-          <div className="absolute -right-12 -top-12 w-40 h-40 rounded-full pointer-events-none" style={{ border: '1px solid rgba(104,105,110,0.06)' }} />
+          <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full pointer-events-none" style={{ border: '1px solid rgba(232,228,235,0.08)' }} />
+          <div className="absolute -right-12 -top-12 w-40 h-40 rounded-full pointer-events-none" style={{ border: '1px solid rgba(232,228,235,0.06)' }} />
 
           <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
 
@@ -102,10 +102,10 @@ export default function Contact() {
                 transition={{ delay: 0.2 }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-bold tracking-widest uppercase"
                 style={{
-                  background: 'rgba(104,105,110,0.12)',
-                  border: '1px solid rgba(104,105,110,0.3)',
+                  background: 'rgba(232,228,235,0.12)',
+                  border: '1px solid rgba(232,228,235,0.3)',
                   color: '#a5b4fc',
-                  boxShadow: '0 0 20px rgba(104,105,110,0.15)',
+                  boxShadow: '0 0 20px rgba(232,228,235,0.15)',
                 }}
               >
                 <BriefcaseBusiness className="w-3.5 h-3.5" />
@@ -119,7 +119,7 @@ export default function Contact() {
               >
                 Let's Build{' '}
                 <span style={{
-                  background: 'linear-gradient(135deg, #68696e, #68696e, #68696e)',
+                  background: 'linear-gradient(135deg, #e8e4eb, #e8e4eb, #e8e4eb)',
                   WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                 }}>
                   Something
@@ -138,16 +138,16 @@ export default function Contact() {
                   id="contact-email-btn"
                   className="group inline-flex w-full items-center justify-center gap-3 rounded-xl px-6 py-3.5 text-sm font-extrabold transition-all duration-300 sm:w-auto"
                   style={{
-                    background: 'linear-gradient(135deg, #68696e, #0c1f5e)',
-                    boxShadow: '0 0 30px rgba(104,105,110,0.35), 0 4px 20px rgba(104,105,110,0.25)',
+                    background: 'linear-gradient(135deg, #e8e4eb, #dbc0f0)',
+                    boxShadow: '0 0 30px rgba(232,228,235,0.35), 0 4px 20px rgba(232,228,235,0.25)',
                     color: '#fff',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 45px rgba(104,105,110,0.55), 0 4px 30px rgba(104,105,110,0.4)';
+                    e.currentTarget.style.boxShadow = '0 0 45px rgba(232,228,235,0.55), 0 4px 30px rgba(232,228,235,0.4)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = '0 0 30px rgba(104,105,110,0.35), 0 4px 20px rgba(104,105,110,0.25)';
+                    e.currentTarget.style.boxShadow = '0 0 30px rgba(232,228,235,0.35), 0 4px 20px rgba(232,228,235,0.25)';
                     e.currentTarget.style.transform = '';
                   }}
                 >
@@ -161,14 +161,14 @@ export default function Contact() {
             {/* RIGHT: Contact info */}
             <div
               className="relative p-8 md:p-12 lg:p-10 border-t lg:border-t-0 lg:border-l"
-              style={{ borderColor: 'rgba(104,105,110,0.1)', background: 'rgba(3,4,14,0.3)' }}
+              style={{ borderColor: 'rgba(232,228,235,0.1)', background: 'rgba(3,4,14,0.3)' }}
             >
               {/* Direct email card */}
               <div
                 className="rounded-2xl p-5 mb-4"
                 style={{
                   background: 'rgba(15,18,48,0.7)',
-                  border: '1px solid rgba(104,105,110,0.15)',
+                  border: '1px solid rgba(232,228,235,0.15)',
                 }}
               >
                 <div className="text-[10px] font-mono uppercase tracking-[0.2em] mb-2" style={{ color: 'rgba(121,134,203,0.5)' }}>
@@ -181,7 +181,7 @@ export default function Contact() {
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#a5b4fc'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#e8eaf6'; }}
                 >
-                  <Mail className="h-4 w-4 flex-shrink-0" style={{ color: '#68696e' }} />
+                  <Mail className="h-4 w-4 flex-shrink-0" style={{ color: '#e8e4eb' }} />
                   giridharsyamsamsani@gmail.com
                 </a>
                 <p className="mt-3 text-xs leading-relaxed" style={{ color: 'rgba(121,134,203,0.55)' }}>
@@ -218,7 +218,7 @@ export default function Contact() {
                     className="group flex items-center justify-between gap-3 rounded-xl px-4 py-3.5 text-sm font-bold transition-all duration-300"
                     style={{
                       background: 'rgba(15,18,48,0.5)',
-                      border: '1px solid rgba(104,105,110,0.1)',
+                      border: '1px solid rgba(232,228,235,0.1)',
                       color: '#e8eaf6',
                     }}
                     onMouseEnter={(e) => {
@@ -227,7 +227,7 @@ export default function Contact() {
                       e.currentTarget.style.transform = 'translateX(4px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(104,105,110,0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(232,228,235,0.1)';
                       e.currentTarget.style.boxShadow = 'none';
                       e.currentTarget.style.transform = '';
                     }}

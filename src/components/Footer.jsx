@@ -19,8 +19,8 @@ export default function Footer() {
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black font-mono text-white"
               style={{
-                background: 'linear-gradient(135deg, #68696e, #0c1f5e)',
-                boxShadow: '0 0 16px rgba(104,105,110,0.3)',
+                background: 'linear-gradient(135deg, #e8e4eb, #dbc0f0)',
+                boxShadow: '0 0 16px rgba(232,228,235,0.3)',
               }}
             >
               GS

@@ -37,7 +37,7 @@ function HoloCard({ project, onOpen }) {
       shineRef.current.style.background = `
         radial-gradient(circle at ${px}% ${py}%,
           rgba(255,255,255,0.08) 0%,
-          rgba(104,105,110,0.06) 40%,
+          rgba(232,228,235,0.06) 40%,
           transparent 70%
         )
       `;
@@ -62,7 +62,7 @@ function HoloCard({ project, onOpen }) {
       className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-150 group"
       style={{
         background: 'linear-gradient(135deg, rgba(15,18,48,0.95), rgba(8,11,26,0.98))',
-        border: `1px solid rgba(104,105,110,0.12)`,
+        border: `1px solid rgba(232,228,235,0.12)`,
         boxShadow: '0 4px 30px rgba(3,4,14,0.5)',
         willChange: 'transform',
         transformStyle: 'preserve-3d',
@@ -177,7 +177,7 @@ function HoloCard({ project, onOpen }) {
                 className="px-2.5 py-1 rounded-lg font-mono text-[10px] transition-colors"
                 style={{
                   background: 'rgba(29,32,102,0.4)',
-                  border: '1px solid rgba(104,105,110,0.15)',
+                  border: '1px solid rgba(232,228,235,0.15)',
                   color: 'rgba(121,134,203,0.7)',
                 }}
               >
@@ -222,7 +222,7 @@ export default function Projects() {
 
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(104,105,110,0.06) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,228,235,0.06) 0%, transparent 60%)',
         }} />
 
         <div className="max-w-7xl mx-auto">
@@ -235,14 +235,14 @@ export default function Projects() {
             className="mb-16"
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(104,105,110,0.6))' }} />
+              <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(232,228,235,0.6))' }} />
               <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">02 — Work</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
                 <span className="text-white">Featured </span>
                 <span style={{
-                  background: 'linear-gradient(135deg, #68696e, #68696e, #68696e)',
+                  background: 'linear-gradient(135deg, #e8e4eb, #e8e4eb, #e8e4eb)',
                   WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                 }}>Projects</span>
               </h2>
