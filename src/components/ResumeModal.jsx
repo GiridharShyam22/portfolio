@@ -64,7 +64,7 @@ export default function ResumeModal() {
             exit={{ opacity: 0, y: 24, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-x-4 sm:inset-x-auto sm:left-1/2 sm:-translate-x-1/2 sm:w-[560px] top-1/2 -translate-y-1/2 z-[201] rounded-3xl border border-white/10 bg-[#0e0c0a]/95 backdrop-blur-2xl shadow-2xl overflow-hidden"
-            style={{ boxShadow: '0 0 80px rgba(212,163,115,0.08), 0 32px 64px rgba(0,0,0,0.7)' }}
+            style={{ boxShadow: '0 0 80px rgba(212,163,115,0.08), 0 32px 64px rgba(11,19,43,0.7)' }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Subtle grid texture */}

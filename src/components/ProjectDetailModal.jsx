@@ -21,13 +21,13 @@ const ICON_MAP = {
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-[#dbc0f0]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-[#48cae4]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(59,130,246,0.12)',
     glowSolid: 'rgb(59,130,246)',
-    border: 'border-[#e8e4eb]/20',
+    border: 'border-[#00b4d8]/20',
     accent: 'text-blue-400',
-    accentBg: 'bg-[#e8e4eb]/10',
-    accentBorder: 'border-[#e8e4eb]/25',
+    accentBg: 'bg-[#00b4d8]/10',
+    accentBorder: 'border-[#00b4d8]/25',
     fadeColor: '#050a14',
   },
   2: {
@@ -149,7 +149,7 @@ export default function ProjectDetailModal({ project, onClose }) {
         exit={{ opacity: 0, y: 40, scale: 0.97 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed inset-0 sm:inset-x-4 sm:top-4 sm:bottom-4 md:inset-x-8 lg:inset-x-16 xl:inset-x-32 md:top-6 md:bottom-6 z-[101] flex flex-col rounded-none sm:rounded-3xl overflow-hidden border ${theme.border} shadow-2xl`}
-        style={{ boxShadow: `0 0 80px ${theme.glow}, 0 32px 64px rgba(0,0,0,0.6)` }}
+        style={{ boxShadow: `0 0 80px ${theme.glow}, 0 32px 64px rgba(11,19,43,0.6)` }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Themed gradient background */}

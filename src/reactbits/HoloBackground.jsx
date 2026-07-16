@@ -86,9 +86,9 @@ const HoloBackground = () => {
             const scanY = (Math.sin(time) * 0.5 + 0.5) * height;
 
             const scanGradient = ctx.createLinearGradient(0, scanY - 20, 0, scanY + 20);
-            scanGradient.addColorStop(0, 'rgba(0,0,0,0)');
+            scanGradient.addColorStop(0, 'rgba(11,19,43,0)');
             scanGradient.addColorStop(0.5, 'rgba(212, 163, 115, 0.1)');
-            scanGradient.addColorStop(1, 'rgba(0,0,0,0)');
+            scanGradient.addColorStop(1, 'rgba(11,19,43,0)');
 
             ctx.fillStyle = scanGradient;
             ctx.fillRect(0, scanY - 50, width, 100);

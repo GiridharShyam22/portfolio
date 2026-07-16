@@ -9,10 +9,10 @@ const SKILLS = [
 ];
 
 const STATS = [
-  { value: 'AI / ML', sub: 'Vision · NLP · Pipelines', color: '#e8e4eb' },
-  { value: 'Full-Stack', sub: 'React · Node · FastAPI', color: '#dbc0f0' },
-  { value: '15+', sub: 'Hackathons', color: '#e8e4eb' },
-  { value: '∞', sub: 'Learning Loop', color: '#e8e4eb' },
+  { value: 'AI / ML', sub: 'Vision · NLP · Pipelines', color: '#00b4d8' },
+  { value: 'Full-Stack', sub: 'React · Node · FastAPI', color: '#48cae4' },
+  { value: '15+', sub: 'Hackathons', color: '#00b4d8' },
+  { value: '∞', sub: 'Learning Loop', color: '#00b4d8' },
 ];
 
 /* ── 3D Orbital Skill Ring ─────────────────────────────── */
@@ -52,9 +52,9 @@ function OrbitRing({ skills, radius = 160, speed = 20, reverse = false }) {
                 className="px-2.5 py-1 rounded-full font-mono whitespace-nowrap text-[10px] font-medium pointer-events-auto cursor-default"
                 style={{
                   background: 'linear-gradient(135deg, rgba(29,32,102,0.7), rgba(15,18,48,0.85))',
-                  border: '1px solid rgba(232,228,235,0.25)',
+                  border: '1px solid rgba(0,180,216,0.25)',
                   color: 'rgba(165,180,252,0.9)',
-                  boxShadow: '0 0 10px rgba(232,228,235,0.1)',
+                  boxShadow: '0 0 10px rgba(0,180,216,0.1)',
                   backdropFilter: 'blur(10px)',
                 }}
               >
@@ -74,7 +74,7 @@ export default function About() {
 
       {/* Section background glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 70% 60% at 10% 50%, rgba(29,32,102,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 60%, rgba(232,228,235,0.06) 0%, transparent 50%)',
+        background: 'radial-gradient(ellipse 70% 60% at 10% 50%, rgba(29,32,102,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 60%, rgba(0,180,216,0.06) 0%, transparent 50%)',
       }} />
 
       <div className="max-w-7xl mx-auto">
@@ -88,7 +88,7 @@ export default function About() {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(232,228,235,0.6))' }} />
+            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(0,180,216,0.6))' }} />
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">01 — About</span>
           </div>
           <h2
@@ -97,7 +97,7 @@ export default function About() {
           >
             <span className="text-white">Who I </span>
             <span style={{
-              background: 'linear-gradient(135deg, #e8e4eb 0%, #e8e4eb 40%, #e8e4eb 100%)',
+              background: 'linear-gradient(135deg, #00b4d8 0%, #00b4d8 40%, #00b4d8 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>
               Am
@@ -118,7 +118,7 @@ export default function About() {
             <div className="space-y-6">
               <div
                 className="pl-5 border-l-2"
-                style={{ borderColor: 'rgba(232,228,235,0.5)' }}
+                style={{ borderColor: 'rgba(0,180,216,0.5)' }}
               >
                 <p className="text-lg md:text-xl leading-relaxed font-medium" style={{ color: 'rgba(232,234,246,0.9)' }}>
                   I'm <span className="font-bold" style={{ color: '#a5b4fc' }}>Giridhar Shyam Samsani</span> — a passionate AI & Machine Learning Developer with experience building intelligent applications using Computer Vision, ML pipelines, and full-stack technologies.
@@ -144,11 +144,11 @@ export default function About() {
                   className="text-center py-4 rounded-xl"
                   style={{
                     background: 'linear-gradient(135deg, rgba(29,32,102,0.35), rgba(8,11,26,0.7))',
-                    border: '1px solid rgba(232,228,235,0.15)',
+                    border: '1px solid rgba(0,180,216,0.15)',
                   }}
                 >
                   <div className="text-2xl font-black" style={{
-                    background: 'linear-gradient(135deg, #e8e4eb, #e8e4eb)',
+                    background: 'linear-gradient(135deg, #00b4d8, #00b4d8)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                   }}>{num}</div>
                   <div className="text-[11px] font-mono uppercase tracking-widest mt-1" style={{ color: 'rgba(121,134,203,0.7)' }}>{label}</div>
@@ -171,9 +171,9 @@ export default function About() {
               <div
                 className="w-28 h-28 rounded-full flex flex-col items-center justify-center z-10"
                 style={{
-                  background: 'radial-gradient(circle at 35% 35%, rgba(232,228,235,0.6), rgba(29,32,102,0.9) 60%, rgba(8,11,26,0.95))',
-                  border: '1px solid rgba(232,228,235,0.4)',
-                  boxShadow: '0 0 40px rgba(232,228,235,0.3), 0 0 80px rgba(232,228,235,0.15), inset 0 0 30px rgba(232,228,235,0.1)',
+                  background: 'radial-gradient(circle at 35% 35%, rgba(0,180,216,0.6), rgba(29,32,102,0.9) 60%, rgba(8,11,26,0.95))',
+                  border: '1px solid rgba(0,180,216,0.4)',
+                  boxShadow: '0 0 40px rgba(0,180,216,0.3), 0 0 80px rgba(0,180,216,0.15), inset 0 0 30px rgba(0,180,216,0.1)',
                   animation: 'pulse-glow 3s ease-in-out infinite',
                 }}
               >
@@ -188,8 +188,8 @@ export default function About() {
 
             {/* Ring outlines */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute w-[280px] h-[98px] rounded-full border border-dashed" style={{ borderColor: 'rgba(232,228,235,0.12)' }} />
-              <div className="absolute w-[390px] h-[136px] rounded-full border border-dashed" style={{ borderColor: 'rgba(232,228,235,0.08)' }} />
+              <div className="absolute w-[280px] h-[98px] rounded-full border border-dashed" style={{ borderColor: 'rgba(0,180,216,0.12)' }} />
+              <div className="absolute w-[390px] h-[136px] rounded-full border border-dashed" style={{ borderColor: 'rgba(0,180,216,0.08)' }} />
             </div>
           </motion.div>
         </div>
@@ -206,7 +206,7 @@ export default function About() {
               className="group p-6 rounded-2xl text-center cursor-default transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, rgba(15,18,48,0.8), rgba(8,11,26,0.9))',
-                border: '1px solid rgba(232,228,235,0.1)',
+                border: '1px solid rgba(0,180,216,0.1)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = `${color}40`;
@@ -214,7 +214,7 @@ export default function About() {
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(232,228,235,0.1)';
+                e.currentTarget.style.borderColor = 'rgba(0,180,216,0.1)';
                 e.currentTarget.style.boxShadow = 'none';
                 e.currentTarget.style.transform = '';
               }}
