@@ -2,117 +2,54 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const PARTICLE_COUNT = 100;
-const MAX_DISTANCE = 1.8;
+function LiquidPlane() {
+  const meshRef = useRef();
 
-function NeuralConstellation() {
-  const pointsRef = useRef();
-  const linesRef = useRef();
-
-  // Initialize random particle positions and velocities
-  const { positions, velocities } = useMemo(() => {
-    const pos = new Float32Array(PARTICLE_COUNT * 3);
-    const vel = [];
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      pos[i * 3] = (Math.random() - 0.5) * 12; // spread X
-      pos[i * 3 + 1] = (Math.random() - 0.5) * 8;  // spread Y
-      pos[i * 3 + 2] = (Math.random() - 0.5) * 4;  // spread Z
-      vel.push({
-        x: (Math.random() - 0.5) * 0.008,
-        y: (Math.random() - 0.5) * 0.008,
-        z: (Math.random() - 0.5) * 0.008
-      });
+  // Create a plane with high segment count for smooth waves
+  const geometry = useMemo(() => new THREE.PlaneGeometry(40, 40, 70, 70), []);
+  
+  // Store original positions for the wave math
+  const originalPositions = useMemo(() => {
+    const pos = geometry.attributes.position;
+    const orig = new Float32Array(pos.count);
+    for (let i = 0; i < pos.count; i++) {
+      orig[i] = pos.getZ(i);
     }
-    return { positions: pos, velocities: vel };
-  }, []);
+    return orig;
+  }, [geometry]);
 
-  const linesGeometry = useMemo(() => {
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6), 3));
-    geo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6), 3));
-    return geo;
-  }, []);
-
-  useFrame(() => {
-    if (!pointsRef.current || !linesRef.current) return;
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime();
+    const pos = geometry.attributes.position;
     
-    const positionsAttr = pointsRef.current.geometry.attributes.position;
-    const posArray = positionsAttr.array;
-
-    // Update positions
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      posArray[i * 3] += velocities[i].x;
-      posArray[i * 3 + 1] += velocities[i].y;
-      posArray[i * 3 + 2] += velocities[i].z;
-
-      // Soft boundary bounce
-      if (Math.abs(posArray[i * 3]) > 6) velocities[i].x *= -1;
-      if (Math.abs(posArray[i * 3 + 1]) > 4) velocities[i].y *= -1;
-      if (Math.abs(posArray[i * 3 + 2]) > 2) velocities[i].z *= -1;
+    // Animate vertices to create a liquid/wave effect
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i);
+      const y = pos.getY(i);
+      
+      // Combine multiple sine waves for organic fluid motion
+      const wave1 = 0.4 * Math.sin(x * 0.3 + time * 0.8);
+      const wave2 = 0.3 * Math.sin(y * 0.4 + time * 0.5);
+      const wave3 = 0.5 * Math.sin((x + y) * 0.15 - time * 0.6);
+      const wave4 = 0.15 * Math.sin(Math.sqrt(x*x + y*y) * 0.5 - time * 1.2);
+      
+      const z = originalPositions[i] + wave1 + wave2 + wave3 + wave4;
+      pos.setZ(i, z);
     }
-    positionsAttr.needsUpdate = true;
-
-    // Update lines
-    let lineIndex = 0;
-    const linePosAttr = linesGeometry.attributes.position;
-    const lineColorAttr = linesGeometry.attributes.color;
-    const linePos = linePosAttr.array;
-    const lineColor = lineColorAttr.array;
-
-    for (let i = 0; i < PARTICLE_COUNT; i++) {
-      for (let j = i + 1; j < PARTICLE_COUNT; j++) {
-        const dx = posArray[i * 3] - posArray[j * 3];
-        const dy = posArray[i * 3 + 1] - posArray[j * 3 + 1];
-        const dz = posArray[i * 3 + 2] - posArray[j * 3 + 2];
-        const distSq = dx * dx + dy * dy + dz * dz;
-
-        if (distSq < MAX_DISTANCE * MAX_DISTANCE) {
-          const alpha = 1.0 - Math.sqrt(distSq) / MAX_DISTANCE;
-          const colorIntensity = alpha * 0.25; // Subtle white/gray lines
-
-          linePos[lineIndex * 6] = posArray[i * 3];
-          linePos[lineIndex * 6 + 1] = posArray[i * 3 + 1];
-          linePos[lineIndex * 6 + 2] = posArray[i * 3 + 2];
-
-          linePos[lineIndex * 6 + 3] = posArray[j * 3];
-          linePos[lineIndex * 6 + 4] = posArray[j * 3 + 1];
-          linePos[lineIndex * 6 + 5] = posArray[j * 3 + 2];
-
-          lineColor[lineIndex * 6] = colorIntensity;
-          lineColor[lineIndex * 6 + 1] = colorIntensity;
-          lineColor[lineIndex * 6 + 2] = colorIntensity;
-          
-          lineColor[lineIndex * 6 + 3] = colorIntensity;
-          lineColor[lineIndex * 6 + 4] = colorIntensity;
-          lineColor[lineIndex * 6 + 5] = colorIntensity;
-
-          lineIndex++;
-        }
-      }
+    pos.needsUpdate = true;
+    
+    // Slowly rotate the entire liquid plane
+    if (meshRef.current) {
+      meshRef.current.rotation.z = time * 0.03;
     }
-    linesGeometry.setDrawRange(0, lineIndex * 2);
-    linePosAttr.needsUpdate = true;
-    lineColorAttr.needsUpdate = true;
   });
 
   return (
-    <group>
-      <points ref={pointsRef}>
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={positions.length / 3}
-            array={positions}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <pointsMaterial color="#ffffff" size={0.03} transparent opacity={0.7} sizeAttenuation={true} />
-      </points>
-
-      <lineSegments ref={linesRef} geometry={linesGeometry}>
-        <lineBasicMaterial vertexColors={true} transparent={true} blending={THREE.AdditiveBlending} depthWrite={false} />
-      </lineSegments>
-    </group>
+    // Tilt the plane so it looks like a floor stretching into the horizon
+    <mesh ref={meshRef} geometry={geometry} rotation={[-Math.PI / 2 + 0.2, 0, 0]} position={[0, -2.5, -8]}>
+      {/* Sleek monochrome wireframe reflecting the tech aesthetic */}
+      <meshBasicMaterial color="#52525b" wireframe transparent opacity={0.3} />
+    </mesh>
   );
 }
 
@@ -120,8 +57,9 @@ export default function HeroScene() {
   return (
     <div className="w-full h-full absolute inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-        <fog attach="fog" args={['#000000', 3, 8]} />
-        <NeuralConstellation />
+        {/* Aggressive black fog to fade the edges of the liquid plane into the darkness */}
+        <fog attach="fog" args={['#000000', 3, 18]} />
+        <LiquidPlane />
       </Canvas>
     </div>
   );
