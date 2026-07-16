@@ -110,7 +110,7 @@ function HoloAvatar({ imgSrc }) {
   return (
     <div
       className="relative"
-      style={{ width: 'clamp(320px, 45vw, 550px)', height: 'clamp(220px, 30vw, 360px)' }}
+      style={{ width: 'clamp(220px, 30vw, 360px)', height: 'clamp(320px, 45vw, 550px)' }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
@@ -147,7 +147,7 @@ function HoloAvatar({ imgSrc }) {
           <img
             src={imgSrc}
             alt="Giridhar Shyam"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[80%_50%] scale-110 origin-[80%_50%]"
             style={{ transform: 'translateZ(0)' }}
           />
 
