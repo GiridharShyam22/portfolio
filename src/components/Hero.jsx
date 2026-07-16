@@ -137,7 +137,7 @@ function HoloAvatar({ imgSrc }) {
 
         {/* Photo container */}
         <div
-          className="absolute inset-0 rounded-2xl overflow-hidden"
+          className="absolute inset-0 rounded-none overflow-hidden"
           style={{
             boxShadow:
               '0 0 0 1px rgba(104,105,110,0.25), 0 0 50px rgba(104,105,110,0.35), 0 0 100px rgba(12,31,94,0.5), inset 0 0 40px rgba(12,31,94,0.3)',
@@ -173,7 +173,7 @@ function HoloAvatar({ imgSrc }) {
           {/* Glare layer */}
           <div
             ref={glareRef}
-            className="absolute inset-0 pointer-events-none rounded-2xl transition-none z-10"
+            className="absolute inset-0 pointer-events-none rounded-none transition-none z-10"
           />
 
           {/* Bottom vignette */}
@@ -188,7 +188,7 @@ function HoloAvatar({ imgSrc }) {
 
         {/* Depth layer — "3D depth" effect */}
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none"
+          className="absolute inset-0 rounded-none pointer-events-none"
           style={{
             transform: 'translateZ(-8px)',
             background: 'rgba(104,105,110,0.08)',
