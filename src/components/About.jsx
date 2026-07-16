@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
+import SkillLoop from './SkillLoop';
 
 const SKILLS = [
   'Python', 'TensorFlow', 'OpenCV', 'PyTorch', 'Scikit-Learn',
@@ -157,40 +158,15 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* RIGHT: Orbital Skill Ring */}
+          {/* RIGHT: Infinite Skill Loop Marquee */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.9 }}
-            className="relative h-[360px] md:h-[420px]"
-            style={{ perspective: '1200px' }}
+            className="flex flex-col items-center justify-center relative w-full h-full min-h-[360px]"
           >
-            {/* Center orb */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div
-                className="w-28 h-28 rounded-full flex flex-col items-center justify-center z-10"
-                style={{
-                  background: 'radial-gradient(circle at 35% 35%, rgba(104,105,110,0.6), rgba(29,32,102,0.9) 60%, rgba(8,11,26,0.95))',
-                  border: '1px solid rgba(104,105,110,0.4)',
-                  boxShadow: '0 0 40px rgba(104,105,110,0.3), 0 0 80px rgba(104,105,110,0.15), inset 0 0 30px rgba(104,105,110,0.1)',
-                  animation: 'pulse-glow 3s ease-in-out infinite',
-                }}
-              >
-                <span className="text-2xl font-black text-white" style={{ fontFamily: 'Space Grotesk' }}>GS</span>
-                <span className="text-[9px] font-mono text-blue-300/70 tracking-widest uppercase mt-0.5">Skills</span>
-              </div>
-            </div>
-
-            {/* Orbit rings */}
-            <OrbitRing skills={SKILLS.slice(0, 10)} radius={140} speed={22} reverse={false} />
-            <OrbitRing skills={SKILLS.slice(10)} radius={195} speed={32} reverse={true} />
-
-            {/* Ring outlines */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute w-[280px] h-[98px] rounded-full border border-dashed" style={{ borderColor: 'rgba(104,105,110,0.12)' }} />
-              <div className="absolute w-[390px] h-[136px] rounded-full border border-dashed" style={{ borderColor: 'rgba(104,105,110,0.08)' }} />
-            </div>
+            <SkillLoop />
           </motion.div>
         </div>
 

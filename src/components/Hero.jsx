@@ -5,7 +5,7 @@ import { useResumeModal } from '../context/ResumeModalContext';
 import heroImg from '../assets/hero.jpg';
 
 const HeroScene = lazy(() => import('./3d/HeroScene'));
-const TechLogos = lazy(() => import('./3d/TechLogos'));
+
 
 /* ── Typewriter Hook ─────────────────────── */
 function useTypewriter(words, speed = 80, pause = 1800) {
@@ -340,11 +340,6 @@ export default function Hero() {
           <HeroScene />
         </Suspense>
       </div>
-
-      {/* ── 3D Tech Logos ── */}
-      <Suspense fallback={null}>
-        <TechLogos />
-      </Suspense>
 
       {/* Content grid */}
       <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
