@@ -45,10 +45,9 @@ function LiquidPlane() {
   });
 
   return (
-    // Tilt the plane so it looks like a floor stretching into the horizon
-    <mesh ref={meshRef} geometry={geometry} rotation={[-Math.PI / 2 + 0.2, 0, 0]} position={[0, -2.5, -8]}>
+    <mesh ref={meshRef} geometry={geometry} rotation={[-Math.PI / 2 + 0.15, 0, 0]} position={[0, -1.5, -3]}>
       {/* Sleek monochrome wireframe reflecting the tech aesthetic */}
-      <meshBasicMaterial color="#52525b" wireframe transparent opacity={0.3} />
+      <meshBasicMaterial color="#ffffff" wireframe transparent opacity={0.6} />
     </mesh>
   );
 }
@@ -56,9 +55,9 @@ function LiquidPlane() {
 export default function HeroScene() {
   return (
     <div className="w-full h-full absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+      <Canvas camera={{ position: [0, 0, 3], fov: 60 }}>
         {/* Aggressive black fog to fade the edges of the liquid plane into the darkness */}
-        <fog attach="fog" args={['#000000', 3, 18]} />
+        <fog attach="fog" args={['#000000', 1.5, 10]} />
         <LiquidPlane />
       </Canvas>
     </div>
