@@ -110,7 +110,7 @@ function HoloAvatar({ imgSrc }) {
   return (
     <div
       className="relative"
-      style={{ width: 'clamp(260px, 36vw, 400px)', height: 'clamp(260px, 36vw, 400px)' }}
+      style={{ width: 'clamp(340px, 45vw, 550px)', height: 'clamp(340px, 45vw, 550px)' }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
