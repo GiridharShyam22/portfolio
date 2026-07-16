@@ -1,10 +1,10 @@
-# Sri Ram Charan Nalla - Developer Profile & Project Analysis
+# Samsani Giridhar Shyam - Developer Profile & Project Analysis
 
-Based on a deep dive into the GitHub repositories (`Charan512`), here is a comprehensive analysis of the real-world skills, architecture patterns, and projects developed.
+Based on a deep dive into the GitHub repositories (`GiridharShyam22`), here is a comprehensive analysis of the real-world skills, architecture patterns, and projects developed.
 
 ## 🌟 Core Developer Identity
 
-Sri Ram Charan Nalla is a highly capable **Full-Stack Developer** and **ML/DL Engineer**. The codebases show a clear progression beyond basic tutorials into multi-service, production-grade applications that utilize modern architectural patterns (microservices, real-time WebSockets, IPFS, hardware integrations, and machine learning pipelines).
+Samsani Giridhar Shyam is a highly capable **Full-Stack Developer** and **ML/DL Engineer**. The codebases show a clear progression beyond basic tutorials into multi-service, production-grade applications that utilize modern architectural patterns (microservices, real-time WebSockets, IPFS, hardware integrations, and machine learning pipelines).
 
 ### Tech Stack Mastery
 
@@ -40,8 +40,8 @@ An AI-powered dashboard displaying live crypto asset charts, sentiment analyses,
 *   **Backend (`ManaHospitalAPI`):** Express.js API dealing with complex booking states and atomic transactions in MongoDB. Maps Firebase ID tokens to a local DB. Implements real-time IST schedule gating and offline administrative overrides (allowing walk-ins to bypass slot limits).
 *   **Frontend (`ManaHospitalUI`):** A Flutter app utilizing `go_router` for strict state-driven navigation, allowing granular booking logic ranging from self-booking to caretakers. 
 
-### 4. SmartSpend (Intelligent Expense Tracker)
-**Repo:** `smartSpend`
+### 4. Agent Flow AI (Intelligent Expense Tracker)
+**Repo:** `agent-flow-ai`
 
 *   A robust Next.js 15 and FastAPI application focusing on AI-driven financial tracking. 
 *   **Features:** Chat-based expense adding via NLP, Tesseract Receipt OCR processing, budget optimizers, and spending forecasts using ARIMA/Linear regression algorithms.
@@ -57,7 +57,7 @@ An AI-powered dashboard displaying live crypto asset charts, sentiment analyses,
 
 ## 🎯 Developer Persona & Summary
 
-The repositories conclusively prove that Sri Ram Charan is adept at **orchestrating complex systems**. He doesn't just build isolated apps; he maps out the interactions between databases, mobile clients, web dashboards, and AI inference engines. 
+The repositories conclusively prove that Giridhar Shyam is adept at **orchestrating complex systems**. He doesn't just build isolated apps; he maps out the interactions between databases, mobile clients, web dashboards, and AI inference engines. 
 
 His systems routinely demonstrate:
 1.  **Strict Security Practices:** Environment isolation, secure tokenization, and complex state machines (e.g., Trading Pulse's transaction ledger or Prajwalan's evaluator tiers).

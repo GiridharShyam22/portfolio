@@ -1,220 +1,296 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/projects';
-import { AnimatePresence } from 'framer-motion';
 import ProjectDetailModal from './ProjectDetailModal';
 
-const projectThemes = {
-  6: { // TalentRadar
-    logo: '/logos/talentradar.png',
-    gradient: "from-amber-500/10 to-transparent",
-    border: "group-hover:border-amber-500/50",
-    text: "group-hover:text-amber-400",
-    tagText: "text-amber-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(245,158,11,0.3)]",
-    iconColor: "text-amber-500",
-  },
-  1: { // Trading Pulse AI
-    logo: '/logos/tradingpulse.svg',
-    gradient: "from-blue-600/10 to-transparent",
-    border: "group-hover:border-blue-500/50",
-    text: "group-hover:text-blue-400",
-    tagText: "text-blue-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.25)]",
-    iconColor: "text-blue-500",
-  },
-  2: { // SmartSpend (Finance)
-    logo: '/logos/smartspend.png',
-    gradient: "from-teal-600/10 to-transparent",
-    border: "group-hover:border-teal-500/50",
-    text: "group-hover:text-teal-400",
-    tagText: "text-teal-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(20,184,166,0.25)]",
-    iconColor: "text-teal-500",
-  },
-  3: { // Soul Connect (Mental Health)
-    logo: '/logos/soulconnect.png',
-    gradient: "from-orange-600/10 to-transparent",
-    border: "group-hover:border-orange-400/50",
-    text: "group-hover:text-orange-400",
-    tagText: "text-orange-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(251,146,60,0.25)]",
-    iconColor: "text-orange-500",
-  },
-  4: { // Prajwalan (Hackathon)
-    logo: '/logos/prajwalan.png',
-    gradient: "from-rose-700/10 to-transparent",
-    border: "group-hover:border-rose-500/50",
-    text: "group-hover:text-rose-400",
-    tagText: "text-rose-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.25)]",
-    iconColor: "text-rose-500",
-  },
-  5: { // Mana Hospitals (Health)
-    logo: '/logos/manahospitals.png',
-    gradient: "from-stone-500/10 to-transparent",
-    border: "group-hover:border-stone-400/50",
-    text: "group-hover:text-stone-300",
-    tagText: "text-stone-400/50",
-    shadow: "hover:shadow-[0_20px_40px_-15px_rgba(168,162,158,0.25)]",
-    iconColor: "text-stone-400",
-  }
+/* ── Project theme config ──────────────────── */
+const themes = {
+  1: { color: '#60a5fa', glow: 'rgba(96,165,250,0.25)',  label: 'Trading AI' },
+  2: { color: '#2dd4bf', glow: 'rgba(45,212,191,0.25)',  label: 'Finance' },
+  3: { color: '#fb923c', glow: 'rgba(251,146,60,0.25)',  label: 'Mental Health AI' },
+  4: { color: '#f472b6', glow: 'rgba(244,114,182,0.25)', label: 'Event Platform' },
+  5: { color: '#a78bfa', glow: 'rgba(167,139,250,0.25)', label: 'Healthcare' },
+  6: { color: '#facc15', glow: 'rgba(250,204,21,0.25)',  label: 'AI Recruiting' },
 };
 
-export default function Projects() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const cardRefs = useRef([]);
+/* ── Holographic 3D Card ───────────────────── */
+function HoloCard({ project, onOpen }) {
+  const theme = themes[project.id] || themes[1];
+  const cardRef = useRef(null);
+  const shineRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const stickyTop = window.innerHeight * 0.15;
-      let current = 0;
-      cardRefs.current.forEach((ref, i) => {
-        if (ref) {
-          const rect = ref.getBoundingClientRect();
-          if (rect.top <= stickyTop + 50) current = i;
-        }
-      });
-      setActiveIndex(current);
-    };
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = (e.clientX - cx) / (rect.width / 2);
+    const dy = (e.clientY - cy) / (rect.height / 2);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    cardRef.current.style.transform =
+      `perspective(1000px) rotateY(${dx * 10}deg) rotateX(${-dy * 8}deg) translateZ(4px)`;
+
+    // Foil shine position
+    if (shineRef.current) {
+      const px = ((e.clientX - rect.left) / rect.width) * 100;
+      const py = ((e.clientY - rect.top) / rect.height) * 100;
+      shineRef.current.style.background = `
+        radial-gradient(circle at ${px}% ${py}%,
+          rgba(255,255,255,0.08) 0%,
+          rgba(79,110,247,0.06) 40%,
+          transparent 70%
+        )
+      `;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (cardRef.current) cardRef.current.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+    if (shineRef.current) shineRef.current.style.background = 'none';
+  };
 
   return (
-    <>
-      <section id="projects" className="relative z-10">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-accent to-amber-400 rounded-full" />
-        </div>
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => onOpen(project)}
+      role="button"
+      tabIndex={0}
+      aria-label={`View ${project.title} case study`}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpen(project); }}
+      className="relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-150 group"
+      style={{
+        background: 'linear-gradient(135deg, rgba(15,18,48,0.95), rgba(8,11,26,0.98))',
+        border: `1px solid rgba(79,110,247,0.12)`,
+        boxShadow: '0 4px 30px rgba(3,4,14,0.5)',
+        willChange: 'transform',
+        transformStyle: 'preserve-3d',
+        transition: 'transform 0.08s ease-out, box-shadow 0.3s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = `${theme.color}50`;
+        e.currentTarget.style.boxShadow = `0 8px 50px ${theme.glow}, 0 0 0 1px ${theme.color}20`;
+      }}
+    >
+      {/* Foil shine overlay */}
+      <div ref={shineRef} className="absolute inset-0 z-10 pointer-events-none rounded-2xl transition-none" />
 
-        {/* Sticky Scroll Counter */}
-        <div className="sticky top-[15vh] z-50 hidden xl:block pointer-events-none">
-          <div className="absolute right-8 lg:right-12 top-0 font-mono tracking-widest pointer-events-auto">
-            <div className="bg-bg2/80 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-5 flex flex-col items-center gap-1 shadow-2xl">
-              <span className="text-white text-2xl font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
-              <div className="w-4 h-px bg-accent/50" />
-              <span className="text-txt-dim text-sm">{String(projects.length).padStart(2, '0')}</span>
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px]"
+        style={{ background: `linear-gradient(90deg, transparent, ${theme.color}, transparent)`, opacity: 0.7 }} />
+
+      {/* Content */}
+      <div className="relative z-10 p-6 md:p-8 flex flex-col h-full" style={{ transformStyle: 'preserve-3d' }}>
+
+        {/* Header row */}
+        <div className="flex items-start justify-between gap-4 mb-4">
+          <div>
+            {/* Project type badge */}
+            <span
+              className="inline-block px-2.5 py-1 rounded-full font-mono text-[10px] tracking-widest uppercase mb-3"
+              style={{ background: `${theme.color}15`, border: `1px solid ${theme.color}35`, color: theme.color }}
+            >
+              {theme.label}
+            </span>
+            <h3
+              className="text-xl md:text-2xl font-bold leading-tight text-white group-hover:transition-colors"
+              style={{ transform: 'translateZ(8px)', fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              {project.title}
+            </h3>
+            <div className="text-xs font-mono mt-1" style={{ color: 'rgba(121,134,203,0.5)' }}>
+              {project.year} · {project.role}
             </div>
+          </div>
+
+          {/* Links */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200"
+                style={{
+                  background: `${theme.color}15`,
+                  border: `1px solid ${theme.color}30`,
+                  color: theme.color,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = `${theme.color}25`; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = `${theme.color}15`; }}
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Live
+              </a>
+            )}
+            {project.apkUrl && (
+              <a
+                href={project.apkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200"
+                style={{
+                  background: `${theme.color}15`,
+                  border: `1px solid ${theme.color}30`,
+                  color: theme.color,
+                }}
+              >
+                APK
+              </a>
+            )}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-1.5 rounded-lg transition-all duration-200"
+              style={{ color: 'rgba(121,134,203,0.5)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(121,134,203,0.5)'; }}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 md:gap-32 pb-32">
-          {projects.map((project, index) => {
-            const theme = projectThemes[project.id];
+        {/* Description */}
+        <p
+          className="text-sm md:text-base leading-relaxed flex-1 mb-5"
+          style={{ color: 'rgba(121,134,203,0.85)', transform: 'translateZ(4px)' }}
+        >
+          {project.description.length > 160 ? project.description.slice(0, 160) + '…' : project.description}
+        </p>
 
-            return (
-              <div
-                key={project.id}
-                ref={(el) => (cardRefs.current[index] = el)}
-                data-index={index}
-                className="relative md:sticky md:top-[15vh] mb-8 md:mb-0 transition-transform duration-500"
-                style={{ zIndex: 10 + index }}
+        {/* Tags + View Case Study */}
+        <div className="flex items-end justify-between gap-3 mt-auto">
+          <div className="flex flex-wrap gap-2">
+            {project.tags.slice(0, 4).map(tag => (
+              <span
+                key={tag}
+                className="px-2.5 py-1 rounded-lg font-mono text-[10px] transition-colors"
+                style={{
+                  background: 'rgba(29,32,102,0.4)',
+                  border: '1px solid rgba(79,110,247,0.15)',
+                  color: 'rgba(121,134,203,0.7)',
+                }}
               >
-                {/* Clickable card — opens modal */}
-                <div
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`View ${project.title} case study`}
-                  onClick={() => setSelectedProject(project)}
-                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedProject(project); }}
-                  className={`bg-bg2 border border-white/10 rounded-3xl p-5 md:p-12 max-w-5xl mx-auto min-h-[420px] md:h-[420px] flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 cursor-pointer ${theme.border} ${theme.shadow}`}
-                >
-                  {/* Massive Watermark Logo */}
-                  <div className="absolute -right-4 -top-4 w-[280px] h-[280px] opacity-[0.07] group-hover:opacity-[0.18] transition-opacity duration-700 pointer-events-none -rotate-12">
-                    <img src={theme.logo} alt="" className="w-full h-full object-contain" draggable={false} />
-                  </div>
+                {tag}
+              </span>
+            ))}
+            {project.tags.length > 4 && (
+              <span className="px-2 py-1 rounded-lg font-mono text-[10px]" style={{ color: 'rgba(121,134,203,0.4)' }}>
+                +{project.tags.length - 4}
+              </span>
+            )}
+          </div>
 
-                  {/* Thematic gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
+          <div
+            className="flex-shrink-0 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1"
+            style={{ color: theme.color }}
+          >
+            Case study →
+          </div>
+        </div>
+      </div>
 
-                  {/* "View case study" hover pill */}
-                  <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 pointer-events-none">
-                    <span className="text-xs font-mono tracking-widest uppercase bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-2 text-white/70">
-                      View case study
-                    </span>
-                  </div>
+      {/* Bottom glow */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ background: `linear-gradient(90deg, transparent, ${theme.color}, transparent)` }}
+      />
+    </div>
+  );
+}
 
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4">
-                      <div>
-                        <span className="text-txt-dim font-mono text-xs tracking-wider uppercase mb-1 block">{project.year}</span>
-                        <h3 className={`text-2xl md:text-4xl font-extrabold text-white mt-1 transition-colors duration-300 ${theme.text}`}>
-                          {project.title}
-                        </h3>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-2 md:gap-4 mt-0">
-                        {project.demoUrl && (
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
-                          >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Live Demo
-                          </a>
-                        )}
-                        {project.apkUrl && (
-                          <a
-                            href={project.apkUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
-                          >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            Download APK
-                          </a>
-                        )}
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className={`opacity-40 hover:opacity-100 transition-opacity p-2 ${theme.iconColor} hover:brightness-150`}
-                        >
-                          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
+/* ── Projects Section ─────────────────────── */
+export default function Projects() {
+  const [selected, setSelected] = useState(null);
 
-                    <p className="text-txt-mid text-base md:text-xl leading-relaxed mb-4 md:mb-8 max-w-3xl font-medium">
-                      {project.description}
-                    </p>
+  const featured = projects.filter(p => p.featured);
+  const rest     = projects.filter(p => !p.featured);
 
-                    <div className="flex flex-wrap gap-3 mt-auto">
-                      {project.tags.map(tag => (
-                        <span key={tag} className={`px-4 py-2 text-xs font-mono rounded-xl bg-bg3 border border-white/5 transition-all duration-300 group-hover:border-white/10 hover:!border-current ${theme.tagText} ${theme.text}`}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+  return (
+    <>
+      <section id="projects" className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden">
+
+        {/* Background glow */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79,110,247,0.06) 0%, transparent 60%)',
+        }} />
+
+        <div className="max-w-7xl mx-auto">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(79,110,247,0.6))' }} />
+              <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">02 — Work</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
+                <span className="text-white">Featured </span>
+                <span style={{
+                  background: 'linear-gradient(135deg, #8899ff, #4f6ef7, #00b4ff)',
+                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+                }}>Projects</span>
+              </h2>
+              <p className="text-sm font-mono max-w-xs text-right" style={{ color: 'rgba(121,134,203,0.6)' }}>
+                {projects.length} projects · Click any card to explore the full case study
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Featured: 3-col on large, 1-col on small */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+            {featured.map((project, i) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: i * 0.12, duration: 0.6 }}
+              >
+                <HoloCard project={project} onOpen={setSelected} />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Rest: 2-col */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {rest.map((project, i) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+              >
+                <HoloCard project={project} onOpen={setSelected} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Modal — rendered outside section to avoid stacking context issues */}
+      {/* Project Detail Modal */}
       <AnimatePresence>
-        {selectedProject && (
+        {selected && (
           <ProjectDetailModal
-            key={selectedProject.id}
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
+            key={selected.id}
+            project={selected}
+            onClose={() => setSelected(null)}
           />
         )}
       </AnimatePresence>
