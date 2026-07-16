@@ -9,8 +9,8 @@ const timeline = [
     badgePulse: true,
     title: 'Coordinator — GCC Coding Club',
     sub: 'Technical Leadership',
-    color: '#737373',
-    glow: 'rgba(115,115,115,0.25)',
+    color: '#727272',
+    glow: 'rgba(114,114,114,0.25)',
     icon: RiCodeSSlashLine,
     points: [
       'Coordinating coding activities, technical events, and peer learning initiatives across the college',
@@ -46,8 +46,8 @@ const achievements = [
     desc: 'Secured Runner-Up position demonstrating strong presentation, teamwork, and communication skills under competitive pressure.',
     stat: '2nd Place',
     statLabel: 'Recognition',
-    color: '#737373',
-    glow: 'rgba(245,158,11,0.3)',
+    color: '#727272',
+    glow: 'rgba(167,167,167,0.3)',
   },
   {
     id: 'hackathons',
@@ -58,16 +58,16 @@ const achievements = [
     desc: 'Participated in 15+ monthly hackathons, gaining hands-on experience in innovation, rapid prototyping, teamwork, and problem-solving.',
     stat: '15+ Events',
     statLabel: 'Experience',
-    color: '#737373',
-    glow: 'rgba(115,115,115,0.25)',
+    color: '#727272',
+    glow: 'rgba(114,114,114,0.25)',
   },
 ];
 
 const smallCards = [
-  { icon: RiCodeSSlashLine, badge: 'Coordinator', title: 'GCC Coding Club', desc: 'Coordinating coding activities and events to foster programming culture.', color: '#737373' },
+  { icon: RiCodeSSlashLine, badge: 'Coordinator', title: 'GCC Coding Club', desc: 'Coordinating coding activities and events to foster programming culture.', color: '#727272' },
   { icon: RiTeamLine,       badge: 'Organizer',   title: 'Tech Expo',       desc: 'Organized a college-level Tech Expo with project showcases.', color: '#171717' },
-  { icon: RiRocketLine,     badge: 'Builder',      title: 'AI & ML Projects', desc: 'Developed multiple AI/ML and full-stack projects solving real-world challenges.', color: '#737373' },
-  { icon: RiAwardLine,      badge: 'Innovator',    title: 'Rapid Prototyping', desc: 'Consistent track record building functional prototypes under time constraints.', color: '#737373' },
+  { icon: RiRocketLine,     badge: 'Builder',      title: 'AI & ML Projects', desc: 'Developed multiple AI/ML and full-stack projects solving real-world challenges.', color: '#727272' },
+  { icon: RiAwardLine,      badge: 'Innovator',    title: 'Rapid Prototyping', desc: 'Consistent track record building functional prototypes under time constraints.', color: '#727272' },
 ];
 
 /* ── Timeline Node ─────────────────────── */
@@ -88,7 +88,7 @@ function TimelineEntry({ item, index }) {
           className="w-4 h-4 rounded-full flex-shrink-0 mt-1.5 z-10"
           style={{
             background: item.color,
-            boxShadow: `0 0 0 4px rgba(3,4,14,0.8), 0 0 16px ${item.glow}`,
+            boxShadow: `0 0 0 4px rgba(4,4,4,0.8), 0 0 16px ${item.glow}`,
             animation: 'node-pulse 3s ease-in-out infinite',
           }}
         />
@@ -100,15 +100,15 @@ function TimelineEntry({ item, index }) {
       <div
         className="flex-1 mb-10 rounded-2xl overflow-hidden transition-all duration-300 group"
         style={{
-          background: 'linear-gradient(135deg, rgba(15,18,48,0.9), rgba(8,11,26,0.95))',
-          border: `1px solid rgba(115,115,115,0.1)`,
+          background: 'linear-gradient(135deg, rgba(20,20,20,0.9), rgba(11,11,11,0.95))',
+          border: `1px solid rgba(114,114,114,0.1)`,
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.borderColor = `${item.color}40`;
           e.currentTarget.style.boxShadow = `0 0 30px ${item.glow}`;
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.borderColor = 'rgba(115,115,115,0.1)';
+          e.currentTarget.style.borderColor = 'rgba(114,114,114,0.1)';
           e.currentTarget.style.boxShadow = 'none';
         }}
       >
@@ -131,11 +131,11 @@ function TimelineEntry({ item, index }) {
           <h4 className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-neutral-200 transition-colors" style={{ fontFamily: 'Space Grotesk' }}>
             {item.title}
           </h4>
-          <div className="text-sm font-medium mb-5" style={{ color: 'rgba(121,134,203,0.7)' }}>{item.sub}</div>
+          <div className="text-sm font-medium mb-5" style={{ color: 'rgba(229,229,229,0.7)' }}>{item.sub}</div>
 
           <ul className="space-y-3 mb-5">
             {item.points.map((pt, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: 'rgba(121,134,203,0.8)' }}>
+              <li key={i} className="flex items-start gap-3 text-sm leading-relaxed" style={{ color: 'rgba(229,229,229,0.8)' }}>
                 <span className="mt-1 flex-shrink-0" style={{ color: item.color }}>▹</span>
                 {pt}
               </li>
@@ -170,7 +170,7 @@ function AchievementCard({ item, index }) {
       transition={{ duration: 0.6, delay: index * 0.12 }}
       className="relative overflow-hidden rounded-2xl transition-all duration-300 group cursor-default"
       style={{
-        background: `linear-gradient(135deg, rgba(15,18,48,0.98), ${item.color}18, rgba(8,11,26,0.98))`,
+        background: `linear-gradient(135deg, rgba(20,20,20,0.98), ${item.color}18, rgba(11,11,11,0.98))`,
         border: `1px solid ${item.color}25`,
       }}
       onMouseEnter={(e) => {
@@ -203,10 +203,10 @@ function AchievementCard({ item, index }) {
         <div className="flex items-start justify-between gap-4">
           <div>
             <h4 className="text-xl font-black text-white mb-2" style={{ fontFamily: 'Space Grotesk' }}>{item.title}</h4>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(121,134,203,0.8)' }}>{item.desc}</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'rgba(229,229,229,0.8)' }}>{item.desc}</p>
           </div>
           <div className="flex-shrink-0 text-right px-4 py-3 rounded-xl" style={{ background: `${item.color}08`, border: `1px solid ${item.color}20` }}>
-            <div className="text-[10px] font-mono uppercase tracking-widest mb-1" style={{ color: 'rgba(121,134,203,0.5)' }}>{item.statLabel}</div>
+            <div className="text-[10px] font-mono uppercase tracking-widest mb-1" style={{ color: 'rgba(229,229,229,0.5)' }}>{item.statLabel}</div>
             <div className="text-base font-black" style={{ color: item.color }}>{item.stat}</div>
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function Experience() {
 
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 70% 50% at 80% 50%, rgba(29,32,102,0.12) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse 70% 50% at 80% 50%, rgba(39,39,39,0.12) 0%, transparent 60%)',
       }} />
 
       <div className="max-w-7xl mx-auto">
@@ -234,13 +234,13 @@ export default function Experience() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(115,115,115,0.6))' }} />
+            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(114,114,114,0.6))' }} />
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-neutral-400/70">03 — Journey</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
             <span className="text-white">Activities & </span>
             <span style={{
-              background: 'linear-gradient(135deg, #737373, #737373, #171717)',
+              background: 'linear-gradient(135deg, #727272, #727272, #171717)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>Achievements</span>
           </h2>
@@ -250,8 +250,8 @@ export default function Experience() {
 
           {/* LEFT: Timeline */}
           <div>
-            <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(121,134,203,0.7)' }}>
-              <span style={{ color: '#737373' }}>/</span> Leadership
+            <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(229,229,229,0.7)' }}>
+              <span style={{ color: '#727272' }}>/</span> Leadership
             </h3>
             {timeline.map((item, i) => (
               <TimelineEntry key={item.id} item={item} index={i} />
@@ -260,8 +260,8 @@ export default function Experience() {
 
           {/* RIGHT: Achievements */}
           <div>
-            <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(121,134,203,0.7)' }}>
-              <span style={{ color: '#737373' }}>/</span> Recognition
+            <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(229,229,229,0.7)' }}>
+              <span style={{ color: '#727272' }}>/</span> Recognition
             </h3>
 
             <div className="space-y-4 mb-6">
@@ -281,15 +281,15 @@ export default function Experience() {
                   transition={{ delay: i * 0.08 }}
                   className="p-4 rounded-xl transition-all duration-300 cursor-default"
                   style={{
-                    background: 'rgba(15,18,48,0.7)',
-                    border: '1px solid rgba(115,115,115,0.1)',
+                    background: 'rgba(20,20,20,0.7)',
+                    border: '1px solid rgba(114,114,114,0.1)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = `${color}40`;
                     e.currentTarget.style.boxShadow = `0 0 20px ${color}15`;
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(115,115,115,0.1)';
+                    e.currentTarget.style.borderColor = 'rgba(114,114,114,0.1)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
@@ -298,7 +298,7 @@ export default function Experience() {
                     <Icon style={{ fontSize: '1.2rem', color, opacity: 0.6 }} />
                   </div>
                   <h4 className="text-sm font-bold text-white mb-1">{title}</h4>
-                  <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(121,134,203,0.6)' }}>{desc}</p>
+                  <p className="text-[11px] leading-relaxed" style={{ color: 'rgba(229,229,229,0.6)' }}>{desc}</p>
                 </motion.div>
               ))}
             </div>

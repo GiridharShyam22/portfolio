@@ -21,64 +21,64 @@ const ICON_MAP = {
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-[#171717]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(59,130,246,0.12)',
+    bg: 'from-[#171717]/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(121,121,121,0.12)',
     glowSolid: 'rgb(59,130,246)',
-    border: 'border-[#737373]/20',
+    border: 'border-[#727272]/20',
     accent: 'text-neutral-400',
-    accentBg: 'bg-[#737373]/10',
-    accentBorder: 'border-[#737373]/25',
-    fadeColor: '#050a14',
+    accentBg: 'bg-[#727272]/10',
+    accentBorder: 'border-[#727272]/25',
+    fadeColor: '#090909',
   },
   2: {
-    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(20,184,166,0.12)',
+    bg: 'from-neutral-950/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(132,132,132,0.12)',
     glowSolid: 'rgb(20,184,166)',
     border: 'border-neutral-500/20',
     accent: 'text-neutral-400',
     accentBg: 'bg-neutral-500/10',
     accentBorder: 'border-neutral-500/25',
-    fadeColor: '#051412',
+    fadeColor: '#0f0f0f',
   },
   3: {
-    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(251,146,60,0.12)',
+    bg: 'from-neutral-950/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(167,167,167,0.12)',
     glowSolid: 'rgb(251,146,60)',
     border: 'border-neutral-500/20',
     accent: 'text-neutral-400',
     accentBg: 'bg-neutral-500/10',
     accentBorder: 'border-neutral-500/25',
-    fadeColor: '#140a04',
+    fadeColor: '#0c0c0c',
   },
   4: {
-    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(244,63,94,0.12)',
+    bg: 'from-neutral-950/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(120,120,120,0.12)',
     glowSolid: 'rgb(244,63,94)',
     border: 'border-neutral-500/20',
     accent: 'text-neutral-400',
     accentBg: 'bg-neutral-500/10',
     accentBorder: 'border-neutral-500/25',
-    fadeColor: '#140206',
+    fadeColor: '#070707',
   },
   5: {
-    bg: 'from-stone-900/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(168,162,158,0.12)',
+    bg: 'from-stone-900/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(163,163,163,0.12)',
     glowSolid: 'rgb(168,162,158)',
     border: 'border-stone-500/20',
     accent: 'text-stone-300',
     accentBg: 'bg-stone-500/10',
     accentBorder: 'border-stone-500/25',
-    fadeColor: '#0e0d0c',
+    fadeColor: '#0d0d0d',
   },
   6: {
-    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
-    glow: 'rgba(245,158,11,0.12)',
+    bg: 'from-neutral-950/95 via-[#0a0a0a]/98 to-[#0a0a0a]/98',
+    glow: 'rgba(167,167,167,0.12)',
     glowSolid: 'rgb(245,158,11)',
     border: 'border-neutral-500/20',
     accent: 'text-neutral-400',
     accentBg: 'bg-neutral-500/10',
     accentBorder: 'border-neutral-500/25',
-    fadeColor: '#140d02',
+    fadeColor: '#0d0d0d',
   },
 };
 
@@ -161,7 +161,7 @@ export default function ProjectDetailModal({ project, onClose }) {
         <div ref={scrollRef} className="relative flex flex-col h-full overflow-y-auto">
 
           {/* HEADER */}
-          <div className={`sticky top-0 z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-6 md:px-12 py-6 border-b ${theme.border} bg-[#0c0a09]/85 backdrop-blur-xl`}>
+          <div className={`sticky top-0 z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-6 md:px-12 py-6 border-b ${theme.border} bg-[#0a0a0a]/85 backdrop-blur-xl`}>
             <div className="flex flex-col gap-1.5 min-w-0">
               <div className={`flex items-center gap-2.5 text-xs font-mono tracking-widest uppercase ${theme.accent}`}>
                 <span className="inline-block w-2 h-2 rounded-full" style={{ background: theme.glowSolid }} />
@@ -267,7 +267,7 @@ export default function ProjectDetailModal({ project, onClose }) {
             <div className="grid md:grid-cols-2 gap-8">
 
               {/* Key Features */}
-              <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7`}>
+              <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0a0a0a]/60 p-7`}>
                 <h3 className={`text-xs font-mono tracking-widest uppercase mb-6 ${theme.accent}`}>Key Features</h3>
                 <ul className="space-y-4">
                   {project.keyFeatures.map((f, i) => (
@@ -281,11 +281,11 @@ export default function ProjectDetailModal({ project, onClose }) {
 
               {/* Architecture + Outcome */}
               <div className="flex flex-col gap-8">
-                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7 flex-1`}>
+                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0a0a0a]/60 p-7 flex-1`}>
                   <h3 className={`text-xs font-mono tracking-widest uppercase mb-4 ${theme.accent}`}>Architecture</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{project.architectureNotes}</p>
                 </div>
-                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0c0a09]/60 p-7 flex-1`}>
+                <div className={`rounded-2xl border ${theme.accentBorder} bg-[#0a0a0a]/60 p-7 flex-1`}>
                   <h3 className={`text-xs font-mono tracking-widest uppercase mb-4 ${theme.accent}`}>Outcome</h3>
                   <p className="text-sm text-white/70 leading-relaxed">{project.outcome}</p>
                 </div>

@@ -48,7 +48,7 @@ export default function LoadingScreen({ onComplete }) {
             className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(115,115,115,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(115,115,115,0.04) 1px, transparent 1px)',
+                'linear-gradient(rgba(114,114,114,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(114,114,114,0.04) 1px, transparent 1px)',
               backgroundSize: '40px 40px',
             }}
           />
@@ -58,7 +58,7 @@ export default function LoadingScreen({ onComplete }) {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(115,115,115,0.1) 0%, transparent 70%)',
+                'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(114,114,114,0.1) 0%, transparent 70%)',
             }}
           />
 
@@ -72,19 +72,19 @@ export default function LoadingScreen({ onComplete }) {
             <div
               className="w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-black font-mono text-white"
               style={{
-                background: 'linear-gradient(135deg, #737373, #171717)',
-                boxShadow: '0 0 40px rgba(115,115,115,0.6), 0 0 80px rgba(115,115,115,0.2)',
+                background: 'linear-gradient(135deg, #727272, #171717)',
+                boxShadow: '0 0 40px rgba(114,114,114,0.6), 0 0 80px rgba(114,114,114,0.2)',
               }}
             >
               GS
             </div>
             {/* Orbiting ring */}
             <div
-              className="absolute -inset-3 rounded-full border border-[#737373]/20"
+              className="absolute -inset-3 rounded-full border border-[#727272]/20"
               style={{ animation: 'spin 4s linear infinite' }}
             />
             <div
-              className="absolute -inset-6 rounded-full border border-dashed border-[#737373]/10"
+              className="absolute -inset-6 rounded-full border border-dashed border-[#727272]/10"
               style={{ animation: 'spin 8s linear infinite reverse' }}
             />
           </motion.div>
@@ -96,22 +96,22 @@ export default function LoadingScreen({ onComplete }) {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="w-full max-w-md mx-6 rounded-2xl overflow-hidden"
             style={{
-              background: 'rgba(8,11,26,0.95)',
-              border: '1px solid rgba(115,115,115,0.2)',
-              boxShadow: '0 20px 60px rgba(3,4,14,0.8)',
+              background: 'rgba(11,11,11,0.95)',
+              border: '1px solid rgba(114,114,114,0.2)',
+              boxShadow: '0 20px 60px rgba(4,4,4,0.8)',
             }}
           >
             {/* Terminal title bar */}
             <div
               className="flex items-center gap-2 px-4 py-3 border-b"
-              style={{ borderColor: 'rgba(115,115,115,0.1)' }}
+              style={{ borderColor: 'rgba(114,114,114,0.1)' }}
             >
               <div className="w-3 h-3 rounded-full bg-neutral-500/70" />
               <div className="w-3 h-3 rounded-full bg-neutral-500/70" />
               <div className="w-3 h-3 rounded-full bg-neutral-500/70" />
               <span
                 className="ml-2 text-xs font-mono"
-                style={{ color: 'rgba(121,134,203,0.5)' }}
+                style={{ color: 'rgba(229,229,229,0.5)' }}
               >
                 portfolio.exe — bash
               </span>
@@ -129,10 +129,10 @@ export default function LoadingScreen({ onComplete }) {
                   style={{
                     color:
                       line.includes('✓')
-                        ? '#4ade80'
+                        ? '#ffffff'
                         : line.includes('ready')
-                        ? '#a5b4fc'
-                        : 'rgba(121,134,203,0.8)',
+                        ? '#b7b7b7'
+                        : 'rgba(229,229,229,0.8)',
                   }}
                 >
                   {line}
@@ -140,7 +140,7 @@ export default function LoadingScreen({ onComplete }) {
                     <span
                       className="inline-block w-2 h-3 ml-1 align-middle"
                       style={{
-                        background: '#737373',
+                        background: '#727272',
                         animation: 'blink-cursor 1s step-end infinite',
                       }}
                     />
@@ -153,13 +153,13 @@ export default function LoadingScreen({ onComplete }) {
             <div className="px-4 pb-4">
               <div
                 className="relative h-1 rounded-full overflow-hidden"
-                style={{ background: 'rgba(115,115,115,0.1)' }}
+                style={{ background: 'rgba(114,114,114,0.1)' }}
               >
                 <motion.div
                   className="absolute inset-y-0 left-0 rounded-full"
                   style={{
-                    background: 'linear-gradient(90deg, #737373, #171717, #737373)',
-                    boxShadow: '0 0 8px rgba(115,115,115,0.6)',
+                    background: 'linear-gradient(90deg, #727272, #171717, #727272)',
+                    boxShadow: '0 0 8px rgba(114,114,114,0.6)',
                   }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.15, ease: 'linear' }}
@@ -167,7 +167,7 @@ export default function LoadingScreen({ onComplete }) {
               </div>
               <div
                 className="flex justify-between mt-2 text-[10px] font-mono"
-                style={{ color: 'rgba(121,134,203,0.4)' }}
+                style={{ color: 'rgba(229,229,229,0.4)' }}
               >
                 <span>Loading</span>
                 <span>{progress}%</span>

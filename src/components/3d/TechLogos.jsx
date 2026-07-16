@@ -12,16 +12,16 @@ function ReactLogo(props) {
   return (
     <group ref={group} {...props}>
       <Sphere args={[0.3, 32, 32]}>
-        <meshStandardMaterial color="#61dafb" emissive="#61dafb" emissiveIntensity={0.5} toneMapped={false} />
+        <meshStandardMaterial color="#b9b9b9" emissive="#b9b9b9" emissiveIntensity={0.5} toneMapped={false} />
       </Sphere>
       <Torus args={[0.8, 0.05, 16, 100]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#61dafb" />
+        <meshStandardMaterial color="#b9b9b9" />
       </Torus>
       <Torus args={[0.8, 0.05, 16, 100]} rotation={[Math.PI / 2, 0, Math.PI / 3]}>
-        <meshStandardMaterial color="#61dafb" />
+        <meshStandardMaterial color="#b9b9b9" />
       </Torus>
       <Torus args={[0.8, 0.05, 16, 100]} rotation={[Math.PI / 2, 0, -Math.PI / 3]}>
-        <meshStandardMaterial color="#61dafb" />
+        <meshStandardMaterial color="#b9b9b9" />
       </Torus>
     </group>
   );
@@ -38,7 +38,7 @@ function AILogo(props) {
   return (
     <group ref={group} {...props}>
       <Icosahedron args={[0.7, 1]}>
-        <meshStandardMaterial color="#10b981" wireframe emissive="#10b981" emissiveIntensity={0.8} toneMapped={false} />
+        <meshStandardMaterial color="#808080" wireframe emissive="#808080" emissiveIntensity={0.8} toneMapped={false} />
       </Icosahedron>
       <Sphere args={[0.15, 16, 16]}>
         <meshStandardMaterial color="#ffffff" emissive="#ffffff" emissiveIntensity={1} />
@@ -58,13 +58,13 @@ function DBLogo(props) {
   return (
     <group ref={group} {...props}>
       <Cylinder args={[0.6, 0.6, 0.3, 32]} position={[0, 0.5, 0]}>
-        <meshStandardMaterial color="#f59e0b" />
+        <meshStandardMaterial color="#a7a7a7" />
       </Cylinder>
       <Cylinder args={[0.6, 0.6, 0.3, 32]} position={[0, 0, 0]}>
-        <meshStandardMaterial color="#f59e0b" />
+        <meshStandardMaterial color="#a7a7a7" />
       </Cylinder>
       <Cylinder args={[0.6, 0.6, 0.3, 32]} position={[0, -0.5, 0]}>
-        <meshStandardMaterial color="#f59e0b" />
+        <meshStandardMaterial color="#a7a7a7" />
       </Cylinder>
     </group>
   );
@@ -81,10 +81,10 @@ function PythonLogo(props) {
   return (
     <group ref={group} {...props}>
       <Torus args={[0.5, 0.2, 16, 50]} position={[0, 0.2, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#3776AB" />
+        <meshStandardMaterial color="#696969" />
       </Torus>
       <Torus args={[0.5, 0.2, 16, 50]} position={[0.2, -0.2, 0.1]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#FFD43B" />
+        <meshStandardMaterial color="#cfcfcf" />
       </Torus>
     </group>
   );

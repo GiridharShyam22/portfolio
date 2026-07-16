@@ -8,25 +8,25 @@ import {
 } from 'react-icons/si';
 
 const SKILLS_TOP = [
-  { name: 'Python', icon: SiPython, color: '#3776AB' },
-  { name: 'TensorFlow', icon: SiTensorflow, color: '#FF6F00' },
-  { name: 'OpenCV', icon: SiOpencv, color: '#5C3EE8' },
-  { name: 'PyTorch', icon: SiPytorch, color: '#EE4C2C' },
-  { name: 'Scikit-Learn', icon: SiScikitlearn, color: '#F7931E' },
-  { name: 'React', icon: SiReact, color: '#61DAFB' },
+  { name: 'Python', icon: SiPython, color: '#696969' },
+  { name: 'TensorFlow', icon: SiTensorflow, color: '#8d8d8d' },
+  { name: 'OpenCV', icon: SiOpencv, color: '#5a5a5a' },
+  { name: 'PyTorch', icon: SiPytorch, color: '#787878' },
+  { name: 'Scikit-Learn', icon: SiScikitlearn, color: '#a3a3a3' },
+  { name: 'React', icon: SiReact, color: '#b9b9b9' },
   { name: 'Next.js', icon: SiNextdotjs, color: '#ffffff' },
-  { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
-  { name: 'FastAPI', icon: SiFastapi, color: '#009688' }
+  { name: 'Node.js', icon: SiNodedotjs, color: '#6e6e6e' },
+  { name: 'FastAPI', icon: SiFastapi, color: '#676767' }
 ];
 
 const SKILLS_BOTTOM = [
-  { name: 'Flutter', icon: SiFlutter, color: '#02569B' },
-  { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1' },
-  { name: 'Docker', icon: SiDocker, color: '#2496ED' },
-  { name: 'Socket.io', icon: SiSocketdotio, color: '#010101' },
-  { name: 'WebRTC', icon: SiWebrtc, color: '#333333' },
-  { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+  { name: 'Flutter', icon: SiFlutter, color: '#444444' },
+  { name: 'MongoDB', icon: SiMongodb, color: '#7c7c7c' },
+  { name: 'PostgreSQL', icon: SiPostgresql, color: '#6a6a6a' },
+  { name: 'Docker', icon: SiDocker, color: '#7d7d7d' },
+  { name: 'Socket.io', icon: SiSocketdotio, color: '#000000' },
+  { name: 'WebRTC', icon: SiWebrtc, color: '#323232' },
+  { name: 'Firebase', icon: SiFirebase, color: '#c7c7c7' },
   { name: 'JWT', icon: SiJsonwebtokens, color: '#000000' }
 ];
 
@@ -73,14 +73,14 @@ function SkillCard({ skill }) {
   const { icon: Icon } = skill;
   return (
     <div
-      className="flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[rgba(115,115,115,0.15)] group"
+      className="flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[rgba(114,114,114,0.15)] group"
       style={{
-        background: 'rgba(115,115,115,0.05)',
-        border: '1px solid rgba(115,115,115,0.2)',
+        background: 'rgba(114,114,114,0.05)',
+        border: '1px solid rgba(114,114,114,0.2)',
         boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
       }}
     >
-      <Icon size={28} className="text-[#e4e4e7] group-hover:text-white transition-colors duration-300" />
+      <Icon size={28} className="text-[#e4e4e4] group-hover:text-white transition-colors duration-300" />
     </div>
   );
 }

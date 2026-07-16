@@ -15,7 +15,7 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
 
   const sharedClass = `relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-colors ${
     isActive
-      ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(212,163,115,0.6)]'
+      ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(172,172,172,0.6)]'
       : external
         ? 'bg-neutral-400/10 border-neutral-300/30 text-neutral-100 hover:bg-neutral-400 hover:border-neutral-300 hover:text-bg'
         : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
@@ -68,7 +68,7 @@ export default function Dock({ items, activeId }) {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="flex max-w-[calc(100vw-1.5rem)] items-center justify-center gap-2 rounded-3xl border border-white/20 bg-bg2/90 px-3 py-3 shadow-[0_0_50px_rgba(212,163,115,0.15)] ring-1 ring-white/5 backdrop-blur-3xl sm:gap-3 sm:px-5 sm:py-4 md:gap-5 md:px-7 md:py-5"
+      className="flex max-w-[calc(100vw-1.5rem)] items-center justify-center gap-2 rounded-3xl border border-white/20 bg-bg2/90 px-3 py-3 shadow-[0_0_50px_rgba(172,172,172,0.15)] ring-1 ring-white/5 backdrop-blur-3xl sm:gap-3 sm:px-5 sm:py-4 md:gap-5 md:px-7 md:py-5"
     >
       {items.map((item, i) => (
         <DockItem key={i} {...item} activeId={activeId} mouseX={mouseX} />

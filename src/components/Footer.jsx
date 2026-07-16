@@ -9,7 +9,7 @@ export default function Footer() {
 
       {/* Subtle glow */}
       <div className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 100%, rgba(29,32,102,0.12) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(ellipse 60% 100% at 50% 100%, rgba(39,39,39,0.12) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -19,17 +19,17 @@ export default function Footer() {
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black font-mono text-white"
               style={{
-                background: 'linear-gradient(135deg, #737373, #171717)',
-                boxShadow: '0 0 16px rgba(115,115,115,0.3)',
+                background: 'linear-gradient(135deg, #727272, #171717)',
+                boxShadow: '0 0 16px rgba(114,114,114,0.3)',
               }}
             >
               GS
             </div>
-            <span className="font-bold text-sm" style={{ color: 'rgba(232,234,246,0.8)' }}>Giridhar Shyam</span>
+            <span className="font-bold text-sm" style={{ color: 'rgba(234,234,234,0.8)' }}>Giridhar Shyam</span>
           </div>
 
           {/* Center: copyright */}
-          <p className="text-xs font-mono text-center" style={{ color: 'rgba(121,134,203,0.4)' }}>
+          <p className="text-xs font-mono text-center" style={{ color: 'rgba(229,229,229,0.4)' }}>
             © {year} Giridhar Shyam Samsani · Built with React + Three.js
           </p>
 
@@ -45,9 +45,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-mono transition-colors duration-200"
-                style={{ color: 'rgba(121,134,203,0.45)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#a5b4fc'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(121,134,203,0.45)'; }}
+                style={{ color: 'rgba(229,229,229,0.45)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#b7b7b7'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(229,229,229,0.45)'; }}
               >
                 {label}
               </a>
