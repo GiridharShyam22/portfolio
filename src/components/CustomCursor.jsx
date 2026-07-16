@@ -45,15 +45,15 @@ export default function CustomCursor() {
       if (dotRef.current) {
         dotRef.current.style.width = '10px';
         dotRef.current.style.height = '10px';
-        dotRef.current.style.background = '#00b4ff';
-        dotRef.current.style.boxShadow = '0 0 14px #00b4ff, 0 0 28px rgba(0,180,255,0.5)';
+        dotRef.current.style.background = '#68696e';
+        dotRef.current.style.boxShadow = '0 0 14px #68696e, 0 0 28px rgba(104,105,110,0.5)';
         dotRef.current.style.transform = dotRef.current.style.transform; /* keep pos */
       }
       if (ringRef.current) {
         ringRef.current.style.width = '44px';
         ringRef.current.style.height = '44px';
-        ringRef.current.style.borderColor = 'rgba(0,180,255,0.55)';
-        ringRef.current.style.background = 'rgba(0,180,255,0.04)';
+        ringRef.current.style.borderColor = 'rgba(104,105,110,0.55)';
+        ringRef.current.style.background = 'rgba(104,105,110,0.04)';
       }
     };
 
@@ -63,13 +63,13 @@ export default function CustomCursor() {
       if (dotRef.current) {
         dotRef.current.style.width = '8px';
         dotRef.current.style.height = '8px';
-        dotRef.current.style.background = '#4f6ef7';
-        dotRef.current.style.boxShadow = '0 0 8px rgba(79,110,247,0.8)';
+        dotRef.current.style.background = '#68696e';
+        dotRef.current.style.boxShadow = '0 0 8px rgba(104,105,110,0.8)';
       }
       if (ringRef.current) {
         ringRef.current.style.width = '36px';
         ringRef.current.style.height = '36px';
-        ringRef.current.style.borderColor = 'rgba(79,110,247,0.45)';
+        ringRef.current.style.borderColor = 'rgba(104,105,110,0.45)';
         ringRef.current.style.background = 'transparent';
       }
     };
@@ -109,8 +109,8 @@ export default function CustomCursor() {
           width: '8px',
           height: '8px',
           borderRadius: '50%',
-          background: '#4f6ef7',
-          boxShadow: '0 0 8px rgba(79,110,247,0.8)',
+          background: '#68696e',
+          boxShadow: '0 0 8px rgba(104,105,110,0.8)',
           pointerEvents: 'none',
           zIndex: 999999,
           willChange: 'transform',
@@ -128,7 +128,7 @@ export default function CustomCursor() {
           width: '36px',
           height: '36px',
           borderRadius: '50%',
-          border: '1.5px solid rgba(79,110,247,0.45)',
+          border: '1.5px solid rgba(104,105,110,0.45)',
           background: 'transparent',
           pointerEvents: 'none',
           zIndex: 999998,

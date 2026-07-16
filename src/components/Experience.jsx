@@ -9,8 +9,8 @@ const timeline = [
     badgePulse: true,
     title: 'Coordinator — GCC Coding Club',
     sub: 'Technical Leadership',
-    color: '#4f6ef7',
-    glow: 'rgba(79,110,247,0.25)',
+    color: '#68696e',
+    glow: 'rgba(104,105,110,0.25)',
     icon: RiCodeSSlashLine,
     points: [
       'Coordinating coding activities, technical events, and peer learning initiatives across the college',
@@ -25,8 +25,8 @@ const timeline = [
     badgePulse: false,
     title: 'Tech Expo Organizer',
     sub: 'Event Management',
-    color: '#7c4fff',
-    glow: 'rgba(124,79,255,0.25)',
+    color: '#0c1f5e',
+    glow: 'rgba(12,31,94,0.25)',
     icon: RiTeamLine,
     points: [
       'Successfully organized a college-level Tech Expo with project showcases and technical demonstrations',
@@ -46,7 +46,7 @@ const achievements = [
     desc: 'Secured Runner-Up position demonstrating strong presentation, teamwork, and communication skills under competitive pressure.',
     stat: '2nd Place',
     statLabel: 'Recognition',
-    color: '#f59e0b',
+    color: '#68696e',
     glow: 'rgba(245,158,11,0.3)',
   },
   {
@@ -58,16 +58,16 @@ const achievements = [
     desc: 'Participated in 15+ monthly hackathons, gaining hands-on experience in innovation, rapid prototyping, teamwork, and problem-solving.',
     stat: '15+ Events',
     statLabel: 'Experience',
-    color: '#00b4ff',
-    glow: 'rgba(0,180,255,0.25)',
+    color: '#68696e',
+    glow: 'rgba(104,105,110,0.25)',
   },
 ];
 
 const smallCards = [
-  { icon: RiCodeSSlashLine, badge: 'Coordinator', title: 'GCC Coding Club', desc: 'Coordinating coding activities and events to foster programming culture.', color: '#4f6ef7' },
-  { icon: RiTeamLine,       badge: 'Organizer',   title: 'Tech Expo',       desc: 'Organized a college-level Tech Expo with project showcases.', color: '#7c4fff' },
-  { icon: RiRocketLine,     badge: 'Builder',      title: 'AI & ML Projects', desc: 'Developed multiple AI/ML and full-stack projects solving real-world challenges.', color: '#00b4ff' },
-  { icon: RiAwardLine,      badge: 'Innovator',    title: 'Rapid Prototyping', desc: 'Consistent track record building functional prototypes under time constraints.', color: '#f59e0b' },
+  { icon: RiCodeSSlashLine, badge: 'Coordinator', title: 'GCC Coding Club', desc: 'Coordinating coding activities and events to foster programming culture.', color: '#68696e' },
+  { icon: RiTeamLine,       badge: 'Organizer',   title: 'Tech Expo',       desc: 'Organized a college-level Tech Expo with project showcases.', color: '#0c1f5e' },
+  { icon: RiRocketLine,     badge: 'Builder',      title: 'AI & ML Projects', desc: 'Developed multiple AI/ML and full-stack projects solving real-world challenges.', color: '#68696e' },
+  { icon: RiAwardLine,      badge: 'Innovator',    title: 'Rapid Prototyping', desc: 'Consistent track record building functional prototypes under time constraints.', color: '#68696e' },
 ];
 
 /* ── Timeline Node ─────────────────────── */
@@ -101,14 +101,14 @@ function TimelineEntry({ item, index }) {
         className="flex-1 mb-10 rounded-2xl overflow-hidden transition-all duration-300 group"
         style={{
           background: 'linear-gradient(135deg, rgba(15,18,48,0.9), rgba(8,11,26,0.95))',
-          border: `1px solid rgba(79,110,247,0.1)`,
+          border: `1px solid rgba(104,105,110,0.1)`,
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.borderColor = `${item.color}40`;
           e.currentTarget.style.boxShadow = `0 0 30px ${item.glow}`;
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.borderColor = 'rgba(79,110,247,0.1)';
+          e.currentTarget.style.borderColor = 'rgba(104,105,110,0.1)';
           e.currentTarget.style.boxShadow = 'none';
         }}
       >
@@ -234,13 +234,13 @@ export default function Experience() {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(79,110,247,0.6))' }} />
+            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(104,105,110,0.6))' }} />
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">03 — Journey</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
             <span className="text-white">Activities & </span>
             <span style={{
-              background: 'linear-gradient(135deg, #8899ff, #4f6ef7, #7c4fff)',
+              background: 'linear-gradient(135deg, #68696e, #68696e, #0c1f5e)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>Achievements</span>
           </h2>
@@ -251,7 +251,7 @@ export default function Experience() {
           {/* LEFT: Timeline */}
           <div>
             <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(121,134,203,0.7)' }}>
-              <span style={{ color: '#4f6ef7' }}>/</span> Leadership
+              <span style={{ color: '#68696e' }}>/</span> Leadership
             </h3>
             {timeline.map((item, i) => (
               <TimelineEntry key={item.id} item={item} index={i} />
@@ -261,7 +261,7 @@ export default function Experience() {
           {/* RIGHT: Achievements */}
           <div>
             <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(121,134,203,0.7)' }}>
-              <span style={{ color: '#4f6ef7' }}>/</span> Recognition
+              <span style={{ color: '#68696e' }}>/</span> Recognition
             </h3>
 
             <div className="space-y-4 mb-6">
@@ -282,14 +282,14 @@ export default function Experience() {
                   className="p-4 rounded-xl transition-all duration-300 cursor-default"
                   style={{
                     background: 'rgba(15,18,48,0.7)',
-                    border: '1px solid rgba(79,110,247,0.1)',
+                    border: '1px solid rgba(104,105,110,0.1)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = `${color}40`;
                     e.currentTarget.style.boxShadow = `0 0 20px ${color}15`;
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(79,110,247,0.1)';
+                    e.currentTarget.style.borderColor = 'rgba(104,105,110,0.1)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >

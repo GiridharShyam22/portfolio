@@ -21,13 +21,13 @@ const ICON_MAP = {
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-blue-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-[#0c1f5e]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(59,130,246,0.12)',
     glowSolid: 'rgb(59,130,246)',
-    border: 'border-blue-500/20',
+    border: 'border-[#68696e]/20',
     accent: 'text-blue-400',
-    accentBg: 'bg-blue-500/10',
-    accentBorder: 'border-blue-500/25',
+    accentBg: 'bg-[#68696e]/10',
+    accentBorder: 'border-[#68696e]/25',
     fadeColor: '#050a14',
   },
   2: {

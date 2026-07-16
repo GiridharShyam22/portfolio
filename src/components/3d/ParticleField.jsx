@@ -77,7 +77,7 @@ function Nodes() {
           />
         </bufferGeometry>
         <pointsMaterial
-          color="#4f6ef7"
+          color="#68696e"
           size={0.08}
           sizeAttenuation
           transparent
@@ -95,7 +95,7 @@ function Nodes() {
           />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#1d2066"
+          color="#0c1f5e"
           transparent
           opacity={0.35}
           depthWrite={false}
@@ -125,15 +125,15 @@ function FloatingRings() {
     <>
       <mesh ref={ring1} position={[6, 2, -4]}>
         <torusGeometry args={[1.2, 0.015, 8, 80]} />
-        <meshBasicMaterial color="#4f6ef7" transparent opacity={0.25} />
+        <meshBasicMaterial color="#68696e" transparent opacity={0.25} />
       </mesh>
       <mesh ref={ring2} position={[-7, -1, -3]}>
         <torusGeometry args={[0.9, 0.012, 8, 60]} />
-        <meshBasicMaterial color="#00b4ff" transparent opacity={0.2} />
+        <meshBasicMaterial color="#68696e" transparent opacity={0.2} />
       </mesh>
       <mesh position={[2, -3, -5]}>
         <torusGeometry args={[0.6, 0.01, 6, 40]} />
-        <meshBasicMaterial color="#7c4fff" transparent opacity={0.2} />
+        <meshBasicMaterial color="#0c1f5e" transparent opacity={0.2} />
       </mesh>
     </>
   );
