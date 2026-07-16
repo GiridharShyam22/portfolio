@@ -110,56 +110,10 @@ function HoloAvatar({ imgSrc }) {
   return (
     <div
       className="relative"
-      style={{ width: 'clamp(340px, 45vw, 550px)', height: 'clamp(340px, 45vw, 550px)' }}
+      style={{ width: 'clamp(320px, 45vw, 550px)', height: 'clamp(220px, 30vw, 360px)' }}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      {/* ── Outer slow ring ── */}
-      <div
-        className="absolute rounded-full"
-        style={{
-          inset: '-36px',
-          border: '1px solid rgba(104,105,110,0.2)',
-          animation: 'orbit-cw 10s linear infinite',
-        }}
-      >
-        {/* dot on ring */}
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full"
-          style={{
-            background: '#68696e',
-            boxShadow: '0 0 10px #68696e, 0 0 20px rgba(104,105,110,0.6)',
-          }}
-        />
-      </div>
-
-      {/* ── Middle dashed ring ── */}
-      <div
-        className="absolute rounded-full border border-dashed"
-        style={{
-          inset: '-18px',
-          borderColor: 'rgba(12,31,94,0.22)',
-          animation: 'orbit-ccw 14s linear infinite',
-        }}
-      >
-        <div
-          className="absolute bottom-0 right-1/4 -translate-y-1/2 translate-x-1/2 w-2 h-2 rounded-full"
-          style={{
-            background: '#0c1f5e',
-            boxShadow: '0 0 8px #0c1f5e',
-          }}
-        />
-      </div>
-
-      {/* ── Inner fast ring ── */}
-      <div
-        className="absolute rounded-full"
-        style={{
-          inset: '-6px',
-          border: '1px solid rgba(104,105,110,0.12)',
-          animation: 'orbit-cw 6s linear infinite',
-        }}
-      />
 
       {/* ── Main image card ── */}
       <div
@@ -183,7 +137,7 @@ function HoloAvatar({ imgSrc }) {
 
         {/* Photo container */}
         <div
-          className="absolute inset-0 rounded-full overflow-hidden"
+          className="absolute inset-0 rounded-2xl overflow-hidden"
           style={{
             boxShadow:
               '0 0 0 1px rgba(104,105,110,0.25), 0 0 50px rgba(104,105,110,0.35), 0 0 100px rgba(12,31,94,0.5), inset 0 0 40px rgba(12,31,94,0.3)',
@@ -193,7 +147,7 @@ function HoloAvatar({ imgSrc }) {
           <img
             src={imgSrc}
             alt="Giridhar Shyam"
-            className="w-full h-full object-cover object-[80%_85%] scale-[1.3] origin-[80%_85%]"
+            className="w-full h-full object-cover object-center"
             style={{ transform: 'translateZ(0)' }}
           />
 
@@ -219,7 +173,7 @@ function HoloAvatar({ imgSrc }) {
           {/* Glare layer */}
           <div
             ref={glareRef}
-            className="absolute inset-0 pointer-events-none rounded-full transition-none z-10"
+            className="absolute inset-0 pointer-events-none rounded-2xl transition-none z-10"
           />
 
           {/* Bottom vignette */}
@@ -234,7 +188,7 @@ function HoloAvatar({ imgSrc }) {
 
         {/* Depth layer — "3D depth" effect */}
         <div
-          className="absolute inset-0 rounded-full pointer-events-none"
+          className="absolute inset-0 rounded-2xl pointer-events-none"
           style={{
             transform: 'translateZ(-8px)',
             background: 'rgba(104,105,110,0.08)',
