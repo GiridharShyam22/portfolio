@@ -70,18 +70,17 @@ function SkillLoop() {
 }
 
 function SkillCard({ skill }) {
-  const { icon: Icon, name, color } = skill;
+  const { icon: Icon } = skill;
   return (
     <div
-      className="flex items-center gap-3 px-6 py-4 rounded-xl flex-shrink-0 transition-transform hover:scale-105"
+      className="flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[rgba(104,105,110,0.15)] group"
       style={{
-        background: 'rgba(104,105,110,0.08)',
-        border: '1px solid rgba(104,105,110,0.15)',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+        background: 'rgba(104,105,110,0.05)',
+        border: '1px solid rgba(104,105,110,0.2)',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
       }}
     >
-      <Icon size={24} style={{ color: (color === '#000000' || color === '#010101' || color === '#333333') ? '#ffffff' : color }} />
-      <span className="font-mono text-sm font-bold text-white tracking-wide">{name}</span>
+      <Icon size={28} className="text-[#e4e4e7] group-hover:text-white transition-colors duration-300" />
     </div>
   );
 }
