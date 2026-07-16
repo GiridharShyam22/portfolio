@@ -1,157 +1,128 @@
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial, Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-/* ── Animated glowing core sphere ── */
-function CoreSphere() {
-  const meshRef = useRef();
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y = clock.getElapsedTime() * 0.18;
-      meshRef.current.rotation.z = clock.getElapsedTime() * 0.06;
-    }
-  });
-  return (
-    <mesh ref={meshRef}>
-      <icosahedronGeometry args={[1.3, 3]} />
-      <MeshDistortMaterial
-        color="#727272"
-        emissive="#424242"
-        emissiveIntensity={0.6}
-        wireframe={false}
-        distort={0.35}
-        speed={2}
-        roughness={0.1}
-        metalness={0.7}
-        transparent
-        opacity={0.85}
-      />
-    </mesh>
-  );
-}
+const PARTICLE_COUNT = 100;
+const MAX_DISTANCE = 1.8;
 
-/* ── Wireframe shell ── */
-function WireShell() {
-  const meshRef = useRef();
-  useFrame(({ clock }) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y = -clock.getElapsedTime() * 0.12;
-      meshRef.current.rotation.x = clock.getElapsedTime() * 0.05;
-    }
-  });
-  return (
-    <mesh ref={meshRef} scale={1.55}>
-      <icosahedronGeometry args={[1.3, 1]} />
-      <meshBasicMaterial color="#727272" wireframe transparent opacity={0.12} />
-    </mesh>
-  );
-}
+function NeuralConstellation() {
+  const pointsRef = useRef();
+  const linesRef = useRef();
 
-/* ── Orbiting ring ── */
-function OrbitRing({ radius = 2.2, speed = 0.4, tilt = 0, color = '#727272' }) {
-  const groupRef = useRef();
-  const dotRef = useRef();
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime() * speed;
-    if (groupRef.current) groupRef.current.rotation.z = t;
-    if (dotRef.current) {
-      dotRef.current.position.x = Math.cos(t) * radius;
-      dotRef.current.position.y = Math.sin(t) * radius * 0.3;
-    }
-  });
-  return (
-    <group ref={groupRef} rotation={[tilt, 0, 0]}>
-      {/* Ring geometry */}
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[radius, 0.008, 8, 80]} />
-        <meshBasicMaterial color={color} transparent opacity={0.25} />
-      </mesh>
-      {/* Orbiting dot */}
-      <mesh ref={dotRef}>
-        <sphereGeometry args={[0.06, 8, 8]} />
-        <meshBasicMaterial color={color} />
-      </mesh>
-    </group>
-  );
-}
-
-/* ── Floating data nodes ── */
-function DataNodes() {
-  const nodes = useMemo(() => {
-    const items = [];
-    for (let i = 0; i < 12; i++) {
-      const theta = (i / 12) * Math.PI * 2;
-      const r = 2.8 + Math.random() * 0.8;
-      items.push({
-        x: Math.cos(theta) * r,
-        y: (Math.random() - 0.5) * 2.5,
-        z: Math.sin(theta) * r,
-        size: 0.03 + Math.random() * 0.04,
-        color: ['#727272', '#171717', '#727272'][Math.floor(Math.random() * 3)],
-        speed: 0.3 + Math.random() * 0.4,
-        phase: Math.random() * Math.PI * 2,
+  // Initialize random particle positions and velocities
+  const { positions, velocities } = useMemo(() => {
+    const pos = new Float32Array(PARTICLE_COUNT * 3);
+    const vel = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 12; // spread X
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 8;  // spread Y
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 4;  // spread Z
+      vel.push({
+        x: (Math.random() - 0.5) * 0.008,
+        y: (Math.random() - 0.5) * 0.008,
+        z: (Math.random() - 0.5) * 0.008
       });
     }
-    return items;
+    return { positions: pos, velocities: vel };
   }, []);
 
-  const groupRef = useRef();
-  useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y = clock.getElapsedTime() * 0.08;
+  const linesGeometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6), 3));
+    geo.setAttribute('color', new THREE.BufferAttribute(new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6), 3));
+    return geo;
+  }, []);
+
+  useFrame(() => {
+    if (!pointsRef.current || !linesRef.current) return;
+    
+    const positionsAttr = pointsRef.current.geometry.attributes.position;
+    const posArray = positionsAttr.array;
+
+    // Update positions
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      posArray[i * 3] += velocities[i].x;
+      posArray[i * 3 + 1] += velocities[i].y;
+      posArray[i * 3 + 2] += velocities[i].z;
+
+      // Soft boundary bounce
+      if (Math.abs(posArray[i * 3]) > 6) velocities[i].x *= -1;
+      if (Math.abs(posArray[i * 3 + 1]) > 4) velocities[i].y *= -1;
+      if (Math.abs(posArray[i * 3 + 2]) > 2) velocities[i].z *= -1;
     }
+    positionsAttr.needsUpdate = true;
+
+    // Update lines
+    let lineIndex = 0;
+    const linePosAttr = linesGeometry.attributes.position;
+    const lineColorAttr = linesGeometry.attributes.color;
+    const linePos = linePosAttr.array;
+    const lineColor = lineColorAttr.array;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      for (let j = i + 1; j < PARTICLE_COUNT; j++) {
+        const dx = posArray[i * 3] - posArray[j * 3];
+        const dy = posArray[i * 3 + 1] - posArray[j * 3 + 1];
+        const dz = posArray[i * 3 + 2] - posArray[j * 3 + 2];
+        const distSq = dx * dx + dy * dy + dz * dz;
+
+        if (distSq < MAX_DISTANCE * MAX_DISTANCE) {
+          const alpha = 1.0 - Math.sqrt(distSq) / MAX_DISTANCE;
+          const colorIntensity = alpha * 0.25; // Subtle white/gray lines
+
+          linePos[lineIndex * 6] = posArray[i * 3];
+          linePos[lineIndex * 6 + 1] = posArray[i * 3 + 1];
+          linePos[lineIndex * 6 + 2] = posArray[i * 3 + 2];
+
+          linePos[lineIndex * 6 + 3] = posArray[j * 3];
+          linePos[lineIndex * 6 + 4] = posArray[j * 3 + 1];
+          linePos[lineIndex * 6 + 5] = posArray[j * 3 + 2];
+
+          lineColor[lineIndex * 6] = colorIntensity;
+          lineColor[lineIndex * 6 + 1] = colorIntensity;
+          lineColor[lineIndex * 6 + 2] = colorIntensity;
+          
+          lineColor[lineIndex * 6 + 3] = colorIntensity;
+          lineColor[lineIndex * 6 + 4] = colorIntensity;
+          lineColor[lineIndex * 6 + 5] = colorIntensity;
+
+          lineIndex++;
+        }
+      }
+    }
+    linesGeometry.setDrawRange(0, lineIndex * 2);
+    linePosAttr.needsUpdate = true;
+    lineColorAttr.needsUpdate = true;
   });
 
   return (
-    <group ref={groupRef}>
-      {nodes.map((n, i) => (
-        <Float key={i} speed={n.speed} rotationIntensity={0.2} floatIntensity={0.3}>
-          <mesh position={[n.x, n.y, n.z]}>
-            <sphereGeometry args={[n.size, 6, 6]} />
-            <meshBasicMaterial color={n.color} />
-          </mesh>
-        </Float>
-      ))}
+    <group>
+      <points ref={pointsRef}>
+        <bufferGeometry>
+          <bufferAttribute
+            attach="attributes-position"
+            count={positions.length / 3}
+            array={positions}
+            itemSize={3}
+          />
+        </bufferGeometry>
+        <pointsMaterial color="#ffffff" size={0.03} transparent opacity={0.7} sizeAttenuation={true} />
+      </points>
+
+      <lineSegments ref={linesRef} geometry={linesGeometry}>
+        <lineBasicMaterial vertexColors={true} transparent={true} blending={THREE.AdditiveBlending} depthWrite={false} />
+      </lineSegments>
     </group>
   );
 }
 
-/* ── Exported Scene ── */
 export default function HeroScene() {
   return (
-    <Canvas
-      camera={{ position: [0, 0, 6], fov: 50 }}
-      gl={{ antialias: true, alpha: true }}
-      style={{ width: '100%', height: '100%' }}
-    >
-      <ambientLight intensity={0.4} />
-      <pointLight position={[5, 5, 5]} intensity={1.2} color="#727272" />
-      <pointLight position={[-5, -3, -3]} intensity={0.6} color="#171717" />
-      <pointLight position={[0, 0, 4]} intensity={0.8} color="#727272" />
-
-      <Stars radius={30} depth={10} count={800} factor={2} saturation={0.8} fade speed={0.5} />
-
-      <Float speed={1.2} rotationIntensity={0.3} floatIntensity={0.4}>
-        <CoreSphere />
-        <WireShell />
-      </Float>
-
-      <OrbitRing radius={2.1} speed={0.35} tilt={0.3} color="#727272" />
-      <OrbitRing radius={2.6} speed={-0.22} tilt={-0.5} color="#171717" />
-      <OrbitRing radius={2.0} speed={0.5} tilt={1.0} color="#727272" />
-
-      <DataNodes />
-
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        enableRotate={true}
-        autoRotate
-        autoRotateSpeed={0.4}
-        maxPolarAngle={Math.PI * 0.65}
-        minPolarAngle={Math.PI * 0.35}
-      />
-    </Canvas>
+    <div className="w-full h-full absolute inset-0 z-0">
+      <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+        <fog attach="fog" args={['#000000', 3, 8]} />
+        <NeuralConstellation />
+      </Canvas>
+    </div>
   );
 }
