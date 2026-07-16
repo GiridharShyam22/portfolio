@@ -21,43 +21,43 @@ const ICON_MAP = {
 // Per-project theme tokens
 const MODAL_THEMES = {
   1: {
-    bg: 'from-[#0c1f5e]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-[#171717]/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(59,130,246,0.12)',
     glowSolid: 'rgb(59,130,246)',
-    border: 'border-[#68696e]/20',
-    accent: 'text-blue-400',
-    accentBg: 'bg-[#68696e]/10',
-    accentBorder: 'border-[#68696e]/25',
+    border: 'border-[#737373]/20',
+    accent: 'text-neutral-400',
+    accentBg: 'bg-[#737373]/10',
+    accentBorder: 'border-[#737373]/25',
     fadeColor: '#050a14',
   },
   2: {
-    bg: 'from-teal-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(20,184,166,0.12)',
     glowSolid: 'rgb(20,184,166)',
-    border: 'border-teal-500/20',
-    accent: 'text-teal-400',
-    accentBg: 'bg-teal-500/10',
-    accentBorder: 'border-teal-500/25',
+    border: 'border-neutral-500/20',
+    accent: 'text-neutral-400',
+    accentBg: 'bg-neutral-500/10',
+    accentBorder: 'border-neutral-500/25',
     fadeColor: '#051412',
   },
   3: {
-    bg: 'from-orange-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(251,146,60,0.12)',
     glowSolid: 'rgb(251,146,60)',
-    border: 'border-orange-500/20',
-    accent: 'text-orange-400',
-    accentBg: 'bg-orange-500/10',
-    accentBorder: 'border-orange-500/25',
+    border: 'border-neutral-500/20',
+    accent: 'text-neutral-400',
+    accentBg: 'bg-neutral-500/10',
+    accentBorder: 'border-neutral-500/25',
     fadeColor: '#140a04',
   },
   4: {
-    bg: 'from-rose-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(244,63,94,0.12)',
     glowSolid: 'rgb(244,63,94)',
-    border: 'border-rose-500/20',
-    accent: 'text-rose-400',
-    accentBg: 'bg-rose-500/10',
-    accentBorder: 'border-rose-500/25',
+    border: 'border-neutral-500/20',
+    accent: 'text-neutral-400',
+    accentBg: 'bg-neutral-500/10',
+    accentBorder: 'border-neutral-500/25',
     fadeColor: '#140206',
   },
   5: {
@@ -71,13 +71,13 @@ const MODAL_THEMES = {
     fadeColor: '#0e0d0c',
   },
   6: {
-    bg: 'from-amber-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
+    bg: 'from-neutral-950/95 via-[#0c0a09]/98 to-[#0c0a09]/98',
     glow: 'rgba(245,158,11,0.12)',
     glowSolid: 'rgb(245,158,11)',
-    border: 'border-amber-500/20',
-    accent: 'text-amber-400',
-    accentBg: 'bg-amber-500/10',
-    accentBorder: 'border-amber-500/25',
+    border: 'border-neutral-500/20',
+    accent: 'text-neutral-400',
+    accentBg: 'bg-neutral-500/10',
+    accentBorder: 'border-neutral-500/25',
     fadeColor: '#140d02',
   },
 };
@@ -149,7 +149,7 @@ export default function ProjectDetailModal({ project, onClose }) {
         exit={{ opacity: 0, y: 40, scale: 0.97 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed inset-0 sm:inset-x-4 sm:top-4 sm:bottom-4 md:inset-x-8 lg:inset-x-16 xl:inset-x-32 md:top-6 md:bottom-6 z-[101] flex flex-col rounded-none sm:rounded-3xl overflow-hidden border ${theme.border} shadow-2xl`}
-        style={{ boxShadow: `0 0 80px ${theme.glow}, 0 32px 64px rgba(2,3,3,0.6)` }}
+        style={{ boxShadow: `0 0 80px ${theme.glow}, 0 32px 64px rgba(0,0,0,0.6)` }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Themed gradient background */}

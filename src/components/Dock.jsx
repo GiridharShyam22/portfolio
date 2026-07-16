@@ -17,7 +17,7 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
     isActive
       ? 'bg-accent/80 border-accent text-white shadow-[0_0_20px_rgba(212,163,115,0.6)]'
       : external
-        ? 'bg-amber-400/10 border-amber-300/30 text-amber-100 hover:bg-amber-400 hover:border-amber-300 hover:text-bg'
+        ? 'bg-neutral-400/10 border-neutral-300/30 text-neutral-100 hover:bg-neutral-400 hover:border-neutral-300 hover:text-bg'
         : 'bg-white/10 border-white/20 text-white/80 hover:bg-accent hover:border-accent'
   }`;
 
@@ -25,7 +25,7 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
     <>
       <Icon className={`w-1/2 h-1/2 transition-colors ${isActive ? 'text-white' : external ? 'group-hover:text-bg' : 'group-hover:text-white'}`} />
       <span className={`absolute -top-10 left-1/2 -translate-x-1/2 font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl ${
-        external ? 'bg-amber-400 text-bg' : 'bg-accent text-bg'
+        external ? 'bg-neutral-400 text-bg' : 'bg-accent text-bg'
       }`}>
         {label}
       </span>

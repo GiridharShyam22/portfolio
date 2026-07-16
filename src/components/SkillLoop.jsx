@@ -73,10 +73,10 @@ function SkillCard({ skill }) {
   const { icon: Icon } = skill;
   return (
     <div
-      className="flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[rgba(104,105,110,0.15)] group"
+      className="flex items-center justify-center w-16 h-16 rounded-2xl flex-shrink-0 transition-all duration-300 hover:scale-110 hover:bg-[rgba(115,115,115,0.15)] group"
       style={{
-        background: 'rgba(104,105,110,0.05)',
-        border: '1px solid rgba(104,105,110,0.2)',
+        background: 'rgba(115,115,115,0.05)',
+        border: '1px solid rgba(115,115,115,0.2)',
         boxShadow: '0 4px 20px rgba(0,0,0,0.2)'
       }}
     >

@@ -183,7 +183,7 @@ export default function ScreenshotReel({
                 className={`shrink-0 rounded-xl overflow-hidden ${borderClass} transition-all duration-300 hover:border-white/30`}
                 style={{
                   height: `${height}px`,
-                  boxShadow: `0 8px 32px ${glowColor}, 0 4px 12px rgba(2,3,3,0.4)`,
+                  boxShadow: `0 8px 32px ${glowColor}, 0 4px 12px rgba(0,0,0,0.4)`,
                 }}
               >
                 <img

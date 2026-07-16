@@ -363,7 +363,7 @@ const ProfileCardComponent = ({
                 left: 0,
                 right: 0,
                 height: '45%',
-                background: 'linear-gradient(to bottom, rgba(2,3,3,0.85) 0%, rgba(2,3,3,0.5) 60%, transparent 100%)',
+                background: 'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, transparent 100%)',
                 borderRadius: 'inherit',
                 pointerEvents: 'none',
                 zIndex: 0,

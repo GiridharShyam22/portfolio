@@ -44,9 +44,9 @@ export default function Navbar() {
             : 'linear-gradient(135deg, rgba(15,18,48,0.7), rgba(8,11,26,0.8))',
           backdropFilter: 'blur(24px) saturate(180%)',
           WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-          border: '1px solid rgba(104,105,110,0.2)',
+          border: '1px solid rgba(115,115,115,0.2)',
           boxShadow: scrolled
-            ? '0 8px 40px rgba(3,4,14,0.6), 0 0 0 1px rgba(104,105,110,0.08), inset 0 1px 0 rgba(255,255,255,0.04)'
+            ? '0 8px 40px rgba(3,4,14,0.6), 0 0 0 1px rgba(115,115,115,0.08), inset 0 1px 0 rgba(255,255,255,0.04)'
             : '0 4px 20px rgba(3,4,14,0.3)',
           transition: 'all 0.4s ease',
         }}
@@ -58,8 +58,8 @@ export default function Navbar() {
           id="nav-logo"
           className="mr-3 flex items-center justify-center w-8 h-8 rounded-lg text-xs font-black font-mono text-white"
           style={{
-            background: 'linear-gradient(135deg, #68696e, #0c1f5e)',
-            boxShadow: '0 0 16px rgba(104,105,110,0.4)',
+            background: 'linear-gradient(135deg, #737373, #171717)',
+            boxShadow: '0 0 16px rgba(115,115,115,0.4)',
           }}
         >
           GS
@@ -82,9 +82,9 @@ export default function Navbar() {
                 layoutId="nav-active"
                 className="absolute inset-0 rounded-xl"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(29,32,102,0.8), rgba(104,105,110,0.2))',
-                  border: '1px solid rgba(104,105,110,0.35)',
-                  boxShadow: '0 0 16px rgba(104,105,110,0.2)',
+                  background: 'linear-gradient(135deg, rgba(29,32,102,0.8), rgba(115,115,115,0.2))',
+                  border: '1px solid rgba(115,115,115,0.35)',
+                  boxShadow: '0 0 16px rgba(115,115,115,0.2)',
                 }}
                 transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
               />
@@ -99,19 +99,19 @@ export default function Navbar() {
           id="nav-hire-cta"
           className="ml-3 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200"
           style={{
-            background: 'linear-gradient(135deg, rgba(104,105,110,0.2), rgba(12,31,94,0.15))',
-            border: '1px solid rgba(104,105,110,0.4)',
+            background: 'linear-gradient(135deg, rgba(115,115,115,0.2), rgba(23,23,23,0.15))',
+            border: '1px solid rgba(115,115,115,0.4)',
             color: '#a5b4fc',
-            boxShadow: '0 0 12px rgba(104,105,110,0.15)',
+            boxShadow: '0 0 12px rgba(115,115,115,0.15)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(104,105,110,0.35), rgba(12,31,94,0.3))';
-            e.currentTarget.style.boxShadow = '0 0 20px rgba(104,105,110,0.3)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(115,115,115,0.35), rgba(23,23,23,0.3))';
+            e.currentTarget.style.boxShadow = '0 0 20px rgba(115,115,115,0.3)';
             e.currentTarget.style.color = '#fff';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(104,105,110,0.2), rgba(12,31,94,0.15))';
-            e.currentTarget.style.boxShadow = '0 0 12px rgba(104,105,110,0.15)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(115,115,115,0.2), rgba(23,23,23,0.15))';
+            e.currentTarget.style.boxShadow = '0 0 12px rgba(115,115,115,0.15)';
             e.currentTarget.style.color = '#a5b4fc';
           }}
         >
@@ -129,8 +129,8 @@ export default function Navbar() {
           style={{
             background: 'linear-gradient(135deg, rgba(15,18,48,0.96), rgba(8,11,26,0.98))',
             backdropFilter: 'blur(24px)',
-            border: '1px solid rgba(104,105,110,0.25)',
-            boxShadow: '0 -4px 40px rgba(3,4,14,0.6), 0 0 0 1px rgba(104,105,110,0.06)',
+            border: '1px solid rgba(115,115,115,0.25)',
+            boxShadow: '0 -4px 40px rgba(3,4,14,0.6), 0 0 0 1px rgba(115,115,115,0.06)',
           }}
         >
           {NAV_ITEMS.map(({ id, label }) => (
@@ -147,8 +147,8 @@ export default function Navbar() {
                   layoutId="mobile-nav-active"
                   className="absolute inset-0 rounded-xl"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(29,32,102,0.8), rgba(104,105,110,0.2))',
-                    border: '1px solid rgba(104,105,110,0.3)',
+                    background: 'linear-gradient(135deg, rgba(29,32,102,0.8), rgba(115,115,115,0.2))',
+                    border: '1px solid rgba(115,115,115,0.3)',
                   }}
                   transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
                 />

@@ -96,7 +96,7 @@ function HoloAvatar({ imgSrc }) {
       glareRef.current.style.background = `
         radial-gradient(circle at ${px}% ${py}%,
           rgba(255,255,255,0.12) 0%,
-          rgba(104,105,110,0.08) 35%,
+          rgba(115,115,115,0.08) 35%,
           transparent 65%
         )
       `;
@@ -132,7 +132,7 @@ function HoloAvatar({ imgSrc }) {
           <div
             key={i}
             className={`absolute w-6 h-6 z-20 pointer-events-none ${cls}`}
-            style={{ borderColor: 'rgba(104,105,110,0.8)' }}
+            style={{ borderColor: 'rgba(115,115,115,0.8)' }}
           />
         ))}
 
@@ -141,7 +141,7 @@ function HoloAvatar({ imgSrc }) {
           className="absolute inset-0 rounded-[2.5rem] overflow-hidden"
           style={{
             boxShadow:
-              '0 0 0 1px rgba(104,105,110,0.25), 0 0 50px rgba(104,105,110,0.35), 0 0 100px rgba(12,31,94,0.5), inset 0 0 40px rgba(12,31,94,0.3)',
+              '0 0 0 1px rgba(115,115,115,0.25), 0 0 50px rgba(115,115,115,0.35), 0 0 100px rgba(23,23,23,0.5), inset 0 0 40px rgba(23,23,23,0.3)',
           }}
         >
           {/* Photo */}
@@ -157,7 +157,7 @@ function HoloAvatar({ imgSrc }) {
             className="absolute inset-0 pointer-events-none mix-blend-screen"
             style={{
               background:
-                'linear-gradient(135deg, rgba(104,105,110,0.15) 0%, transparent 40%, rgba(12,31,94,0.1) 80%)',
+                'linear-gradient(135deg, rgba(115,115,115,0.15) 0%, transparent 40%, rgba(23,23,23,0.1) 80%)',
             }}
           />
 
@@ -166,7 +166,7 @@ function HoloAvatar({ imgSrc }) {
             className="absolute inset-0 pointer-events-none"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(104,105,110,0.04) 3px, rgba(104,105,110,0.04) 4px)',
+                'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(115,115,115,0.04) 3px, rgba(115,115,115,0.04) 4px)',
               opacity: 0.8,
             }}
           />
@@ -182,7 +182,7 @@ function HoloAvatar({ imgSrc }) {
             className="absolute bottom-0 left-0 right-0 h-1/3 pointer-events-none"
             style={{
               background:
-                'linear-gradient(to top, rgba(2,3,3,0.7), transparent)',
+                'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
             }}
           />
         </div>
@@ -192,8 +192,8 @@ function HoloAvatar({ imgSrc }) {
           className="absolute inset-0 rounded-[2.5rem] pointer-events-none"
           style={{
             transform: 'translateZ(-8px)',
-            background: 'rgba(104,105,110,0.08)',
-            boxShadow: '0 0 40px rgba(104,105,110,0.2)',
+            background: 'rgba(115,115,115,0.08)',
+            boxShadow: '0 0 40px rgba(115,115,115,0.2)',
           }}
         />
       </div>
@@ -212,10 +212,10 @@ function HoloAvatar({ imgSrc }) {
         }}
       >
         <span
-          className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"
+          className="w-2 h-2 rounded-full bg-neutral-400 flex-shrink-0"
           style={{ boxShadow: '0 0 8px #4ade80', animation: 'pulse-glow-cyan 2s ease-in-out infinite' }}
         />
-        <span className="text-green-300">Open to Work</span>
+        <span className="text-neutral-300">Open to Work</span>
       </motion.div>
 
       {/* ── Floating badge: Hackathons ── */}
@@ -226,12 +226,12 @@ function HoloAvatar({ imgSrc }) {
         className="absolute -bottom-5 -left-5 px-3 py-2 rounded-xl text-center z-30"
         style={{
           background: 'linear-gradient(135deg, rgba(8,11,26,0.98), rgba(29,32,102,0.9))',
-          border: '1px solid rgba(104,105,110,0.35)',
-          boxShadow: '0 0 16px rgba(104,105,110,0.2)',
+          border: '1px solid rgba(115,115,115,0.35)',
+          boxShadow: '0 0 16px rgba(115,115,115,0.2)',
           backdropFilter: 'blur(12px)',
         }}
       >
-        <div className="text-xl font-black" style={{ color: '#68696e' }}>15+</div>
+        <div className="text-xl font-black" style={{ color: '#737373' }}>15+</div>
         <div className="text-[9px] font-mono uppercase tracking-widest" style={{ color: 'rgba(121,134,203,0.7)' }}>Hackathons</div>
       </motion.div>
 
@@ -243,8 +243,8 @@ function HoloAvatar({ imgSrc }) {
         className="absolute -bottom-5 -right-5 px-3 py-2 rounded-xl text-center z-30"
         style={{
           background: 'linear-gradient(135deg, rgba(8,11,26,0.98), rgba(29,32,102,0.9))',
-          border: '1px solid rgba(12,31,94,0.35)',
-          boxShadow: '0 0 16px rgba(12,31,94,0.2)',
+          border: '1px solid rgba(23,23,23,0.35)',
+          boxShadow: '0 0 16px rgba(23,23,23,0.2)',
           backdropFilter: 'blur(12px)',
         }}
       >
@@ -265,7 +265,7 @@ function HoloAvatar({ imgSrc }) {
             right: 0,
             height: '40%',
             background:
-              'linear-gradient(to bottom, transparent, rgba(104,105,110,0.04) 50%, transparent)',
+              'linear-gradient(to bottom, transparent, rgba(115,115,115,0.04) 50%, transparent)',
             animation: 'hud-scan 4s ease-in-out infinite',
           }}
         />
@@ -283,17 +283,17 @@ function HeroResumeButton() {
       id="hero-resume-btn"
       className="relative group px-7 py-3.5 rounded-xl font-bold text-sm overflow-hidden transition-all duration-300 flex items-center gap-2"
       style={{
-        background: 'linear-gradient(135deg, #68696e, #0c1f5e)',
-        boxShadow: '0 0 30px rgba(104,105,110,0.4), 0 4px 20px rgba(104,105,110,0.3)',
+        background: 'linear-gradient(135deg, #737373, #171717)',
+        boxShadow: '0 0 30px rgba(115,115,115,0.4), 0 4px 20px rgba(115,115,115,0.3)',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow =
-          '0 0 45px rgba(104,105,110,0.65), 0 4px 30px rgba(104,105,110,0.5)';
+          '0 0 45px rgba(115,115,115,0.65), 0 4px 30px rgba(115,115,115,0.5)';
         e.currentTarget.style.transform = 'translateY(-2px)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow =
-          '0 0 30px rgba(104,105,110,0.4), 0 4px 20px rgba(104,105,110,0.3)';
+          '0 0 30px rgba(115,115,115,0.4), 0 4px 20px rgba(115,115,115,0.3)';
         e.currentTarget.style.transform = '';
       }}
     >
@@ -330,7 +330,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
         style={{
           background:
-            'radial-gradient(ellipse 90% 80% at 50% 0%, rgba(29,32,102,0.4) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(104,105,110,0.08) 0%, transparent 50%)',
+            'radial-gradient(ellipse 90% 80% at 50% 0%, rgba(29,32,102,0.4) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(115,115,115,0.08) 0%, transparent 50%)',
         }}
       />
 
@@ -367,12 +367,12 @@ export default function Hero() {
               }}
             >
               <span
-                className="w-1.5 h-1.5 rounded-full bg-green-400"
+                className="w-1.5 h-1.5 rounded-full bg-neutral-400"
                 style={{ boxShadow: '0 0 8px #4ade80', animation: 'pulse-glow-cyan 2s ease-in-out infinite' }}
               />
               Open to Work
             </div>
-            <span className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: 'rgba(104,105,110,0.6)' }}>
+            <span className="font-mono text-xs tracking-[0.2em] uppercase" style={{ color: 'rgba(115,115,115,0.6)' }}>
               AI/ML · Full-Stack
             </span>
           </motion.div>
@@ -389,13 +389,13 @@ export default function Hero() {
               fontWeight: 800,
             }}
           >
-            <span className="block text-white" style={{ textShadow: '0 0 60px rgba(104,105,110,0.3)' }}>
+            <span className="block text-white" style={{ textShadow: '0 0 60px rgba(115,115,115,0.3)' }}>
               Giridhar
             </span>
             <span
               className="block"
               style={{
-                background: 'linear-gradient(135deg, #68696e 0%, #68696e 40%, #68696e 80%)',
+                background: 'linear-gradient(135deg, #737373 0%, #737373 40%, #737373 80%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -411,7 +411,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className="font-mono text-xs tracking-[0.2em] uppercase"
-            style={{ color: 'rgba(104,105,110,0.65)' }}
+            style={{ color: 'rgba(115,115,115,0.65)' }}
           >
             // ai & ml developer · full-stack engineer
           </motion.div>
@@ -427,7 +427,7 @@ export default function Hero() {
               {'> '}
               {role}
               <span
-                className="inline-block w-0.5 h-5 bg-[#68696e] ml-0.5 align-middle"
+                className="inline-block w-0.5 h-5 bg-[#737373] ml-0.5 align-middle"
                 style={{ animation: 'blink-cursor 1s step-end infinite' }}
               />
             </span>
@@ -460,29 +460,29 @@ export default function Hero() {
                 className="group flex items-center gap-3 p-3 rounded-xl cursor-default transition-all duration-300"
                 style={{
                   background: 'linear-gradient(135deg, rgba(29,32,102,0.3), rgba(8,11,26,0.6))',
-                  border: '1px solid rgba(104,105,110,0.12)',
+                  border: '1px solid rgba(115,115,115,0.12)',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background =
                     'linear-gradient(135deg, rgba(29,32,102,0.6), rgba(15,18,48,0.8))';
-                  e.currentTarget.style.borderColor = 'rgba(104,105,110,0.4)';
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(104,105,110,0.15)';
+                  e.currentTarget.style.borderColor = 'rgba(115,115,115,0.4)';
+                  e.currentTarget.style.boxShadow = '0 0 20px rgba(115,115,115,0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background =
                     'linear-gradient(135deg, rgba(29,32,102,0.3), rgba(8,11,26,0.6))';
-                  e.currentTarget.style.borderColor = 'rgba(104,105,110,0.12)';
+                  e.currentTarget.style.borderColor = 'rgba(115,115,115,0.12)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <div
                   className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                   style={{
-                    background: 'rgba(104,105,110,0.15)',
-                    border: '1px solid rgba(104,105,110,0.2)',
+                    background: 'rgba(115,115,115,0.15)',
+                    border: '1px solid rgba(115,115,115,0.2)',
                   }}
                 >
-                  <Icon className="w-4 h-4 text-blue-400" />
+                  <Icon className="w-4 h-4 text-neutral-400" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white/90">{label}</div>
@@ -508,18 +508,18 @@ export default function Hero() {
               className="group px-7 py-3.5 rounded-xl font-bold text-sm transition-all duration-300 flex items-center gap-2"
               style={{
                 background: 'rgba(29,32,102,0.2)',
-                border: '1px solid rgba(104,105,110,0.25)',
+                border: '1px solid rgba(115,115,115,0.25)',
                 color: 'rgba(137,150,204,0.9)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(29,32,102,0.4)';
-                e.currentTarget.style.borderColor = 'rgba(104,105,110,0.5)';
+                e.currentTarget.style.borderColor = 'rgba(115,115,115,0.5)';
                 e.currentTarget.style.color = '#fff';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'rgba(29,32,102,0.2)';
-                e.currentTarget.style.borderColor = 'rgba(104,105,110,0.25)';
+                e.currentTarget.style.borderColor = 'rgba(115,115,115,0.25)';
                 e.currentTarget.style.color = 'rgba(137,150,204,0.9)';
                 e.currentTarget.style.transform = '';
               }}
@@ -558,7 +558,7 @@ export default function Hero() {
         </span>
         <div className="w-px h-10 relative overflow-hidden">
           <div
-            className="absolute inset-0 bg-gradient-to-b from-[#68696e]/60 to-transparent"
+            className="absolute inset-0 bg-gradient-to-b from-[#737373]/60 to-transparent"
             style={{ animation: 'float-bob 2s ease-in-out infinite' }}
           />
         </div>

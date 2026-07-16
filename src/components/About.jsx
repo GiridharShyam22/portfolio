@@ -10,10 +10,10 @@ const SKILLS = [
 ];
 
 const STATS = [
-  { value: 'AI / ML', sub: 'Vision · NLP · Pipelines', color: '#68696e' },
-  { value: 'Full-Stack', sub: 'React · Node · FastAPI', color: '#0c1f5e' },
-  { value: '15+', sub: 'Hackathons', color: '#68696e' },
-  { value: '∞', sub: 'Learning Loop', color: '#68696e' },
+  { value: 'AI / ML', sub: 'Vision · NLP · Pipelines', color: '#737373' },
+  { value: 'Full-Stack', sub: 'React · Node · FastAPI', color: '#171717' },
+  { value: '15+', sub: 'Hackathons', color: '#737373' },
+  { value: '∞', sub: 'Learning Loop', color: '#737373' },
 ];
 
 /* ── 3D Orbital Skill Ring ─────────────────────────────── */
@@ -53,9 +53,9 @@ function OrbitRing({ skills, radius = 160, speed = 20, reverse = false }) {
                 className="px-2.5 py-1 rounded-full font-mono whitespace-nowrap text-[10px] font-medium pointer-events-auto cursor-default"
                 style={{
                   background: 'linear-gradient(135deg, rgba(29,32,102,0.7), rgba(15,18,48,0.85))',
-                  border: '1px solid rgba(104,105,110,0.25)',
+                  border: '1px solid rgba(115,115,115,0.25)',
                   color: 'rgba(165,180,252,0.9)',
-                  boxShadow: '0 0 10px rgba(104,105,110,0.1)',
+                  boxShadow: '0 0 10px rgba(115,115,115,0.1)',
                   backdropFilter: 'blur(10px)',
                 }}
               >
@@ -75,7 +75,7 @@ export default function About() {
 
       {/* Section background glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 70% 60% at 10% 50%, rgba(29,32,102,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 60%, rgba(104,105,110,0.06) 0%, transparent 50%)',
+        background: 'radial-gradient(ellipse 70% 60% at 10% 50%, rgba(29,32,102,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 60%, rgba(115,115,115,0.06) 0%, transparent 50%)',
       }} />
 
       <div className="max-w-7xl mx-auto">
@@ -89,8 +89,8 @@ export default function About() {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(104,105,110,0.6))' }} />
-            <span className="font-mono text-xs tracking-[0.25em] uppercase text-blue-400/70">01 — About</span>
+            <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(115,115,115,0.6))' }} />
+            <span className="font-mono text-xs tracking-[0.25em] uppercase text-neutral-400/70">01 — About</span>
           </div>
           <h2
             className="text-4xl md:text-6xl font-extrabold leading-tight"
@@ -98,7 +98,7 @@ export default function About() {
           >
             <span className="text-white">Who I </span>
             <span style={{
-              background: 'linear-gradient(135deg, #68696e 0%, #68696e 40%, #68696e 100%)',
+              background: 'linear-gradient(135deg, #737373 0%, #737373 40%, #737373 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
             }}>
               Am
@@ -119,7 +119,7 @@ export default function About() {
             <div className="space-y-6">
               <div
                 className="pl-5 border-l-2"
-                style={{ borderColor: 'rgba(104,105,110,0.5)' }}
+                style={{ borderColor: 'rgba(115,115,115,0.5)' }}
               >
                 <p className="text-lg md:text-xl leading-relaxed font-medium" style={{ color: 'rgba(232,234,246,0.9)' }}>
                   I'm <span className="font-bold" style={{ color: '#a5b4fc' }}>Giridhar Shyam Samsani</span> — a passionate AI & Machine Learning Developer with experience building intelligent applications using Computer Vision, ML pipelines, and full-stack technologies.
@@ -129,7 +129,7 @@ export default function About() {
                 I don't just build isolated apps — I orchestrate complex systems where databases, mobile clients, web dashboards, and AI inference engines interact seamlessly. From training ML models to crafting polished interfaces, I build end-to-end systems that make a tangible impact.
               </p>
               <p className="text-base leading-relaxed" style={{ color: 'rgba(121,134,203,0.7)' }}>
-                Actively participating in <span className="text-blue-300 font-semibold">15+ hackathons</span>, coordinating the <span className="text-blue-300 font-semibold">GCC Coding Club</span>, and constantly pushing the boundaries of what's possible.
+                Actively participating in <span className="text-neutral-300 font-semibold">15+ hackathons</span>, coordinating the <span className="text-neutral-300 font-semibold">GCC Coding Club</span>, and constantly pushing the boundaries of what's possible.
               </p>
             </div>
 
@@ -145,11 +145,11 @@ export default function About() {
                   className="text-center py-4 rounded-xl"
                   style={{
                     background: 'linear-gradient(135deg, rgba(29,32,102,0.35), rgba(8,11,26,0.7))',
-                    border: '1px solid rgba(104,105,110,0.15)',
+                    border: '1px solid rgba(115,115,115,0.15)',
                   }}
                 >
                   <div className="text-2xl font-black" style={{
-                    background: 'linear-gradient(135deg, #68696e, #68696e)',
+                    background: 'linear-gradient(135deg, #737373, #737373)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
                   }}>{num}</div>
                   <div className="text-[11px] font-mono uppercase tracking-widest mt-1" style={{ color: 'rgba(121,134,203,0.7)' }}>{label}</div>
@@ -182,7 +182,7 @@ export default function About() {
               className="group p-6 rounded-2xl text-center cursor-default transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg, rgba(15,18,48,0.8), rgba(8,11,26,0.9))',
-                border: '1px solid rgba(104,105,110,0.1)',
+                border: '1px solid rgba(115,115,115,0.1)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = `${color}40`;
@@ -190,7 +190,7 @@ export default function About() {
                 e.currentTarget.style.transform = 'translateY(-4px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(104,105,110,0.1)';
+                e.currentTarget.style.borderColor = 'rgba(115,115,115,0.1)';
                 e.currentTarget.style.boxShadow = 'none';
                 e.currentTarget.style.transform = '';
               }}
