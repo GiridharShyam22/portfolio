@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Send, ArrowUpRight, Mail, BriefcaseBusiness } from 'lucide-react';
 import { useResumeModal } from '../context/ResumeModalContext';
+import { useRef } from 'react';
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -44,18 +45,35 @@ function ContactResumeButton() {
 }
 
 export default function Contact() {
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    containerRef.current.style.setProperty('--x', `${x}px`);
+    containerRef.current.style.setProperty('--y', `${y}px`);
+  };
+
   return (
-    <section id="contact" className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden">
+    <section 
+      id="contact" 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden bg-black"
+    >
 
-      {/* Background glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(114,114,114,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 30% at 20% 50%, rgba(39,39,39,0.2) 0%, transparent 50%)',
-      }} />
+      {/* Circuit board pattern revealed by flashlight */}
+      <div 
+        className="absolute inset-0 pointer-events-none circuit-bg opacity-70 transition-opacity duration-300"
+        style={{
+          maskImage: 'radial-gradient(500px circle at var(--x, 50%) var(--y, 50%), black 0%, transparent 100%)',
+          WebkitMaskImage: 'radial-gradient(500px circle at var(--x, 50%) var(--y, 50%), black 0%, transparent 100%)',
+        }}
+      />
 
-      {/* Circuit board pattern */}
-      <div className="absolute inset-0 pointer-events-none circuit-bg opacity-40" />
-
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header */}
         <motion.div

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { useCyberSounds } from '../context/SoundContext';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'home',       label: 'Home' },
@@ -13,6 +15,7 @@ export default function Navbar() {
   const [active, setActive] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { soundEnabled, toggleSound, playClick, playHover } = useCyberSounds();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,6 +68,20 @@ export default function Navbar() {
           GS
         </a>
 
+        {/* Sound Toggle */}
+        <button
+          onClick={() => { playClick(); toggleSound(); }}
+          onMouseEnter={playHover}
+          className="mr-2 flex items-center justify-center w-8 h-8 rounded-lg transition-colors duration-200"
+          style={{
+            background: soundEnabled ? 'rgba(114,114,114,0.15)' : 'transparent',
+            color: soundEnabled ? '#fff' : 'rgba(229,229,229,0.5)',
+          }}
+          aria-label="Toggle Sound"
+        >
+          {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+        </button>
+
         {NAV_ITEMS.map(({ id, label }) => (
           <a
             key={id}
@@ -74,7 +91,8 @@ export default function Navbar() {
             style={{
               color: active === id ? '#eaeaea' : 'rgba(229,229,229,0.8)',
             }}
-            onClick={() => setActive(id)}
+            onClick={() => { playClick(); setActive(id); }}
+            onMouseEnter={playHover}
           >
             {/* Active indicator */}
             {active === id && (
@@ -114,6 +132,7 @@ export default function Navbar() {
             e.currentTarget.style.boxShadow = '0 0 12px rgba(114,114,114,0.15)';
             e.currentTarget.style.color = '#b7b7b7';
           }}
+          onClick={playClick}
         >
           Hire Me ↗
         </a>
@@ -140,7 +159,7 @@ export default function Navbar() {
               id={`mobile-nav-${id}`}
               className="relative px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-200"
               style={{ color: active === id ? '#eaeaea' : 'rgba(229,229,229,0.6)' }}
-              onClick={() => setActive(id)}
+              onClick={() => { playClick(); setActive(id); }}
             >
               {active === id && (
                 <motion.div

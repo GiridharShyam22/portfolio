@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectDetailModal from './ProjectDetailModal';
+import GlitchText from './GlitchText';
+import { useCyberSounds } from '../context/SoundContext';
 
 /* ── Project theme config ──────────────────── */
 const themes = {
@@ -18,6 +20,7 @@ function HoloCard({ project, onOpen }) {
   const theme = themes[project.id] || themes[1];
   const cardRef = useRef(null);
   const shineRef = useRef(null);
+  const { playHover, playClick } = useCyberSounds();
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -49,12 +52,18 @@ function HoloCard({ project, onOpen }) {
     if (shineRef.current) shineRef.current.style.background = 'none';
   };
 
+  const handleClick = () => {
+    playClick();
+    onOpen(project);
+  };
+
   return (
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onClick={() => onOpen(project)}
+      onMouseEnter={playHover}
+      onClick={handleClick}
       role="button"
       tabIndex={0}
       aria-label={`View ${project.title} case study`}
@@ -258,11 +267,10 @@ export default function Projects() {
             </div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
-                <span className="text-white">Featured </span>
-                <span style={{
-                  background: 'linear-gradient(135deg, #727272, #727272, #727272)',
-                  WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-                }}>Projects</span>
+                <GlitchText text="Featured" className="text-white" />
+                <span className="text-transparent bg-clip-text ml-3" style={{ background: 'linear-gradient(135deg, #727272, #727272, #727272)', WebkitBackgroundClip: 'text' }}>
+                  Projects
+                </span>
               </h2>
               <p className="text-sm font-mono max-w-xs text-right" style={{ color: 'rgba(229,229,229,0.6)' }}>
                 {projects.length} projects · Click any card to explore the full case study

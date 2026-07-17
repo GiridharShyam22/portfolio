@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { GiTrophyCup } from 'react-icons/gi';
 import { RiRocketLine, RiCodeSSlashLine, RiTeamLine, RiAwardLine } from 'react-icons/ri';
+import GlitchText from './GlitchText';
 
 const timeline = [
   {
@@ -241,12 +242,11 @@ export default function Experience() {
             <div className="h-px flex-1 max-w-[40px]" style={{ background: 'linear-gradient(to right, transparent, rgba(114,114,114,0.6))' }} />
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-neutral-400/70">03 — Journey</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold" style={{ fontFamily: 'Space Grotesk' }}>
-            <span className="text-white">Activities & </span>
-            <span style={{
-              background: 'linear-gradient(135deg, #727272, #727272, #171717)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-            }}>Achievements</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold flex flex-wrap gap-3" style={{ fontFamily: 'Space Grotesk' }}>
+            <GlitchText text="Activities &" className="text-white" />
+            <span className="text-transparent bg-clip-text" style={{ background: 'linear-gradient(135deg, #727272, #727272, #171717)', WebkitBackgroundClip: 'text' }}>
+              Achievements
+            </span>
           </h2>
         </motion.div>
 

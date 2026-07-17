@@ -10,6 +10,7 @@ import ResumeModal from './components/ResumeModal';
 import LoadingScreen from './components/LoadingScreen';
 import CustomCursor from './components/CustomCursor';
 import { ResumeModalProvider } from './context/ResumeModalContext';
+import { SoundProvider } from './context/SoundContext';
 
 // Lazy-load the heavy Three.js particle field
 
@@ -17,8 +18,9 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <ResumeModalProvider>
-      {/* ── Custom Cursor ── */}
+    <SoundProvider>
+      <ResumeModalProvider>
+        {/* ── Custom Cursor ── */}
       <CustomCursor />
 
       {/* ── Loading Screen ── */}
@@ -78,7 +80,8 @@ function App() {
         {/* ── Resume Modal ── */}
         <ResumeModal />
       </div>
-    </ResumeModalProvider>
+      </ResumeModalProvider>
+    </SoundProvider>
   );
 }
 
