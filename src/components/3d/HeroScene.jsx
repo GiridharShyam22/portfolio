@@ -1,65 +1,102 @@
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
-
-function LiquidPlane() {
-  const meshRef = useRef();
-
-  // Create a plane with high segment count for smooth waves
-  const geometry = useMemo(() => new THREE.PlaneGeometry(40, 40, 70, 70), []);
-  
-  // Store original positions for the wave math
-  const originalPositions = useMemo(() => {
-    const pos = geometry.attributes.position;
-    const orig = new Float32Array(pos.count);
-    for (let i = 0; i < pos.count; i++) {
-      orig[i] = pos.getZ(i);
-    }
-    return orig;
-  }, [geometry]);
-
-  useFrame(({ clock }) => {
-    const time = clock.getElapsedTime();
-    const pos = geometry.attributes.position;
-    
-    // Animate vertices to create a liquid/wave effect
-    for (let i = 0; i < pos.count; i++) {
-      const x = pos.getX(i);
-      const y = pos.getY(i);
-      
-      // Combine multiple sine waves for organic fluid motion
-      const wave1 = 0.4 * Math.sin(x * 0.3 + time * 0.8);
-      const wave2 = 0.3 * Math.sin(y * 0.4 + time * 0.5);
-      const wave3 = 0.5 * Math.sin((x + y) * 0.15 - time * 0.6);
-      const wave4 = 0.15 * Math.sin(Math.sqrt(x*x + y*y) * 0.5 - time * 1.2);
-      
-      const z = originalPositions[i] + wave1 + wave2 + wave3 + wave4;
-      pos.setZ(i, z);
-    }
-    pos.needsUpdate = true;
-    
-    // Slowly rotate the entire liquid plane
-    if (meshRef.current) {
-      meshRef.current.rotation.z = time * 0.03;
-    }
-  });
-
-  return (
-    <mesh ref={meshRef} geometry={geometry} rotation={[-Math.PI / 2 + 0.15, 0, 0]} position={[0, -1.5, -3]}>
-      {/* Sleek monochrome wireframe reflecting the tech aesthetic */}
-      <meshBasicMaterial color="#ffffff" wireframe transparent opacity={0.6} />
-    </mesh>
-  );
-}
+import { useEffect, useRef } from 'react';
 
 export default function HeroScene() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    // Handle window resize
+    const resizeCanvas = () => {
+      // Use parent container dimensions instead of window to stay contained
+      const parent = canvas.parentElement;
+      if (parent) {
+        canvas.width = parent.clientWidth;
+        canvas.height = parent.clientHeight;
+      }
+    };
+    
+    // Initial size
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Characters for the rain (Binary + Tech Symbols)
+    const chars = '01010101010101010101{}[]/<>';
+    const charArray = chars.split('');
+
+    const fontSize = 16;
+    let columns = Math.floor(canvas.width / fontSize);
+
+    // Array to track the Y coordinate of each drop
+    let drops = Array(columns).fill(1);
+
+    // Drawing function
+    let lastDrawTime = 0;
+    const fps = 30;
+    const interval = 1000 / fps;
+
+    const render = (timestamp) => {
+      animationFrameId = requestAnimationFrame(render);
+
+      // Throttle frame rate
+      if (timestamp - lastDrawTime < interval) return;
+      lastDrawTime = timestamp;
+
+      // Update columns if canvas resized
+      const currentColumns = Math.floor(canvas.width / fontSize);
+      if (currentColumns !== columns) {
+        columns = currentColumns;
+        drops = Array(columns).fill(1);
+      }
+
+      // Draw semi-transparent black background to create trail effect
+      ctx.fillStyle = 'rgba(11, 11, 11, 0.15)'; // Trail length determined by opacity
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = charArray[Math.floor(Math.random() * charArray.length)];
+
+        // Randomly make leading characters bright white, tail is gray
+        if (Math.random() > 0.95) {
+          ctx.fillStyle = '#ffffff'; // Bright white head
+        } else {
+          ctx.fillStyle = '#52525b'; // Darker gray tail
+        }
+
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // Reset drop randomly after it crosses the screen
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(render);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-full absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 3], fov: 60 }}>
-        {/* Aggressive black fog to fade the edges of the liquid plane into the darkness */}
-        <fog attach="fog" args={['#000000', 1.5, 10]} />
-        <LiquidPlane />
-      </Canvas>
+    <div className="absolute inset-0 z-0 overflow-hidden" style={{ background: '#0b0b0b' }}>
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full opacity-60"
+        style={{ filter: 'blur(0.5px)' }}
+      />
+      {/* Vignette/gradient overlay to fade the rain at the edges and under text */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0b0b0b_100%)] pointer-events-none" />
     </div>
   );
 }
