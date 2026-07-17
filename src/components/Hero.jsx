@@ -334,8 +334,8 @@ export default function Hero() {
         }}
       />
 
-      {/* Three.js background scene (subtle, behind everything) */}
-      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
+      {/* Binary Rain background scene */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <Suspense fallback={null}>
           <HeroScene />
         </Suspense>

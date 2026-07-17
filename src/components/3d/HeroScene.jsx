@@ -89,11 +89,10 @@ export default function HeroScene() {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden" style={{ background: '#0b0b0b' }}>
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <canvas
         ref={canvasRef}
-        className="w-full h-full opacity-60"
-        style={{ filter: 'blur(0.5px)' }}
+        className="w-full h-full"
       />
       {/* Vignette/gradient overlay to fade the rain at the edges and under text */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#0b0b0b_100%)] pointer-events-none" />
