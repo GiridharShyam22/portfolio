@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { GiTrophyCup } from 'react-icons/gi';
 import { RiRocketLine, RiCodeSSlashLine, RiTeamLine, RiAwardLine } from 'react-icons/ri';
 
@@ -216,6 +216,10 @@ function AchievementCard({ item, index }) {
 }
 
 export default function Experience() {
+  const { scrollYProgress } = useScroll();
+  const yLeft = useTransform(scrollYProgress, [0, 1], ['0%', '5%']);
+  const yRight = useTransform(scrollYProgress, [0, 1], ['0%', '-5%']);
+
   return (
     <section id="experience" className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden">
 
@@ -249,17 +253,17 @@ export default function Experience() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
           {/* LEFT: Timeline */}
-          <div>
+          <motion.div style={{ y: yLeft }}>
             <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(229,229,229,0.7)' }}>
               <span style={{ color: '#727272' }}>/</span> Leadership
             </h3>
             {timeline.map((item, i) => (
               <TimelineEntry key={item.id} item={item} index={i} />
             ))}
-          </div>
+          </motion.div>
 
           {/* RIGHT: Achievements */}
-          <div>
+          <motion.div style={{ y: yRight }}>
             <h3 className="font-mono text-sm tracking-[0.2em] uppercase mb-8 flex items-center gap-3" style={{ color: 'rgba(229,229,229,0.7)' }}>
               <span style={{ color: '#727272' }}>/</span> Recognition
             </h3>
@@ -302,7 +306,7 @@ export default function Experience() {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

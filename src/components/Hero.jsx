@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Zap, Code2, Brain, Globe, Download, ArrowRight } from 'lucide-react';
 import { useResumeModal } from '../context/ResumeModalContext';
 import heroImg from '../assets/hero.jpg';
@@ -319,6 +319,10 @@ function HeroResumeButton() {
 /* ── Main Hero ─────────────────────────────── */
 export default function Hero() {
   const role = useTypewriter(roles, 75, 2000);
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 1000], ['0%', '20%']);
+  const textY = useTransform(scrollY, [0, 1000], ['0%', '-10%']);
+  const avatarY = useTransform(scrollY, [0, 1000], ['0%', '-25%']);
 
   return (
     <section
@@ -335,11 +339,11 @@ export default function Hero() {
       />
 
       {/* Binary Rain background scene */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <motion.div className="absolute inset-0 z-0 pointer-events-none" style={{ y: bgY }}>
         <Suspense fallback={null}>
           <HeroScene />
         </Suspense>
-      </div>
+      </motion.div>
 
       {/* Content grid */}
       <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
@@ -349,6 +353,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          style={{ y: textY }}
           className="flex flex-col gap-5 order-last md:order-first"
         >
           {/* Status + eyebrow */}
@@ -530,13 +535,13 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* ── RIGHT: Holographic Photo ──────── */}
+        {/* ── RIGHT: 3D Holographic Avatar ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex justify-center md:justify-end items-center order-first md:order-last"
-          style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
+          style={{ y: avatarY }}
+          className="flex justify-center md:justify-end items-center order-first md:order-last relative w-full h-full min-h-[400px] md:min-h-[500px]"
         >
           <HoloAvatar imgSrc={heroImg} />
         </motion.div>

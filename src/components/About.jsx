@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import SkillLoop from './SkillLoop';
+import SkillGraph from './3d/SkillGraph';
 
 const SKILLS = [
   'Python', 'TensorFlow', 'OpenCV', 'PyTorch', 'Scikit-Learn',
@@ -166,7 +166,7 @@ export default function About() {
             transition={{ duration: 0.9 }}
             className="flex flex-col items-center justify-center relative w-full h-full min-h-[360px]"
           >
-            <SkillLoop />
+            <SkillGraph />
           </motion.div>
         </div>
 

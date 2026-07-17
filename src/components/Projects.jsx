@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { projects } from '../data/projects';
 import ProjectDetailModal from './ProjectDetailModal';
 
@@ -216,6 +216,14 @@ export default function Projects() {
   const featured = projects.filter(p => p.featured);
   const rest     = projects.filter(p => !p.featured);
 
+  const { scrollYProgress } = useScroll();
+  // Parallax offsets for columns
+  const yCol1 = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
+  const yCol2 = useTransform(scrollYProgress, [0, 1], ['0%', '-5%']);
+  const yCol3 = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+
+  const bgTextY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+
   return (
     <>
       <section id="projects" className="relative py-24 md:py-36 px-6 md:px-12 overflow-hidden">
@@ -225,7 +233,17 @@ export default function Projects() {
           background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(114,114,114,0.06) 0%, transparent 60%)',
         }} />
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
+
+          {/* Huge background text for parallax depth */}
+          <motion.div 
+            className="absolute top-0 right-0 pointer-events-none select-none overflow-hidden opacity-5"
+            style={{ y: bgTextY, x: '20%' }}
+          >
+            <span className="text-[20vw] font-bold font-mono tracking-tighter leading-none text-white whitespace-nowrap">
+              PROJECTS
+            </span>
+          </motion.div>
 
           {/* Header */}
           <motion.div
@@ -267,19 +285,24 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Rest: 2-col */}
+          {/* Rest: 2-col or 3-col */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rest.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-              >
-                <HoloCard project={project} onOpen={setSelected} />
-              </motion.div>
-            ))}
+            {rest.map((project, i) => {
+              const colIndex = i % 3;
+              const yOffset = colIndex === 0 ? yCol1 : colIndex === 1 ? yCol2 : yCol3;
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  style={{ y: yOffset }}
+                >
+                  <HoloCard project={project} onOpen={setSelected} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
